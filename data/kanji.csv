@@ -1,0 +1,328 @@
+character,meaning,readings,examples,ready
+百,cent,ひゃく,三百（さんびゃく）— trois cents,true
+千,mille,せん,三千（さんぜん）— trois mille,true
+万,dix mille,まん,一万円（いちまんえん）— 10 000 yens,true
+円,"yen, cercle",えん,百円（ひゃくえん）— 100 yens,true
+一,un,いち・ひと,一つ（ひとつ）— une chose,true
+二,deux,に・ふた,二人（ふたり）— deux personnes,true
+三,trois,さん・みっ,三つ（みっつ）— trois choses,true
+四,quatre,し・よん・よっ,四月（しがつ）— avril,true
+五,cinq,ご・いつ,五日（いつか）— le 5 / cinq jours,true
+六,six,ろく・むっ,六月（ろくがつ）— juin,true
+七,sept,しち・なな,七時（しちじ）— sept heures,true
+八,huit,はち・やっ,八つ（やっつ）— huit choses,true
+九,neuf,きゅう・く・ここの,九月（くがつ）— septembre,true
+十,dix,じゅう・とお,十日（とおか）— le 10 / dix jours,true
+零,zéro,れい,零点（れいてん）— zéro point,true
+月,"lune, mois",げつ・がつ・つき,月曜日（げつようび）— lundi,true
+火,feu,か・ひ,火曜日（かようび）— mardi,true
+水,eau,すい・みず,水曜日（すいようび）— mercredi,true
+木,"arbre, bois",もく・き,木曜日（もくようび）— jeudi,true
+金,"or, argent",きん・かね,金曜日（きんようび）— vendredi,true
+土,"terre, sol",ど・つち,土曜日（どようび）— samedi,true
+日,"jour, soleil",にち・じつ・ひ,日曜日（にちようび）— dimanche,true
+年,année,ねん・とし,今年（ことし）— cette année,true
+人,personne,じん・にん・ひと,日本人（にほんじん）— Japonais(e),true
+口,"bouche, ouverture",こう・くち,入口（いりぐち）— entrée,true
+目,œil,もく・め,目的（もくてき）— objectif,true
+耳,oreille,じ・みみ,耳（みみ）— oreille,true
+手,main,しゅ・て,上手（じょうず）— habile,true
+足,"pied, jambe, suffire",そく・あし・た,"足（あし）— pied, jambe",true
+力,force,りょく・ちから,力（ちから）— force,true
+王,roi,おう,王様（おうさま）— roi,true
+山,montagne,さん・やま,富士山（ふじさん）— mont Fuji,true
+川,rivière,せん・かわ,川（かわ）— rivière,true
+田,rizière,でん・た,田んぼ（たんぼ）— rizière,true
+石,pierre,せき・いし,石（いし）— pierre,true
+花,fleur,か・はな,花見（はなみ）— contemplation des fleurs,true
+竹,bambou,ちく・たけ,竹（たけ）— bambou,true
+雨,pluie,う・あめ,大雨（おおあめ）— forte pluie,true
+虫,insecte,ちゅう・むし,虫（むし）— insecte,true
+上,"haut, monter",じょう・うえ・あ,上手（じょうず）— habile,true
+下,"bas, descendre",か・げ・した・さ,地下（ちか）— sous-sol,true
+左,gauche,さ・ひだり,左手（ひだりて）— main gauche,true
+右,droite,う・ゆう・みぎ,右手（みぎて）— main droite,true
+外,"extérieur, dehors",がい・そと・はず,外国（がいこく）— pays étranger,true
+内,"intérieur, dedans",ない・うち,国内（こくない）— intérieur du pays,true
+中,"milieu, intérieur",ちゅう・なか,中国（ちゅうごく）— Chine,true
+学,"étudier, apprentissage",がく・まな,学生（がくせい）— étudiant,true
+校,école,こう,学校（がっこう）— école,true
+先,"avant, précédent",せん・さき,先生（せんせい）— professeur,true
+生,"vie, naître",せい・しょう・い・う・なま,学生（がくせい）— étudiant,true
+名,nom,めい・みょう・な,"名前（なまえ）— prénom, nom",true
+字,"caractère, lettre",じ・あざ,漢字（かんじ）— kanji,true
+本,"livre, origine",ほん・もと,日本（にほん）— Japon,true
+休,"repos, se reposer",きゅう・やす,"休み（やすみ）— repos, congé",true
+大,grand,だい・たい・おお,大学（だいがく）— université,true
+小,petit,しょう・ちい・こ,小学校（しょうがっこう）— école primaire,true
+高,"haut, cher",こう・たか,高校（こうこう）— lycée,true
+友,ami,ゆう・とも,友達（ともだち）— ami,true
+入,entrer,にゅう・はい・い,入口（いりぐち）— entrée,true
+出,sortir,しゅつ・で・だ,出口（でぐち）— sortie,true
+門,"porte, portail",もん・かど,専門（せんもん）— spécialité,true
+体,corps,たい・からだ,体（からだ）— corps,true
+父,père,ふ・ちち,父（ちち）— mon père,true
+母,mère,ぼ・はは,母（はは）— ma mère,true
+子,enfant,し・す・こ,子供（こども）— enfant,true
+男,"homme, masculin",だん・なん・おとこ,男の人（おとこのひと）— homme,true
+女,"femme, féminin",じょ・にょ・おんな,女の人（おんなのひと）— femme,true
+犬,chien,けん・いぬ,子犬（こいぬ）— chiot,true
+立,"se lever, être debout",りつ・た,立つ（たつ）— se lever,true
+見,"voir, regarder",けん・み,見る（みる）— voir,true
+聞,"entendre, demander",ぶん・もん・き,"聞く（きく）— écouter, demander",true
+行,"aller, ligne",こう・ぎょう・い・おこな,行く（いく）— aller,true
+来,"venir, prochain",らい・く・き,来年（らいねん）— l’année prochaine,true
+帰,rentrer,き・かえ,帰る（かえる）— rentrer,true
+米,grain de riz,べい・まい・こめ・よね,米（こめ）— riz (cru),true
+茶,thé,ちゃ・さ,茶（ちゃ）— thé,true
+牛,vache,ぎゅう・うし,牛（うし）— bétail,true
+肉,chair,にく・しし,肉（にく）— viande,true
+魚,poisson,ぎょ・うお・さかな,魚（さかな）— poisson,true
+貝,coquillage,ばい・かい,貝（かい）— coquillage,true
+好,aimer bien,こう・この・す,"好き（すき）— aimé, apprécié",true
+物,objet,ぶつ・もつ・もの,物（もの）— chose,true
+時,temps,じ・とき・どき,時（とき）— heure,true
+間,intervalle,かん・けん・あいだ・ま,間（あいだ）— entre,true
+今,maintenant,こん・きん・いま,今（いま）— actuellement,true
+半,moitié,はん・なか,半（はん）— demi,true
+分,portion,ぶん・ふん・わ,分（ぶん）— morceau,true
+何,quoi,か・なに・なん,何（なに）— que,true
+夕,soirée,せき・ゆう,夕方（ゆうがた）— soir,true
+方,direction,ほう・かた・がた,方（ほう）— coté,true
+林,bois (petite forêt),りん・はやし,林（はやし）— (petite) forêt,true
+森,forêt,しん・もり,森（もり）— forêt,true
+畑,ferme,はた・はたけ,畑（はたけ）— champ,true
+岩,rocher,がん・いわ,岩（いわ）— roc,true
+音,son,おん・いん・おと・ね,音（おと）— bruit,true
+明,clair,めい・みょう・あ・あか,"明るい（あかるい）— clair, lumineux",true
+暗,obscurité,あん・くら・くれ,暗い（くらい）— sombre,true
+言,"dire, parole",げん・ごん・い・こと,言う（いう）— dire,true
+書,"écrire, livre",しょ・か,書く（かく）— écrire,true
+読,lire,どく・よ,読む（よむ）— lire,true
+話,"parler, histoire",わ・はな・はなし,話す（はなす）— parler,true
+食,"manger, nourriture",しょく・た,食事（しょくじ）— repas ; 食べる（たべる）— manger,true
+飲,boire,いん・の,飲み物（のみもの）— boisson,true
+買,acheter,ばい・か,買い物（かいもの）— achats,true
+町,quartier,ちょう・まち,町（まち）— quartier,true
+寺,temple bouddhiste,じ・てら,寺（てら）— temple,true
+電,électricité,でん,電気（でんき）— électricité,true
+車,véhicule,しゃ・くるま,車（くるま）— véhicule,true
+北,nord,ほく・きた,北（きた）— nord,true
+南,sud,なん・な・みなみ,南（みなみ）— sud,true
+西,Ouest,せい・さい・にし,西（にし）— ouest,true
+東,Est,とう・ひがし,東（ひがし）— est,true
+新,nouveau,しん・あたら・あら,新（しん）— néo-,true
+古,vieux,こ・ふる,"古い（ふるい）— ancien, vieux",true
+長,long,ちょう・なが・おさ,長（ちょう）— responsable,true
+安,paisible,あん・やす,安い（やすい）— bon marché,true
+多,beaucoup,た・おお・まさ,多（た）— multi-,true
+少,un petit peu,しょう・すく・すこ,少ない（すくない）— peu nombreux,true
+元,commencement,げん・がん・もと,元（もと）— base,true
+気,esprit,き・け・いき,気（き）— esprit,true
+家,maison,か・け・いえ・や,家（け）— famille,true
+族,tribu,ぞく,家族（かぞく）— famille,true
+兄,frère aîné,けい・きょう・あに,兄（あに）— frère ainé,true
+弟,frère cadet,てい・だい・おとうと,弟（おとうと）— petit frère,true
+姉,soeur aînée,し・あね・はは,姉（あね）— sœur aînée,true
+妹,soeur cadette,まい・いもうと,妹（いもうと）— (ma) sœur cadette,true
+私,privé,し・わたくし・わたし,私（わたし）— moi-même,true
+育,élever,いく・そだ・はぐく,育てる（そだてる）— élever,true
+部,partie,ぶ・べ,部（ぶ）— catégorie,true
+屋,toit,おく・や,"部屋（へや）— pièce, chambre",true
+広,vaste,こう・ひろ,"広い（ひろい）— large, spacieux",true
+低,bas,てい・ひく,低い（ひくい）— bas,true
+近,près,きん・こん・ちか,近い（ちかい）— proche,true
+遠,loin,えん・おん・とお,遠い（とおい）— loin,true
+静,calme,せい・じょう・しず,静か（しずか）— calme,true
+洋,océan,よう,洋服（ようふく）— vêtement occidental,true
+服,habillement,ふく,服（ふく）— vêtement,true
+短,court,たん・みじか,短い（みじかい）— court,true
+玉,bijoux,ぎょく・たま・だま,玉（たま）— balle,true
+毛,pilosité,もう・け,毛（け）— cheveu,true
+糸,fil,し・いと,糸（いと）— corde,true
+光,rayon,こう・ひか・ひかり,光（ひかり）— lumière,true
+衣,vêtement,い・え・ころも・きぬ,衣（ころも）— vêtements,true
+店,magasin,てん・みせ・たな,店（みせ）— échoppe,true
+客,hôte,きゃく・かく,客（きゃく）— client,true
+親,parent,しん・おや・した,親（おや）— parents,true
+切,couper,せつ・さい・き・ぎ,切る（きる）— couper,true
+売,vendre,ばい・う,売る（うる）— vendre,true
+当,frapper,とう・あ・まさ,"当たる（あたる）— toucher, correspondre",true
+品,marchandise,ひん・ほん・しな,品（しな）— dignité,true
+便,commodité,べん・びん・たよ,便（びん）— circonstances,true
+利,profit,り・き,利（り）— avantage,true
+使,utiliser,し・つか・づか,使う（つかう）— utiliser,true
+銀,argent,ぎん・しろがね,銀（ぎん）— argent,true
+白,blanc,はく・びゃく・しろ・しら,白（しろ）— blanc,true
+黒,noir,こく・くろ,黒（くろ）— noir,true
+紙,papier,し・かみ,紙（かみ）— papier,true
+朝,matin,ちょう・あさ,朝（あさ）— matin,true
+晩,soir,ばん,晩（ばん）— nuit,true
+昼,journée,ちゅう・ひる,昼（ひる）— jour,true
+夜,nuit,や・よ・よる,夜（よる）— nuit,true
+前,devant,ぜん・まえ,前（まえ）— antérieur,true
+後,après,ご・こう・のち・うし,後（あと）— derrière,true
+午,midi,ご・うま,午後（ごご）— après-midi,true
+早,tôt,そう・さっ・はや・さ,"早い（はやい）— tôt, rapide",true
+荷,bagages,か・に,荷（に）— bagages,true
+送,escorter,そう・おく,送る（おくる）— envoyer,true
+宅,domicile,たく,宅（たく）— chez soi,true
+急,urgence,きゅう・いそ・せ,急（きゅう）— soudain,true
+速,vite,そく・はや・すみ,速い（はやい）— rapide,true
+遅,retard,ち・おく・おそ,"遅い（おそい）— lent, tardif",true
+重,lourd,じゅう・ちょう・え・おも,重い（おもい）— lourd,true
+軽,léger,けい・きょう・かる・かろ,軽い（かるい）— léger,true
+住,résider,じゅう・ぢゅう・す・ず,住む（すむ）— habiter,true
+所,lieu,しょ・ところ・どころ,所（ところ）— endroit,true
+様,"Monsieur, Madame",よう・しょう・さま・さん,様（よう）— à la manière de,true
+主,maître,しゅ・す・ぬし・おも,主（ぬし）— maître,true
+番,tour (de rôle),ばん・つが,番（ばん）— nombre (dans une série),true
+地,sol,ち・じ,地（ち）— sol,true
+号,surnom,ごう・さけ・よびな,号（ごう）— nombre,true
+京,capitale,きょう・けい・みやこ,東京（とうきょう）— Tokyo,true
+国,pays,こく・くに,国（くに）— pays,true
+都,métropole,と・つ・みやこ,都（みやこ）— capitale (ville),true
+道,voie,どう・とう・みち・いう,道（みち）— chemin,true
+府,préfecture urbaine,ふ,大阪府（おおさかふ）— préfecture d’Osaka,true
+県,préfecture,けん・か,県（けん）— préfecture,true
+市,marché,し・いち,市（し）— ville,true
+区,circonscription,く・おう,区（く）— arrondissement,true
+村,village,そん・むら,村（むら）— village,true
+毎,chaque,まい・ごと,毎（まい）— chaque,true
+週,semaine,しゅう,週（しゅう）— semaine,true
+映,projection,えい・うつ・は,映画（えいが）— film,true
+画,trait de plume,が・かく・えが,"画（かく）— trait (de crayon, de pinceau)",true
+館,bâtiment,かん・やかた・たて,映画館（えいがかん）— cinéma,true
+公,public,こう・く・おおやけ,公（おおやけ）— formel,true
+園,parc,えん・その,園（その）— jardin,true
+夫,mari,ふ・ふう・おっと・それ,夫（おっと）— époux,true
+妻,épouse,さい・つま,妻（つま）— épouse,true
+特,spécial,とく,特別（とくべつ）— spécial,true
+思,penser,し・おも・おもえら,思う（おもう）— penser,true
+料,redevance,りょう,料（りょう）— charge,true
+理,logique,り・ことわり,理科（りか）— sciences,true
+有,posséder,ゆう・う・あ,"有る（ある）— avoir, exister",true
+会,réunion,かい・え・あ・あつ,会（かい）— fête,true
+社,temple shinto,しゃ・やしろ,会社（かいしゃ）— entreprise,true
+働,travailler,どう・はたら,働く（はたらく）— travailler,true
+作,fabriquer,さく・さ・つく・づく,作る（つくる）— fabriquer,true
+工,ingénierie,こう・く,工場（こうじょう）— usine,true
+場,lieu,じょう・ちょう・ば,場（ば）— emplacement,true
+始,commencer,し・はじ,始める（はじめる）— commencer,true
+終,finir,しゅう・お・おわ,終わる（おわる）— finir,true
+駅,gare,えき,駅（えき）— gare,true
+鉄,fer,てつ・くろがね,鉄（てつ）— fer,true
+乗,monter,じょう・しょう・の,乗る（のる）— monter dans un véhicule,true
+降,descendre,こう・ご・お・ふ,降りる（おりる）— descendre,true
+開,ouvrir,かい・ひら・びら,開ける（あける）— ouvrir,true
+閉,fermer,へい・と・し,閉める（しめる）— fermer,true
+発,départ,はつ・ほつ・た・あば,出発（しゅっぱつ）— départ,true
+着,enfiler,ちゃく・じゃく・き・つ,着る（きる）— porter un vêtement,true
+交,mélanger,こう・まじ・ま,"交通（こうつう）— circulation, transport",true
+通,circulation,つう・つ・とお・どお,通（つう）— connaisseur,true
+台,piédestal,だい・たい・うてな・われ,台所（だいどころ）— cuisine,true
+止,arrêter,し・と・ど,止まる（とまる）— s’arrêter,true
+色,couleur,しょく・しき・いろ,色（いろ）— couleur,true
+赤,rouge,せき・しゃく・あか,赤（あか）— rouge,true
+黄,jaune,こう・おう・き・こ,黄色（きいろ）— jaune,true
+青,bleu,せい・しょう・あお,青（あお）— bleu,true
+病,malade,びょう・へい・や・やまい,病（やまい）— maladie,true
+院,temple,いん,病院（びょういん）— hôpital,true
+医,médecin,い・くすし,医者（いしゃ）— médecin,true
+科,département,か,科（か）— département,true
+薬,médicament,やく・くすり,薬（くすり）— médicament,true
+待,attendre,たい・ま,待つ（まつ）— attendre,true
+合,correspondre,ごう・がっ・あ・あい,"合う（あう）— correspondre, convenir",true
+計,planifier,けい・はか,"時計（とけい）— montre, horloge",true
+研,polir,けん・と,研究（けんきゅう）— recherche,true
+究,recherche,きゅう・く・きわ,研究（けんきゅう）— recherche,true
+語,langage,ご・かた,語（ご）— langue,true
+文,phrase,ぶん・もん・ふみ・あや,文（ふみ）— écrits,true
+英,Angleterre,えい・はなぶさ,英語（えいご）— anglais,true
+化,transformation,か・け・ば・ふ,化学（かがく）— chimie,true
+数,nombre,すう・す・かず・かぞ,数（かず）— chiffre,true
+心,coeur,しん・こころ・ごころ,心（こころ）— âme,true
+若,jeune,じゃく・にゃく・わか・も,若い（わかい）— jeune,true
+集,rassembler,しゅう・あつ・つど,集（しゅう）— collection,true
+知,savoir,ち・し,"知る（しる）— savoir, connaître",true
+酒,saké,しゅ・さけ・さか,酒（さけ）— alcool,true
+歌,chanson,か・うた,歌（うた）— chanson,true
+声,voix,せい・しょう・こえ・こわ,声（こえ）— voix,true
+楽,musique,がく・らく・たの・この,"楽しい（たのしい）— amusant, agréable",true
+味,goût,み・あじ,味（あじ）— goût,true
+油,huile,ゆ・ゆう・あぶら,油（あぶら）— huile,true
+太,gras,たい・た・ふと,"太い（ふとい）— épais, gros",true
+細,menu,さい・ほそ・こま,"細い（ほそい）— fin, mince",true
+皿,assiette,べい・さら,皿（さら）— assiette,true
+飯,repas,はん・めし,飯（めし）— nourriture,true
+麦,orge,ばく・むぎ,麦（むぎ）— blé,true
+春,printemps,しゅん・はる,春（はる）— printemps,true
+夏,été,か・が・なつ,夏（なつ）— été,true
+秋,automne,しゅう・あき・とき,秋（あき）— automne,true
+冬,hiver,とう・ふゆ,冬（ふゆ）— hiver,true
+空,vide,くう・そら・あ,空（そら）— ciel,true
+星,étoile,せい・しょう・ほし・ぼし,星（ほし）— étoile,true
+雲,nuage,うん・くも・ぐも,雲（くも）— nuage,true
+去,parti,きょ・こ・さ,去年（きょねん）— l’année dernière,true
+天,cieux,てん・あまつ・あめ,天（てん）— ciel,true
+晴,éclaircir,せい・は・ば,晴れ（はれ）— beau temps,true
+雪,neige,せつ・ゆき,雪（ゆき）— neige,true
+風,vent,ふう・ふ・かぜ・かざ,風（ふう）— aspect,true
+強,fort,きょう・ごう・つよ・し,強い（つよい）— fort,true
+弱,faible,じゃく・よわ,弱（じゃく）— faible,true
+暑,chaud,しょ・あつ,暑い（あつい）— chaud,true
+寒,froid (temps),かん・さむ,寒い（さむい）— froid,true
+旅,voyage,りょ・たび,旅（たび）— voyage,true
+持,avoir,じ・も,"持つ（もつ）— tenir, posséder",true
+世,génération,せい・せ・よ,世界（せかい）— monde,true
+界,monde,かい,世界（せかい）— monde,true
+写,copie,しゃ・じゃ・うつ,写真（しゃしん）— photographie,true
+真,exact,しん・ま・まこと,真（しん）— réalité,true
+船,bateau,せん・ふね・ふな,船（ふね）— bateau,true
+勉,exercice,べん・つと,勉強（べんきょう）— étude,true
+漢,sino-,かん,漢字（かんじ）— kanji,true
+宿,auberge,しゅく・やど,宿（やど）— demeure,true
+題,sujet,だい,題（だい）— matière,true
+質,substance,しつ・しち・たち・ただ,質（しつ）— qualité,true
+問,question,もん・と・とん,問（もん）— compteur pour les questions,true
+教,enseigner,きょう・おし・おそ,教える（おしえる）— enseigner,true
+室,pièce,しつ・むろ,室（しつ）— pièce (immobilier),true
+試,test,し・こころ・ため,試験（しけん）— examen,true
+験,vérification,けん・げん・あかし・しるし,試験（しけん）— examen,true
+答,solution,とう・こた,答（こたえ）— réponse,true
+考,réfléchir,こう・かんが,考える（かんがえる）— réfléchir,true
+正,correct,せい・しょう・ただ・まさ,正しい（ただしい）— correct,true
+丸,rond,がん・まる,丸（まる）— cercle,true
+不,négation,ふ・ぶ,不（ふ）— in-,true
+同,identique,どう・おな,同（どう）— ibid,true
+貸,prêter,たい・か・かし,貸す（かす）— prêter,true
+借,emprunter,しゃく・か,借りる（かりる）— emprunter,true
+返,rendre,へん・かえ,返す（かえす）— rendre,true
+冊,tome,さつ・さく・ふみ,冊（さつ）— tome,true
+歴,historique,れき・れっき,歴史（れきし）— histoire,true
+史,histoire,し,史（し）— histoire,true
+図,carte,ず・と・え・はか,図（ず）— dessin,true
+運,porter,うん・はこ,運ぶ（はこぶ）— transporter,true
+動,bouger,どう・うご,動く（うごく）— bouger,true
+練,pratiquer,れん・ね,練習（れんしゅう）— entraînement,true
+習,apprendre,しゅう・じゅ・なら,習う（ならう）— apprendre,true
+走,courir,そう・はし,走る（はしる）— courir,true
+歩,marcher,ほ・ぶ・ある・あゆ,歩く（あるく）— marcher,true
+泳,nager,えい・およ,泳ぐ（およぐ）— nager,true
+才,génie,さい,才（さい）— -ans (âge),true
+自,soi-même,じ・し・みずか・おの,自分（じぶん）— soi-même,true
+然,un certain,ぜん・ねん・しか・さ,自然（しぜん）— nature,true
+草,herbe,そう・くさ・ぐさ,草（くさ）— herbe,true
+原,pré,げん・はら,原（はら）— champ,true
+湖,lac,こ・みずうみ,湖（みずうみ）— lac,true
+谷,vallée,こく・たに・きわ,谷（たに）— vallée,true
+海,mer,かい・うみ,海（うみ）— mer,true
+辺,environs,へん・あた・ほと,辺（へん）— la proximité,true
+里,hameau,り・さと,里（さと）— village natal,true
+野,sauvage,や・しょ・の,野（の）— campagne,true
+緑,vert,りょく・ろく・みどり,緑（みどり）— verdure,true
+池,étang,ち・いけ,池（いけ）— étang,true
+鳥,oiseau,ちょう・とり,鳥（とり）— oiseau,true
+羽,plume,う・は・わ,羽（はね）— plume,true
+馬,cheval,ば・め・うま・ま,馬（うま）— cheval,true
+鳴,gazouiller,めい・な,"鳴く（なく）— crier, chanter pour un animal",true

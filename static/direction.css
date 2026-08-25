@@ -1,0 +1,9 @@
+.home > h1 { margin-bottom: 16px; }
+.direction { display:flex; align-items:center; justify-content:center; gap:14px; margin:0 0 52px; color:var(--muted); font-weight:600; }
+.direction button { width:42px; height:30px; border:1px solid var(--line); border-radius:20px; background:var(--card); color:var(--green); font-size:19px; line-height:1; }
+.direction button:hover { border-color:var(--green); }
+.french-prompt { font:700 clamp(35px,7vw,62px) "Noto Serif JP"; line-height:1.2; margin:auto; max-width:620px; }
+.reverse-meaning { color:var(--muted); margin:4px 0 10px; }
+.home { width:min(1040px,calc(100% - 40px)); }
+.choices { grid-template-columns:repeat(3,1fr); }
+@media(max-width:760px) { .choices { grid-template-columns:1fr; } }

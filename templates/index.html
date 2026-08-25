@@ -1,0 +1,10 @@
+<!doctype html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kotoba</title><link rel="stylesheet" href="{{ url_for('static',filename='styles.css') }}"><link rel="stylesheet" href="{{ url_for('static',filename='direction.css') }}"></head>
+<body class="home-page"><main class="home"><div class="brand-title"><h1>Kotoba</h1><span class="level-badge">N5 · N4</span></div>
+<form class="direction" method="post" action="{{ url_for('toggle_direction') }}">
+{% if direction == 'jp_to_fr' %}<span>Japonais</span><button type="submit" aria-label="Inverser le sens de révision">→</button><span>Français</span>
+{% else %}<span>Japonais</span><button type="submit" aria-label="Inverser le sens de révision">←</button><span>Français</span>{% endif %}
+</form><nav class="choices" aria-label="Choisir un type de révision">
+<a class="choice" href="{{ url_for('start_session',deck='kanji') }}"><span class="choice-kanji">字</span><strong>Kanji</strong><small>{{ due_counts.kanji }} à réviser</small></a>
+<a class="choice" href="{{ url_for('start_session',deck='vocabulary') }}"><span class="choice-kanji">語</span><strong>Vocabulaire</strong><small>{{ due_counts.vocabulary }} à réviser</small></a>
+<a class="choice" href="{{ url_for('start_session',deck='grammar') }}"><span class="choice-kanji">文</span><strong>Grammaire</strong><small>{{ due_counts.grammar }} à réviser</small></a>
+</nav><a class="catalog-link" href="{{ url_for('catalog') }}">Catalogue</a></main></body></html>
