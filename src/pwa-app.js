@@ -117,7 +117,7 @@ async function startSession(deck) {
 function cardSides(deck, card) {
   if (deck === "kanji") return { jp: card.character, fr: card.meaning, reading: card.readings, context: card.examples, meta: "EN CONTEXTE" };
   if (deck === "vocabulary") return { jp: card.japanese, fr: card.french, reading: card.reading, context: card.category, meta: `${card.level} · CATÉGORIE · LEÇON ${card.lesson}` };
-  return { jp: card.structure, fr: card.french, reading: card.construction, context: card.example, meta: `${card.level} · EXEMPLE · LEÇON ${card.lesson}` };
+  return { jp: card.reading, fr: card.french, reading: card.construction, context: "", meta: "" };
 }
 async function renderReview() {
   const { deck, queue, position, revealed } = session;
@@ -130,8 +130,8 @@ async function renderReview() {
   app.innerHTML = `<header class="topbar"><button id="home">Kotoba</button><span>${position + 1} / ${queue.length}</span></header><main class="review-page">
     <div class="progress"><i style="width:${Math.round(position / queue.length * 100)}%"></i></div>
     <article class="flashcard"><p>${revealed ? "Réponse" : direction === "jp_to_fr" ? `Que signifie ce ${DECKS[deck].label} ?` : "Comment le dire en japonais ?"}</p>
-      <div class="prompt ${promptClass}">${escapeHTML(revealed && direction === "fr_to_jp" ? sides.jp : prompt)}</div>
-      ${revealed ? `<section class="answer"><h2>${escapeHTML(direction === "jp_to_fr" ? sides.fr : sides.jp)}</h2>${direction === "fr_to_jp" ? `<p>${escapeHTML(sides.fr)}</p>` : ""}<p class="reading">${escapeHTML(sides.reading)}</p><div class="example"><small>${escapeHTML(sides.meta)}</small>${escapeHTML(sides.context)}</div></section>` : `<button class="primary" id="reveal">Afficher la réponse</button>`}
+      <div class="prompt ${promptClass}">${escapeHTML(revealed && direction === "fr_to_jp" ? sides.jp : prompt)}${!revealed && direction === "jp_to_fr" && deck === "vocabulary" ? `<small class="prompt-reading">${escapeHTML(sides.reading)}</small>` : ""}</div>
+      ${revealed ? `<section class="answer"><h2>${escapeHTML(direction === "jp_to_fr" ? sides.fr : sides.jp)}</h2>${direction === "fr_to_jp" ? `<p>${escapeHTML(sides.fr)}</p>` : ""}<p class="reading">${escapeHTML(sides.reading)}</p>${sides.context ? `<div class="example"><small>${escapeHTML(sides.meta)}</small>${escapeHTML(sides.context)}</div>` : ""}</section>` : `<button class="primary" id="reveal">Afficher la réponse</button>`}
     </article>
     ${revealed ? `<section class="ratings"><p>Comment était ton rappel ?</p><div class="rating-grid">${RATINGS.map(([grade, key, label]) => `<button class="rating ${key}" data-rating="${grade}"><strong>${label}</strong><small>${formatInterval(previews[grade].card.due, now)}</small></button>`).join("")}</div></section>` : ""}
   </main>`;

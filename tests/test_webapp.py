@@ -1,4 +1,5 @@
 import webapp
+import re
 from config import SESSION_SIZES
 
 
@@ -34,3 +35,17 @@ def test_fsrs_columns_are_migrated():
     with webapp.database() as connection:
         columns = {row[1] for row in connection.execute("PRAGMA table_info(memory_states)")}
     assert {"fsrs_card_id", "fsrs_state", "fsrs_step"} <= columns
+
+
+def test_grammar_readings_do_not_contain_kanji():
+    cards = webapp.load_cards("grammar")
+    assert all(card["reading"] for card in cards)
+    assert all(not re.search(r"[一-龯]", card["reading"]) for card in cards)
+
+
+def test_vocabulary_prompt_includes_hiragana_reading():
+    client = webapp.app.test_client()
+    with client.session_transaction() as session:
+        session["review_direction"] = "jp_to_fr"
+    response = client.get("/vocabulary", follow_redirects=True)
+    assert '<p class="readings">' in response.get_data(as_text=True)
