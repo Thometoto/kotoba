@@ -111,11 +111,7 @@ async function renderHome() {
 
 async function startSession(deck) {
   const due = await dueCards(deck);
-  const shuffled = due
-    .map(card => ({ card, order: Math.random() }))
-    .sort((a, b) => a.order - b.order)
-    .map(({ card }) => card);
-  session = { deck, queue: shuffled.slice(0, DECKS[deck].size), position: 0, revealed: false };
+  session = { deck, queue: due.slice(0, DECKS[deck].size), position: 0, revealed: false };
   renderReview();
 }
 function cardSides(deck, card) {

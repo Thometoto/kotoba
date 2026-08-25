@@ -13,7 +13,7 @@ for (const path of [
 ]) assert.ok(fs.statSync(path).size > 0, `${path} doit exister`);
 
 const serviceWorker = fs.readFileSync("service-worker.js", "utf8");
-assert.ok(serviceWorker.includes('const CACHE = "kotoba-v2"'), "le cache doit être versionné");
+assert.ok(serviceWorker.includes('const CACHE = "kotoba-v3"'), "le cache doit être versionné");
 assert.ok(serviceWorker.indexOf("fetch(event.request)") < serviceWorker.indexOf("caches.match(event.request)"), "le réseau doit être prioritaire pour recevoir les mises à jour");
 for (const path of ["data/kanji.csv", "data/vocabulary.csv", "data/grammar.csv"])
   assert.ok(serviceWorker.includes(path), `${path} doit être disponible hors connexion`);
@@ -21,7 +21,7 @@ for (const path of ["data/kanji.csv", "data/vocabulary.csv", "data/grammar.csv"]
 const source = fs.readFileSync("src/pwa-app.js", "utf8");
 assert.ok(!source.includes("data-level"), "le choix N5/N4 doit être absent");
 assert.ok(!source.includes("kotoba-level"), "aucun niveau ne doit être mémorisé");
-assert.ok(source.includes("Math.random()"), "les cartes doivent être mélangées");
+assert.ok(!source.includes("Math.random()"), "les cartes doivent conserver l’ordre pédagogique des CSV");
 
 const scheduler = fsrs({
   request_retention: 0.9, enable_fuzz: false, enable_short_term: true,
