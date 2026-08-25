@@ -16,7 +16,6 @@ const scheduler = fsrs({
 const app = document.querySelector("#app");
 const cards = {};
 let direction = localStorage.getItem("kotoba-direction") || "jp_to_fr";
-let level = localStorage.getItem("kotoba-level") || "N5";
 let session = null;
 
 function parseCSV(text) {
@@ -75,7 +74,7 @@ function serializeCard(card) {
   return { ...card, due: card.due.toISOString(), last_review: card.last_review?.toISOString() || null };
 }
 function eligible(deck) {
-  return cards[deck].filter(card => /^(true|1|oui|yes)$/i.test(card.ready || "") && (deck === "kanji" || level === "Tous" || card.level === level));
+  return cards[deck].filter(card => /^(true|1|oui|yes)$/i.test(card.ready || ""));
 }
 async function dueCards(deck) {
   const now = Date.now(); const result = [];
@@ -101,13 +100,10 @@ async function renderHome() {
   app.innerHTML = `<section class="home">
     <div class="brand"><h1>Kotoba</h1><span class="badge">N5 · N4</span></div>
     <div class="direction"><span>Japonais</span><button id="direction" aria-label="Inverser le sens">${direction === "jp_to_fr" ? "→" : "←"}</button><span>Français</span></div>
-    <div class="levels" aria-label="Niveau"><button data-level="N5">N5</button><button data-level="N4">N4</button><button data-level="Tous">Tous</button></div>
     <nav class="choices">${Object.entries(DECKS).map(([key, deck]) => `<button class="choice" data-deck="${key}"><span class="choice-glyph">${deck.glyph}</span><strong>${deck.title}</strong><small>${counts[key]} à réviser</small></button>`).join("")}</nav>
     <div class="home-actions"><button class="link-button" id="catalog">Catalogue</button><button class="link-button" id="backup">Sauvegarde</button></div>
   </section>`;
-  app.querySelector(`[data-level="${level}"]`)?.classList.add("active");
   app.querySelector("#direction").onclick = () => { direction = direction === "jp_to_fr" ? "fr_to_jp" : "jp_to_fr"; localStorage.setItem("kotoba-direction", direction); renderHome(); };
-  app.querySelectorAll("[data-level]").forEach(button => button.onclick = () => { level = button.dataset.level; localStorage.setItem("kotoba-level", level); renderHome(); });
   app.querySelectorAll("[data-deck]").forEach(button => button.onclick = () => startSession(button.dataset.deck));
   app.querySelector("#catalog").onclick = renderCatalog;
   app.querySelector("#backup").onclick = renderBackup;
@@ -115,7 +111,11 @@ async function renderHome() {
 
 async function startSession(deck) {
   const due = await dueCards(deck);
-  session = { deck, queue: due.slice(0, DECKS[deck].size), position: 0, revealed: false };
+  const shuffled = due
+    .map(card => ({ card, order: Math.random() }))
+    .sort((a, b) => a.order - b.order)
+    .map(({ card }) => card);
+  session = { deck, queue: shuffled.slice(0, DECKS[deck].size), position: 0, revealed: false };
   renderReview();
 }
 function cardSides(deck, card) {
