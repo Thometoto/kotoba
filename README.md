@@ -1,4 +1,4 @@
-# Kotoba - Japanese Learning AI
+# Kotoba - Japanese Learning
 
 Application de flashcards japonais-français destinée principalement à l’iPhone et à l’iPad. Elle contient trois parcours séparés (kanji, vocabulaire et grammaire), les niveaux N5/N4 et une planification adaptative FSRS.
 
@@ -51,7 +51,7 @@ character,meaning,readings,examples,ready
 
 Les modifications du CSV sont prises en compte au prochain chargement de page. Une fiche avec `ready` défini à `false` reste visible dans le catalogue mais n’apparaît pas en révision.
 
-Le vocabulaire se trouve dans `data/vocabulary.csv` et la grammaire dans `data/grammar.csv`. Chaque ligne possède un identifiant unique, un niveau (`N5` ou `N4`) et une colonne `ready`. Les leçons 1 à 50 de *Minna no Nihongo* sont renseignées.
+Le vocabulaire se trouve dans `data/vocabulary.csv` et la grammaire dans `data/grammar.csv`. Chaque ligne possède un identifiant unique, un niveau (`N5` ou `N4`) et une colonne `ready`.
 
 ## Tests
 
@@ -62,8 +62,8 @@ pytest
 ## Portée actuelle
 
 - Parcours Kanji, Vocabulaire et Grammaire fonctionnels.
-- N5 : 1 204 cartes de vocabulaire et 96 cartes de grammaire (leçons 1 à 25).
-- N4 : 1 488 cartes de vocabulaire et 84 cartes de grammaire (leçons 26 à 50).
+- N5 : 1 204 cartes de vocabulaire et 96 cartes de grammaire.
+- N4 : 1 488 cartes de vocabulaire et 84 cartes de grammaire.
 - Toutes les entrées de la liste initiale figurent dans le catalogue.
 - Seules les fiches comportant un sens, des lectures et un exemple participent aux sessions.
 - Taille des sessions : 20 kanji, 20 cartes de vocabulaire et 5 cartes de grammaire.
