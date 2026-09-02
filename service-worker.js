@@ -1,4 +1,4 @@
-const CACHE = "kotoba-v4";
+const CACHE = "kotoba-v5";
 const CORE = [
   "./", "./index.html", "./pwa.css", "./app.js", "./manifest.webmanifest",
   "./icons/icon.svg", "./icons/icon-180.png", "./icons/icon-512.png",

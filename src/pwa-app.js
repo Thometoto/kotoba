@@ -115,9 +115,9 @@ async function startSession(deck) {
   renderReview();
 }
 function cardSides(deck, card) {
-  if (deck === "kanji") return { jp: card.character, fr: card.meaning, reading: card.readings, context: card.examples, meta: "EN CONTEXTE" };
+  if (deck === "kanji") return { jp: card.character, fr: card.meaning, reading: card.readings, context: card.examples, meta: "EXEMPLES PAR LECTURE" };
   if (deck === "vocabulary") return { jp: card.japanese, fr: card.french, reading: card.reading, context: card.category, meta: `${card.level} · CATÉGORIE · LEÇON ${card.lesson}` };
-  return { jp: card.reading, fr: card.french, reading: card.construction, context: "", meta: "" };
+  return { jp: card.reading, fr: card.french, reading: card.construction, context: card.example_reading, meta: `${card.level} · EXEMPLE · LEÇON ${card.lesson}` };
 }
 async function renderReview() {
   const { deck, queue, position, revealed } = session;
