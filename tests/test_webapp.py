@@ -42,7 +42,11 @@ def test_grammar_readings_do_not_contain_kanji():
     assert all(card["reading"] for card in cards)
     assert all(not re.search(r"[一-龯]", card["reading"]) for card in cards)
     assert all(card["example_reading"] for card in cards)
-    assert all(not re.search(r"[一-龯ァ-ヶ]", card["example_reading"].split("／", 1)[0]) for card in cards)
+    assert all(not re.search(r"[一-龯]", card["example_reading"].split("／", 1)[0]) for card in cards)
+    for card in cards:
+        source = card["example"].split("／", 1)[0]
+        reading = card["example_reading"].split("／", 1)[0]
+        assert all(token in reading for token in re.findall(r"[ァ-ヶー]+", source))
 
 
 def test_each_kanji_reading_has_an_example_word():

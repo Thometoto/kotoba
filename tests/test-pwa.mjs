@@ -13,7 +13,7 @@ for (const path of [
 ]) assert.ok(fs.statSync(path).size > 0, `${path} doit exister`);
 
 const serviceWorker = fs.readFileSync("service-worker.js", "utf8");
-assert.ok(serviceWorker.includes('const CACHE = "kotoba-v5"'), "le cache doit être versionné");
+assert.ok(serviceWorker.includes('const CACHE = "kotoba-v6"'), "le cache doit être versionné");
 assert.ok(serviceWorker.indexOf("fetch(event.request)") < serviceWorker.indexOf("caches.match(event.request)"), "le réseau doit être prioritaire pour recevoir les mises à jour");
 for (const path of ["data/kanji.csv", "data/vocabulary.csv", "data/grammar.csv"])
   assert.ok(serviceWorker.includes(path), `${path} doit être disponible hors connexion`);
