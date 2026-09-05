@@ -15,30 +15,17 @@ Kotoba fonctionne ensuite hors connexion. Les données, les états FSRS et l’h
 
 La progression n’est pas synchronisée automatiquement entre l’iPhone et l’iPad : il faut utiliser l’export/import pour la transférer.
 
-## Version PWA
+## Développement
 
 Les fichiers `index.html`, `app.js`, `pwa.css`, `manifest.webmanifest` et `service-worker.js` forment l’application installable. Pour reconstruire `app.js` après une modification de `src/pwa-app.js` :
 
 ```bash
 pnpm install
 pnpm run build
-node tests/test-pwa.mjs
+pnpm run test:pwa
 ```
 
-## Lancer l’application
-
-La version Flask reste disponible pour une utilisation ou un développement sur ordinateur. Depuis ce dossier :
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -e ".[dev]"
-python webapp.py
-```
-
-Le navigateur s’ouvre automatiquement sur <http://127.0.0.1:8000>.
-
-La progression et l’historique sont enregistrés dans `data/kotoba.sqlite3`. Aucun temps de réponse n’est mesuré ni sauvegardé. FSRS vise une rétention de 90 % et calcule la stabilité, la difficulté et la prochaine échéance de chaque carte séparément pour les deux directions.
+Pour tester l’application localement, il suffit de servir le dossier avec un serveur HTTP statique, par exemple `python3 -m http.server 8000`, puis d’ouvrir <http://127.0.0.1:8000>. La progression et l’historique sont enregistrés dans IndexedDB sur l’appareil. Aucun temps de réponse n’est mesuré ni sauvegardé.
 
 ## Ajouter ou modifier les cartes
 
@@ -56,7 +43,7 @@ Le vocabulaire se trouve dans `data/vocabulary.csv` et la grammaire dans `data/g
 ## Tests
 
 ```bash
-pytest
+pnpm run test:pwa
 ```
 
 ## Portée actuelle
@@ -68,4 +55,4 @@ pytest
 - Seules les fiches comportant un sens, des lectures et un exemple participent aux sessions.
 - Taille des sessions : 20 kanji, 20 cartes de vocabulaire et 5 cartes de grammaire.
 
-Le planificateur utilise l’implémentation Python officielle de FSRS. Une carte oubliée repasse par une étape courte ; les autres intervalles sont calculés selon son état de mémoire plutôt qu’avec des multiplicateurs fixes.
+Le planificateur utilise `ts-fsrs`. Une carte oubliée repasse par une étape courte ; les autres intervalles sont calculés selon son état de mémoire plutôt qu’avec des multiplicateurs fixes.
