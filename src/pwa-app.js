@@ -150,11 +150,43 @@ function renderComplete(reviewed, label) {
   app.innerHTML = `<section class="complete"><span>よくできました！</span><h1>${reviewed ? "Session terminée" : "Tout est à jour"}</h1><p>${reviewed ? `${reviewed} ${escapeHTML(label)}${reviewed > 1 ? "s" : ""} révisé${reviewed > 1 ? "s" : ""}.` : `Aucun ${escapeHTML(label)} à réviser pour le moment.`}</p><button class="primary" id="home">Retour à l’accueil</button></section>`;
   app.querySelector("#home").onclick = renderHome;
 }
-function renderCatalog() {
-  app.innerHTML = `<header class="topbar"><button id="home">← Accueil</button><span>${cards.kanji.length} kanji</span></header><main class="catalog"><h1>Catalogue</h1><input class="search" id="search" type="search" placeholder="Rechercher un kanji ou un sens"><section class="catalog-list"></section></main>`;
-  const list = app.querySelector(".catalog-list");
-  const draw = query => { const q = query.trim().toLowerCase(); list.innerHTML = cards.kanji.filter(c => !q || `${c.character} ${c.meaning} ${c.readings}`.toLowerCase().includes(q)).map(c => `<article class="catalog-row"><strong>${escapeHTML(c.character)}</strong><div><span>${escapeHTML(c.meaning)}</span><small>${escapeHTML(c.readings)}</small></div></article>`).join(""); };
-  draw(""); app.querySelector("#search").oninput = event => draw(event.target.value); app.querySelector("#home").onclick = renderHome;
+const CATALOG_FIELDS = {
+  kanji: ["character", "meaning", "readings", "examples"],
+  vocabulary: ["japanese", "reading", "french", "category"],
+  grammar: ["structure", "reading", "french", "construction", "example", "example_reading"],
+};
+function catalogSummary(deck, card) {
+  if (deck === "kanji") return { title: card.character, subtitle: card.meaning, note: card.readings };
+  if (deck === "vocabulary") return { title: card.japanese, subtitle: card.french, note: card.reading };
+  return { title: card.structure, subtitle: card.french, note: card.reading };
+}
+function renderCatalog(selectedDeck = "kanji", query = "") {
+  app.innerHTML = `<header class="topbar"><button id="home">← Accueil</button><span>Recherche</span></header><main class="catalog"><h1>Catalogue</h1>
+    <nav class="catalog-tabs" aria-label="Catégorie">${Object.entries(DECKS).map(([key, deck]) => `<button data-catalog-deck="${key}" class="${key === selectedDeck ? "active" : ""}">${deck.title}</button>`).join("")}</nav>
+    <input class="search" id="search" type="search" value="${escapeHTML(query)}" placeholder="Rechercher dans ${DECKS[selectedDeck].title.toLowerCase()}" autocomplete="off">
+    <p class="catalog-status" aria-live="polite"></p><section class="catalog-list"></section></main>`;
+  const input = app.querySelector("#search"); const list = app.querySelector(".catalog-list"); const status = app.querySelector(".catalog-status");
+  const draw = value => {
+    const q = value.trim().toLocaleLowerCase("fr");
+    if (!q) { list.innerHTML = ""; status.textContent = "Saisissez un mot pour rechercher une fiche."; return; }
+    const results = cards[selectedDeck].filter(card => CATALOG_FIELDS[selectedDeck].some(field => (card[field] || "").toLocaleLowerCase("fr").includes(q)));
+    status.textContent = results.length ? `${results.length} résultat${results.length > 1 ? "s" : ""}` : "Aucun résultat";
+    list.innerHTML = results.map(card => { const item = catalogSummary(selectedDeck, card); return `<button class="catalog-row" data-card-id="${escapeHTML(card[DECKS[selectedDeck].id])}"><strong>${escapeHTML(item.title)}</strong><span>${escapeHTML(item.subtitle)}</span>${item.note ? `<small>${escapeHTML(item.note)}</small>` : ""}</button>`; }).join("");
+    list.querySelectorAll("[data-card-id]").forEach(button => button.onclick = () => renderCatalogCard(selectedDeck, cards[selectedDeck].find(card => card[DECKS[selectedDeck].id] === button.dataset.cardId), value));
+  };
+  draw(query); input.oninput = event => draw(event.target.value);
+  app.querySelectorAll("[data-catalog-deck]").forEach(button => button.onclick = () => renderCatalog(button.dataset.catalogDeck, input.value));
+  app.querySelector("#home").onclick = renderHome;
+}
+function renderCatalogCard(deck, card, query) {
+  const sides = cardSides(deck, card);
+  const details = deck === "grammar"
+    ? [["Structure", card.structure], ["Lecture", card.reading], ["Signification", card.french], ["Construction", card.construction], ["Exemple", card.example_reading]]
+    : deck === "vocabulary"
+      ? [["Japonais", card.japanese], ["Lecture", card.reading], ["Français", card.french], ["Catégorie", card.category]]
+      : [["Kanji", card.character], ["Signification", card.meaning], ["Lectures", card.readings], ["Exemples", card.examples]];
+  app.innerHTML = `<header class="topbar"><button id="back-catalog">← Résultats</button><span>${DECKS[deck].title}</span></header><main class="catalog-card"><div class="catalog-card-glyph">${escapeHTML(sides.jp)}</div>${details.filter(([, value]) => value).map(([label, value]) => `<section><small>${label}</small><p>${escapeHTML(value)}</p></section>`).join("")}</main>`;
+  app.querySelector("#back-catalog").onclick = () => renderCatalog(deck, query);
 }
 async function renderBackup() {
   app.innerHTML = `<header class="topbar"><button id="home">← Accueil</button><span>Local</span></header><section class="panel"><h1>Sauvegarde</h1><p>La progression reste uniquement sur cet appareil. Exporte-la régulièrement pour pouvoir la restaurer.</p><button class="primary" id="export">Exporter la progression</button><p><label class="primary" for="import">Importer une sauvegarde</label><input hidden id="import" type="file" accept="application/json"></p></section>`;

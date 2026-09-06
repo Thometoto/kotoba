@@ -13,7 +13,7 @@ for (const path of [
 ]) assert.ok(fs.statSync(path).size > 0, `${path} doit exister`);
 
 const serviceWorker = fs.readFileSync("service-worker.js", "utf8");
-assert.ok(serviceWorker.includes('const CACHE = "kotoba-v6"'), "le cache doit être versionné");
+assert.ok(serviceWorker.includes('const CACHE = "kotoba-v7"'), "le cache doit être versionné");
 assert.ok(serviceWorker.indexOf("fetch(event.request)") < serviceWorker.indexOf("caches.match(event.request)"), "le réseau doit être prioritaire pour recevoir les mises à jour");
 for (const path of ["data/kanji.csv", "data/vocabulary.csv", "data/grammar.csv"])
   assert.ok(serviceWorker.includes(path), `${path} doit être disponible hors connexion`);
@@ -25,6 +25,10 @@ assert.ok(!source.includes("Math.random()"), "les cartes doivent conserver l’o
 assert.ok(source.includes("prompt-reading"), "la lecture du vocabulaire doit apparaître sous le mot");
 assert.ok(source.includes('jp: card.reading'), "les structures grammaticales doivent utiliser leur lecture");
 assert.ok(source.includes("card.example_reading"), "les cartes de grammaire doivent afficher un exemple en hiragana");
+assert.ok(source.includes("CATALOG_FIELDS"), "le catalogue doit rechercher dans les trois catégories");
+for (const deck of ["kanji", "vocabulary", "grammar"])
+  assert.ok(source.includes(`${deck}: [`), `le catalogue doit indexer ${deck}`);
+assert.ok(source.includes("renderCatalogCard"), "un résultat doit ouvrir sa fiche détaillée");
 
 const scheduler = fsrs({
   request_retention: 0.9, enable_fuzz: false, enable_short_term: true,
