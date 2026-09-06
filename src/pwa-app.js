@@ -105,7 +105,7 @@ async function renderHome() {
   </section>`;
   app.querySelector("#direction").onclick = () => { direction = direction === "jp_to_fr" ? "fr_to_jp" : "jp_to_fr"; localStorage.setItem("kotoba-direction", direction); renderHome(); };
   app.querySelectorAll("[data-deck]").forEach(button => button.onclick = () => startSession(button.dataset.deck));
-  app.querySelector("#catalog").onclick = renderCatalog;
+  app.querySelector("#catalog").onclick = () => renderCatalog();
   app.querySelector("#backup").onclick = renderBackup;
 }
 
