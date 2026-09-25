@@ -56,3 +56,11 @@ pnpm run test:pwa
 - Taille des sessions : 20 kanji, 20 cartes de vocabulaire et 5 cartes de grammaire.
 
 Le planificateur utilise `ts-fsrs`. Une carte oubliée repasse par une étape courte ; les autres intervalles sont calculés selon son état de mémoire plutôt qu’avec des multiplicateurs fixes.
+
+## Exercices
+
+Le quatrième bouton propose 36 exercices N5/N4 : particules, vocabulaire en contexte, conjugaison, ordre des mots, grammaire, dialogues, compréhension, correction et transformation. Les sessions comptent au maximum 10 questions ; chaque catégorie contient initialement 4 exercices. Un mode permet de retravailler les erreurs.
+
+La banque est rédigée dans `src/exercise-bank.js`, sans API ni génération automatique : elle fonctionne hors connexion. Les exercices sont reliés aux fiches de grammaire et affichent des références issues des trois CSV. Après modification de la banque, reconstruire `app.js`.
+
+Les résultats sont conservés localement dans localStorage, séparément de FSRS, et inclus dans les exports/imports de sauvegarde.

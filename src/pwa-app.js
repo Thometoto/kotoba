@@ -1,4 +1,5 @@
 import { createEmptyCard, fsrs, Rating } from "ts-fsrs";
+import { openExercises, readHistory, validateHistory, HISTORY_KEY } from './exercises.js';
 
 const DECKS = {
   kanji: { file: "data/kanji.csv", id: "character", label: "kanji", title: "Kanji", glyph: "字", size: 20 },
@@ -105,6 +106,11 @@ async function renderHome() {
   </section>`;
   app.querySelector("#direction").onclick = () => { direction = direction === "jp_to_fr" ? "fr_to_jp" : "jp_to_fr"; localStorage.setItem("kotoba-direction", direction); renderHome(); };
   app.querySelectorAll("[data-deck]").forEach(button => button.onclick = () => startSession(button.dataset.deck));
+  const exercisesButton = document.createElement('button');
+  exercisesButton.className = 'choice';
+  exercisesButton.innerHTML = '<span class="choice-glyph">練</span><strong>Exercices</strong><small>Mettre en pratique</small>';
+  exercisesButton.onclick = () => openExercises(app, cards, renderHome);
+  app.querySelector('.choices').append(exercisesButton);
   app.querySelector("#catalog").onclick = () => renderCatalog();
   app.querySelector("#backup").onclick = renderBackup;
 }
@@ -192,14 +198,16 @@ async function renderBackup() {
   app.innerHTML = `<header class="topbar"><button id="home">← Accueil</button><span>Local</span></header><section class="panel"><h1>Sauvegarde</h1><p>La progression reste uniquement sur cet appareil. Exporte-la régulièrement pour pouvoir la restaurer.</p><button class="primary" id="export">Exporter la progression</button><p><label class="primary" for="import">Importer une sauvegarde</label><input hidden id="import" type="file" accept="application/json"></p></section>`;
   app.querySelector("#home").onclick = renderHome;
   app.querySelector("#export").onclick = async () => {
-    const payload = { version: 1, exportedAt: new Date().toISOString(), states: await allStates(), reviews: await allReviews() };
+    const payload = { version: 1, exportedAt: new Date().toISOString(), states: await allStates(), reviews: await allReviews(), exercises: readHistory() };
     const link = document.createElement("a"); link.href = URL.createObjectURL(new Blob([JSON.stringify(payload)], { type: "application/json" })); link.download = `kotoba-${new Date().toISOString().slice(0,10)}.json`; link.click(); URL.revokeObjectURL(link.href);
   };
   app.querySelector("#import").onchange = async event => {
     const payload = JSON.parse(await event.target.files[0].text());
     if (payload.version !== 1 || !Array.isArray(payload.states)) throw new Error("Sauvegarde incompatible");
+    const exerciseHistory = payload.exercises === undefined ? null : validateHistory(payload.exercises);
     for (const state of payload.states) await putState(state);
     for (const review of payload.reviews || []) { const copy = { ...review }; delete copy.id; await addReview(copy); }
+    if (exerciseHistory) localStorage.setItem(HISTORY_KEY, JSON.stringify({...readHistory(), ...exerciseHistory}));
     alert("Progression importée."); renderHome();
   };
 }
