@@ -1,6 +1,6 @@
-import { BANK, TYPES } from './exercise-bank.js';
+import { TYPES, normalizeAnswer, isReady, loadExercises } from './exercise-data.js';
 export const HISTORY_KEY = 'kotoba-exercises-v1';
-const normalize = value => value.normalize('NFKC').replace(/\s/g, '');
+const normalize = normalizeAnswer;
 const escape = (value = '') => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function readHistory() {
   try { return validateHistory(JSON.parse(localStorage.getItem(HISTORY_KEY) || '{}')); } catch { return {}; }
@@ -8,22 +8,21 @@ export function readHistory() {
 export function validateHistory(value) {
   if (!value || typeof value !== 'object' || Array.isArray(value)) throw new Error('Historique des exercices invalide');
   const result = {};
-  for (const exercise of BANK) {
-    const entry = value[exercise.id];
-    if (entry === undefined) continue;
+  for (const [id, entry] of Object.entries(value)) {
+    if (!/^[a-zA-Z0-9][a-zA-Z0-9_-]{0,63}$/.test(id) || id in Object.prototype) throw new Error('Identifiant d’exercice invalide');
     if (!Number.isSafeInteger(entry?.attempts) || entry.attempts < 1 || !Number.isSafeInteger(entry.correct) || entry.correct < 0 || entry.correct > entry.attempts || typeof entry.lastCorrect !== 'boolean') throw new Error('Historique des exercices invalide');
-    result[exercise.id] = {attempts: entry.attempts, correct: entry.correct, lastCorrect: entry.lastCorrect};
+    result[id] = {attempts: entry.attempts, correct: entry.correct, lastCorrect: entry.lastCorrect};
   }
   return result;
 }
 export function availableExercises(cards) {
-  return BANK.flatMap(e => {
-    const grammar = cards.grammar.find(g => g.id === e.grammarId && /^(true|1|oui|yes)$/i.test(g.ready));
+  return (cards.exercises || []).flatMap(e => {
+    const grammar = cards.grammar.find(g => g.id === e.grammarId && isReady(g.ready));
     return grammar ? [{...e, lesson: Number(grammar.lesson), level: grammar.level, grammar}] : [];
   }).sort((a,b) => a.lesson - b.lesson || a.id.localeCompare(b.id));
 }
 export function selectExercises(pool, history, mode = 'mixed') {
-  const filtered = pool.filter(e => mode === 'mixed' || mode === 'mistakes' && history[e.id]?.lastCorrect === false || mode === e.type);
+  const filtered = pool.filter(e => mode === 'mixed' || mode === 'practice' && e.difficulty === 'practice' || mode === 'mistakes' && history[e.id]?.lastCorrect === false || mode === e.type);
   // Unseen questions advance through the lessons; errors then return before mastered items.
   const rank = e => !history[e.id] ? 0 : history[e.id].lastCorrect ? 2 : 1;
   return filtered.sort((a,b) => rank(a)-rank(b) || (rank(a) === 2 ? history[a.id].attempts-history[b.id].attempts : 0) || a.lesson-b.lesson || a.id.localeCompare(b.id)).slice(0,10);
@@ -35,14 +34,26 @@ function shuffled(items) {
   return result;
 }
 export function openExercises(app, cards, home) {
+  if (cards.exerciseError) {
+    app.innerHTML = '<section class="panel"><h1>Exercices indisponibles</h1><p>' + escape(cards.exerciseError) + '</p><p>Vérifie le CSV ou reconnecte-toi pour le télécharger.</p><button id="exercise-retry">Réessayer</button><button id="exercise-home">Accueil</button></section>';
+    app.querySelector('#exercise-home').onclick = home;
+    app.querySelector('#exercise-retry').onclick = async event => {
+      event.target.disabled = true;
+      try { cards.exercises = await loadExercises(cards.grammar); delete cards.exerciseError; }
+      catch (error) { cards.exerciseError = error.message; }
+      openExercises(app,cards,home);
+    };
+    return;
+  }
   const pool = availableExercises(cards);
   let history = readHistory(); let run; let index; let answers; let tiles; let selected; let submitted; let storageWarning = '';
   const header = (label, back) => { app.innerHTML = `<header class="topbar"><button id="exercise-back">← ${back}</button><span>${escape(label)}</span></header>`; };
   function menu() {
     header('Entraînement', 'Accueil');
-    const attempted = Object.values(history).reduce((n,h)=>n+h.attempts,0);
-    const correct = Object.values(history).reduce((n,h)=>n+h.correct,0);
-    app.innerHTML += `<main class="exercise-page"><h1>Exercices</h1><p>Des séances de 10 questions maximum, dans l’ordre des leçons. Choisis une réponse ou assemble la phrase.</p><p>${pool.length} exercices · ${attempted ? `${Math.round(correct/attempted*100)} % de réussite sur ${attempted} réponses` : 'À toi de commencer'}</p><div class="exercise-menu">${[['mixed','Session mixte'],['mistakes','Reprendre mes erreurs'],...Object.entries(TYPES)].map(([key,label])=>{const count=pool.filter(e=>key==='mixed'||key==='mistakes'&&history[e.id]?.lastCorrect===false||e.type===key).length; return `<button data-mode="${key}" ${count?'':'disabled'}><strong>${label}</strong><small>${count} exercices</small></button>`;}).join('')}</div></main>`;
+    const activeHistory = pool.map(e => history[e.id]).filter(Boolean);
+    const attempted = activeHistory.reduce((n,h)=>n+h.attempts,0);
+    const correct = activeHistory.reduce((n,h)=>n+h.correct,0);
+    app.innerHTML += `<main class="exercise-page"><h1>Exercices</h1><p>Des séances de 10 questions maximum, dans l’ordre des leçons. Choisis une réponse ou assemble la phrase. Le mode Approfondissement propose directement les questions plus exigeantes.</p><p>${pool.length} exercices · ${attempted ? `${Math.round(correct/attempted*100)} % de réussite sur ${attempted} réponses` : 'À toi de commencer'}</p><div class="exercise-menu">${[['mixed','Session mixte'],['practice','Approfondissement'],['mistakes','Reprendre mes erreurs'],...Object.entries(TYPES)].map(([key,label])=>{const count=pool.filter(e=>key==='mixed'||key==='practice'&&e.difficulty==='practice'||key==='mistakes'&&history[e.id]?.lastCorrect===false||e.type===key).length; return `<button data-mode="${key}" ${count?'':'disabled'}><strong>${label}</strong><small>${count} exercices</small></button>`;}).join('')}</div></main>`;
     app.querySelector('#exercise-back').onclick=home;
     app.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{run=selectExercises(pool,history,b.dataset.mode);index=0;answers=[];begin();});
   }
@@ -52,7 +63,7 @@ export function openExercises(app, cards, home) {
     const words=cards.vocabulary.filter(v=>normalize(v.reading||'').length>=2 && text.includes(normalize(v.reading))).slice(0,6);
     const characters = new Set(words.flatMap(v=>[...v.japanese]));
     const kanji=cards.kanji.filter(k=>characters.has(k.character)).slice(0,8);
-    return `<details><summary>Revoir la notion et les mots</summary><p>${escape(e.grammar.reading)} — ${escape(e.grammar.french)}</p>${words.map(v=>`<p>${escape(v.japanese)} (${escape(v.reading)}) — ${escape(v.french)}</p>`).join('')}${kanji.length?`<p>${kanji.map(k=>`${escape(k.character)} : ${escape(k.meaning)}`).join(' · ')}</p>`:''}</details>`;
+    return `<details><summary>Revoir la notion et les mots</summary><p>${escape(e.grammar.reading)} — ${escape(e.grammar.french)}</p><p>${escape(e.grammar.example_reading || "")}</p>${words.map(v=>`<p>${escape(v.japanese)} (${escape(v.reading)}) — ${escape(v.french)}</p>`).join('')}${kanji.length?`<p>${kanji.map(k=>`${escape(k.character)} : ${escape(k.meaning)}`).join(' · ')}</p>`:''}</details>`;
   }
   function draw() {
     const e=run[index]; header(`${index+1} / ${run.length}`, 'Exercices');

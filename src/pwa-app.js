@@ -1,4 +1,6 @@
-import { createEmptyCard, fsrs, Rating } from "ts-fsrs";
+import { createEmptyCard, Rating } from "ts-fsrs";
+import { parseCSV } from './csv.js';
+import { loadExercises } from './exercise-data.js';
 import { openExercises, readHistory, validateHistory, HISTORY_KEY } from './exercises.js';
 
 const DECKS = {
@@ -10,32 +12,11 @@ const RATINGS = [
   [Rating.Again, "again", "Oublié"], [Rating.Hard, "hard", "Difficile"],
   [Rating.Good, "good", "Correct"], [Rating.Easy, "easy", "Facile"],
 ];
-const scheduler = fsrs({
-  request_retention: 0.9, maximum_interval: 36500, enable_fuzz: false,
-  enable_short_term: true, learning_steps: ["1m"], relearning_steps: ["10m"],
-});
+import { scheduler } from './scheduler.js';
 const app = document.querySelector("#app");
 const cards = {};
 let direction = localStorage.getItem("kotoba-direction") || "jp_to_fr";
 let session = null;
-
-function parseCSV(text) {
-  const rows = []; let row = []; let field = ""; let quoted = false;
-  for (let i = 0; i < text.length; i++) {
-    const char = text[i];
-    if (quoted) {
-      if (char === '"' && text[i + 1] === '"') { field += '"'; i++; }
-      else if (char === '"') quoted = false;
-      else field += char;
-    } else if (char === '"') quoted = true;
-    else if (char === ",") { row.push(field); field = ""; }
-    else if (char === "\n") { row.push(field.replace(/\r$/, "")); rows.push(row); row = []; field = ""; }
-    else field += char;
-  }
-  if (field || row.length) { row.push(field); rows.push(row); }
-  const headers = rows.shift();
-  return rows.filter(r => r.some(Boolean)).map(r => Object.fromEntries(headers.map((h, i) => [h, r[i] ?? ""])));
-}
 
 function openDB() {
   return new Promise((resolve, reject) => {
@@ -215,6 +196,8 @@ async function renderBackup() {
 async function boot() {
   try {
     await Promise.all(Object.entries(DECKS).map(async ([key, deck]) => { cards[key] = parseCSV(await (await fetch(deck.file)).text()); }));
+    try { cards.exercises = await loadExercises(cards.grammar); }
+    catch (error) { cards.exercises = []; cards.exerciseError = error.message; }
     if ("serviceWorker" in navigator) navigator.serviceWorker.register("service-worker.js");
     window.addEventListener("offline", () => { const badge = document.createElement("span"); badge.className = "offline"; badge.textContent = "Hors connexion"; document.body.append(badge); });
     window.addEventListener("online", () => document.querySelector(".offline")?.remove());

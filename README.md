@@ -55,12 +55,34 @@ pnpm run test:pwa
 - Seules les fiches comportant un sens, des lectures et un exemple participent aux sessions.
 - Taille des sessions : 20 kanji, 20 cartes de vocabulaire et 5 cartes de grammaire.
 
-Le planificateur utilise `ts-fsrs`. Une carte oubliée repasse par une étape courte ; les autres intervalles sont calculés selon son état de mémoire plutôt qu’avec des multiplicateurs fixes.
+Le planificateur utilise `ts-fsrs`. Une carte notée « Oublié » revient une heure après la réponse, y compris lors de plusieurs oublis consécutifs et pour une carte déjà apprise. Ce délai s’applique aux prochaines réponses ; les échéances déjà enregistrées ne sont pas modifiées rétroactivement. Les autres intervalles sont calculés selon son état de mémoire plutôt qu’avec des multiplicateurs fixes.
 
 ## Exercices
 
-Le quatrième bouton propose 36 exercices N5/N4 : particules, vocabulaire en contexte, conjugaison, ordre des mots, grammaire, dialogues, compréhension, correction et transformation. Les sessions comptent au maximum 10 questions ; chaque catégorie contient initialement 4 exercices. Un mode permet de retravailler les erreurs.
+Le quatrième bouton charge directement **data/exercises.csv** : 72 exercices N5/N4 répartis dans neuf formats. Les 36 exercices d’introduction sont conservés avec leurs identifiants, et 36 questions plus exigeantes s’appuient sur les exemples de grammar.csv. Le mode **Approfondissement** donne directement accès à ces dernières. Les sessions proposent au maximum 10 questions et le mode **Reprendre mes erreurs** reprend les réponses à retravailler.
 
-La banque est rédigée dans `src/exercise-bank.js`, sans API ni génération automatique : elle fonctionne hors connexion. Les exercices sont reliés aux fiches de grammaire et affichent des références issues des trois CSV. Après modification de la banque, reconstruire `app.js`.
+Les données ne sont plus intégrées au JavaScript. Une modification du CSV suffit : aucun rebuild n’est nécessaire pour modifier ou ajouter une question. Le CSV est mis en cache pour fonctionner hors connexion après un premier chargement en ligne. Il faut republier les fichiers modifiés pour mettre à jour l’application sur GitHub Pages, puis l’ouvrir en ligne pour recevoir les nouvelles données.
 
-Les résultats sont conservés localement dans localStorage, séparément de FSRS, et inclus dans les exports/imports de sauvegarde.
+### Colonnes de exercises.csv
+
+| Colonne | Contenu |
+| --- | --- |
+| id | Identifiant unique et stable. Ne pas réutiliser un ancien identifiant pour une question différente. |
+| type | particle, vocabulary, conjugation, order, grammar, dialogue, reading, correction ou transform. |
+| grammar_id | Identifiant existant dans grammar.csv, par exemple g114. Le niveau et la leçon proviennent de cette fiche. |
+| difficulty | base ou practice (mode Approfondissement). |
+| instruction | Consigne en français, assez précise pour rendre la réponse unique. |
+| prompt | Phrase, dialogue ou texte présenté avant la réponse. Les retours à la ligne sont autorisés dans un champ entre guillemets. |
+| answer | Bonne réponse, ou phrase complète pour order. |
+| options | Mauvaises réponses séparées par le caractère \|. Pour order : tous les morceaux à assembler (douze maximum), séparés par \|, et non des mauvaises réponses. |
+| translation | Traduction affichée après validation. |
+| explanation | Explication de la correction et des confusions utiles. |
+| ready | true pour activer ; false pour garder une question en brouillon. |
+
+Enregistrer en UTF-8 avec une virgule comme séparateur. Les champs contenant des virgules ou des retours à la ligne doivent être entourés de guillemets doubles ; doubler un guillemet à l’intérieur d’un champ. Les mots japonais restent en kana, en conservant les katakana. Vérifier que les distracteurs ne sont pas des réponses également valables. Pour une phrase à assembler, préciser l’ordre attendu si plusieurs ordres sont naturels.
+
+Une ligne active invalide affiche une erreur dans Exercices, sans bloquer les flashcards. Une fiche de grammaire inactive désactive aussi les exercices liés. Les résultats restent locaux, séparés de FSRS, et sont inclus dans les sauvegardes. Les historiques des identifiants anciens ou temporairement désactivés sont conservés, mais exclus des statistiques des exercices actifs.
+
+Après une modification du code, reconstruire app.js. Après une modification des exercices, lancer pnpm run test:pwa pour vérifier le CSV et ses références.
+
+Le bouton « Difficile » impose un délai minimum de deux heures, dans l’aperçu comme dans la sauvegarde. Si FSRS calcule un intervalle plus long, celui-ci est conservé. Cette règle s’applique aux prochaines réponses, sans modifier les échéances déjà enregistrées.

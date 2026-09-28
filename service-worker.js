@@ -1,8 +1,8 @@
-const CACHE = "kotoba-v9";
+const CACHE = "kotoba-v12";
 const CORE = [
   "./", "./index.html", "./pwa.css", "./app.js", "./manifest.webmanifest",
   "./icons/icon.svg", "./icons/icon-180.png", "./icons/icon-512.png",
-  "./data/kanji.csv", "./data/vocabulary.csv", "./data/grammar.csv"
+  "./data/kanji.csv", "./data/vocabulary.csv", "./data/grammar.csv", "./data/exercises.csv"
 ];
 
 self.addEventListener("install", event => {
