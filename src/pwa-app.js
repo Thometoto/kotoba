@@ -27,7 +27,6 @@ async function renderHome(){
  const [states,snapshot,ack]=await Promise.all([allStates(),getSnapshot(),getMeta('snapshot-exported')]);if(token!==view)return;
  const counts=Object.fromEntries(Object.keys(DECKS).map(deck=>[deck,selectSession(deck,cards[deck],states,Infinity).length]));
  app.innerHTML=`<section class="home"><div class="brand"><h1>Kotoba</h1><span class="badge">N5 · N4</span></div>
- <p class="direction">Japonais <span aria-label="dans les deux sens">↔</span> Français</p><p class="mixed-note">Sens mélangés · Kanji : reconnaissance et écriture</p>
  ${snapshot&&!ack?.value?'<aside class="migration-notice">Ta progression avant la refonte est conservée sur cet appareil. <button id="snapshot-download">Télécharger cette sauvegarde</button></aside>':''}
  <nav class="choices">${Object.entries(DECKS).map(([key,d])=>`<button class="choice" data-deck="${key}"><span class="choice-glyph">${d.glyph}</span><strong>${d.title}</strong><small>${counts[key]} fiches à réviser</small></button>`).join('')}
  <button class="choice" id="exercises"><span class="choice-glyph">練</span><strong>Exercices</strong><small>Mettre en pratique</small></button></nav>
