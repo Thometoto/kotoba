@@ -1,181 +1,337 @@
-"id","structure","reading","french","construction","example","example_reading","lesson","level","ready"
-"g001","～は～です","～は～です","Identifier ou présenter quelqu’un ou quelque chose.","Nom A + は + nom B + です","わたしは学生です。／ Je suis étudiant.","わたしはがくせいです。／ Je suis étudiant.","1","N5","true"
-"g002","～は～じゃありません","～は～じゃありません","Former la négation polie d’un nom.","Nom A + は + nom B + じゃありません","ミラーさんは医者じゃありません。／ M. Miller n’est pas médecin.","ミラーさんはいしゃじゃありません。／ M. Miller n’est pas médecin.","1","N5","true"
-"g003","～は～ですか","～は～ですか","Poser une question polie.","Phrase + か","サントスさんは会社員ですか。／ M. Santos est-il employé ?","サントスさんはかいしゃいんですか。／ M. Santos est-il employé ?","1","N5","true"
-"g004","～も～です","～も～です","Dire « aussi » avec la particule も.","Nom A + も + nom B + です","わたしも学生です。／ Moi aussi, je suis étudiant.","わたしもがくせいです。／ Moi aussi, je suis étudiant.","1","N5","true"
-"g005","～は～の～です","～は～の～です","Exprimer l’appartenance ou le rattachement.","Nom A + は + nom B + の + nom C + です","わたしはIMCの社員です。／ Je suis employé d’IMC.","わたしはIMCのしゃいんです。／ Je suis employé d’IMC.","1","N5","true"
-"g006","これ／それ／あれは～です","これ／それ／あれは～です","Désigner une chose proche du locuteur, de l’interlocuteur ou éloignée des deux.","これ／それ／あれ + は + nom + です","これは辞書です。／ Ceci est un dictionnaire.","これはじしょです。／ Ceci est un dictionnaire.","2","N5","true"
-"g007","この／その／あの～","この／その／あの～","Déterminer un nom selon sa position.","この／その／あの + nom","あの人はだれですか。／ Qui est cette personne là-bas ?","あのひとはだれですか。／ Qui est cette personne là-bas ?","2","N5","true"
-"g008","～は＜人＞のです","～は＜ひと＞のです","Indiquer le propriétaire d’un objet en omettant le nom déjà connu.","Nom + は + personne + の + です","この傘はわたしのです。／ Ce parapluie est le mien.","このかさはわたしのです。／ Ce parapluie est le mien.","2","N5","true"
-"g009","そうです／そうじゃありません","そうです／そうじゃありません","Confirmer ou corriger une information.","はい、そうです／いいえ、そうじゃありません","これは本ですか。はい、そうです。／ C’est un livre ? Oui.","これはほんですか。はい、そうです。／ C’est un livre ? Oui.","2","N5","true"
-"g010","ここ／そこ／あそこは～です","ここ／そこ／あそこは～です","Localiser un lieu.","ここ／そこ／あそこ + は + lieu + です","ここは食堂です。／ Ici, c’est la cantine.","ここはしょくどうです。／ Ici, c’est la cantine.","3","N5","true"
-"g011","～はどこですか","～はどこですか","Demander où se trouve une personne, un objet ou un lieu.","Nom + は + どこ + ですか","トイレはどこですか。／ Où sont les toilettes ?","トイレはどこですか。／ Où sont les toilettes ?","3","N5","true"
-"g012","～は～の～です","～は～の～です","Donner l’origine, la marque ou l’organisation liée à un objet.","Nom A + は + nom B + の + nom C + です","これは日本の車です。／ C’est une voiture japonaise.","これはにほんのくるまです。／ C’est une voiture japonaise.","3","N5","true"
-"g013","～はいくらですか","～はいくらですか","Demander un prix.","Nom + は + いくら + ですか","この時計はいくらですか。／ Combien coûte cette montre ?","このとけいはいくらですか。／ Combien coûte cette montre ?","3","N5","true"
-"g014","～時～分です","～じ～ふんです","Dire l’heure.","Nombre + 時 + nombre + 分 + です","今、七時半です。／ Il est maintenant sept heures et demie.","いま、ななじはんです。／ Il est maintenant sept heures et demie.","4","N5","true"
-"g015","～から～まで","～から～まで","Exprimer un point de départ et une limite.","Heure/lieu + から + heure/lieu + まで","九時から五時まで働きます。／ Je travaille de 9 h à 17 h.","きゅうじからごじまではたらきます。／ Je travaille de 9 h à 17 h.","4","N5","true"
-"g016","～曜日です","～ようびです","Indiquer le jour de la semaine.","Jour + 曜日 + です","休みは日曜日です。／ Le jour de repos est dimanche.","やすみはにちようひです。／ Le jour de repos est dimanche.","4","N5","true"
-"g017","～時に～ます","～じに～ます","Indiquer l’heure précise d’une action.","Heure + に + verbe poli","六時に起きます。／ Je me lève à 6 h.","ろくじにおきます。／ Je me lève à 6 h.","4","N5","true"
-"g018","～ます／ません／ました／ませんでした","～ます／ません／ました／ませんでした","Conjuguer un verbe au présent/futur et au passé, affirmatif ou négatif.","Base en ます + terminaison","きのう勉強しませんでした。／ Hier, je n’ai pas étudié.","きのうべんきょうしませんでした。／ Hier, je n’ai pas étudié.","4","N5","true"
-"g019","＜場所＞へ行きます／来ます／帰ります","＜ばしょ＞へいきます／きます／かえります","Indiquer la destination d’un déplacement.","Lieu + へ + verbe de déplacement","京都へ行きます。／ Je vais à Kyoto.","きょうとへいきます。／ Je vais à Kyoto.","5","N5","true"
-"g020","＜乗り物＞で行きます","＜のりもの＞でいきます","Indiquer le moyen de transport.","Moyen + で + verbe de déplacement","電車で行きます。／ J’y vais en train.","でんしゃでいきます。／ J’y vais en train.","5","N5","true"
-"g021","＜人＞と行きます","＜ひと＞といきます","Indiquer la personne qui accompagne.","Personne + と + verbe de déplacement","家族と日本へ来ました。／ Je suis venu au Japon avec ma famille.","かぞくとにほんへきました。／ Je suis venu au Japon avec ma famille.","5","N5","true"
-"g022","＜日時＞に行きます","＜にちじ＞にいきます","Indiquer la date ou l’heure d’un déplacement.","Date/heure + に + verbe de déplacement","七月二日に行きます。／ J’y vais le 2 juillet.","なながつふつかにいきます。／ J’y vais le 2 juillet.","5","N5","true"
-"g023","～を～ます","～を～ます","Marquer le complément d’objet direct.","Objet + を + verbe","パンを食べます。／ Je mange du pain.","パンをたべます。／ Je mange du pain.","6","N5","true"
-"g024","＜場所＞で～ます","＜ばしょ＞で～ます","Indiquer le lieu où se déroule une action.","Lieu + で + verbe","図書館で勉強します。／ J’étudie à la bibliothèque.","としょかんでべんきょうします。／ J’étudie à la bibliothèque.","6","N5","true"
-"g025","いっしょに～ませんか","いっしょに～ませんか","Inviter poliment quelqu’un.","いっしょに + verbe en ませんか","いっしょに映画を見ませんか。／ Voulez-vous voir un film ensemble ?","いっしょにえいがをみませんか。／ Voulez-vous voir un film ensemble ?","6","N5","true"
-"g026","～ましょう","～ましょう","Proposer de faire quelque chose ensemble.","Base en ます + ましょう","ちょっと休みましょう。／ Reposons-nous un peu.","ちょっとやすみましょう。／ Reposons-nous un peu.","6","N5","true"
-"g027","～で～ます","～で～ます","Indiquer l’outil, la langue ou le moyen utilisé.","Outil/moyen + で + verbe","はしで食べます。／ Je mange avec des baguettes.","はしでたべます。／ Je mange avec des baguettes.","7","N5","true"
-"g028","「～」は＜langue＞で～です","「～」は＜げんご＞で～です","Donner une traduction dans une langue.","Mot + は + langue + で + traduction + です","「ありがとう」はフランス語で「merci」です。","「ありがとう」はフランスごで「merci」です。","7","N5","true"
-"g029","＜人＞に＜物＞をあげます","＜ひと＞に＜もの＞をあげます","Dire que l’on donne quelque chose à quelqu’un.","Donneur + は + personne + に + objet + を + あげます","友達に花をあげます。／ J’offre des fleurs à un ami.","ともだちにはなをあげます。／ J’offre des fleurs à un ami.","7","N5","true"
-"g030","＜人＞に／から＜物＞をもらいます","＜ひと＞に／から＜もの＞をもらいます","Dire que l’on reçoit quelque chose de quelqu’un.","Receveur + は + personne + に／から + objet + を + もらいます","母に時計をもらいました。／ J’ai reçu une montre de ma mère.","ははにとけいをもらいました。／ J’ai reçu une montre de ma mère.","7","N5","true"
-"g031","もう～ました／まだです","もう～ました／まだです","Dire qu’une action est déjà faite ou pas encore.","もう + passé／まだです","もう昼ご飯を食べました。／ J’ai déjà déjeuné.","もうひるごはんをたべました。／ J’ai déjà déjeuné.","7","N5","true"
-"g032","～は＜な形容詞＞です","～は＜なけいようし＞です","Décrire avec un adjectif en な.","Nom + は + adjectif-na + です","奈良は静かです。／ Nara est calme.","ならはしずかです。／ Nara est calme.","8","N5","true"
-"g033","～は＜い形容詞＞です","～は＜いけいようし＞です","Décrire avec un adjectif en い.","Nom + は + adjectif-i + です","富士山は高いです。／ Le mont Fuji est haut.","ふじやまはたかいです。／ Le mont Fuji est haut.","8","N5","true"
-"g034","＜な形容詞＞な＜名詞＞","＜なけいようし＞な＜めいし＞","Placer un adjectif en な devant un nom.","Adjectif-na + な + nom","奈良は静かな町です。／ Nara est une ville calme.","ならはしずかなまちです。／ Nara est une ville calme.","8","N5","true"
-"g035","＜い形容詞＞＜名詞＞","＜いけいようし＞＜めいし＞","Placer un adjectif en い devant un nom.","Adjectif-i + nom","これは新しい本です。／ C’est un nouveau livre.","これはあたらしいほんです。／ C’est un nouveau livre.","8","N5","true"
-"g036","あまり～ません","あまり～ません","Exprimer un faible degré dans une phrase négative.","あまり + forme négative","この本はあまりおもしろくないです。／ Ce livre n’est pas très intéressant.","このほんはあまりおもしろくないです。／ Ce livre n’est pas très intéressant.","8","N5","true"
-"g037","～は～が好きです／嫌いです","～は～がすきです／きらいです","Exprimer ses goûts.","Thème + は + objet + が + 好き／嫌いです","わたしは音楽が好きです。／ J’aime la musique.","わたしはおんがくがすきです。／ J’aime la musique.","9","N5","true"
-"g038","～は～が上手です／下手です","～は～がじょうずです／へたです","Exprimer l’habileté ou la maladresse.","Thème + は + activité + が + 上手／下手です","マリアさんは料理が上手です。／ Maria cuisine bien.","マリアさんはりょうりがじょうずです。／ Maria cuisine bien.","9","N5","true"
-"g039","～がわかります","～がわかります","Dire que l’on comprend quelque chose.","Objet compris + が + わかります","日本語が少しわかります。／ Je comprends un peu le japonais.","にほんごがすこしわかります。／ Je comprends un peu le japonais.","9","N5","true"
-"g040","～があります","～があります","Dire que l’on possède ou que l’on a quelque chose.","Objet + が + あります","時間があります。／ J’ai du temps.","じかんがあります。／ J’ai du temps.","9","N5","true"
-"g041","～から、～","～から、～","Donner une raison avec « parce que ».","Cause + から、conséquence","時間がありませんから、新聞を読みません。／ Je ne lis pas le journal car je n’ai pas le temps.","じかんがありませんから、しんぶんをよみません。／ Je ne lis pas le journal car je n’ai pas le temps.","9","N5","true"
-"g042","～に～がいます","～に～がいます","Indiquer l’existence d’un être animé dans un lieu.","Lieu + に + personne/animal + が + います","教室に学生がいます。／ Il y a des étudiants dans la classe.","きょうしつにがくせいがいます。／ Il y a des étudiants dans la classe.","10","N5","true"
-"g043","～に～があります","～に～があります","Indiquer l’existence d’une chose dans un lieu.","Lieu + に + chose + が + あります","机の上に本があります。／ Il y a un livre sur le bureau.","つくえのうえにほんがあります。／ Il y a un livre sur le bureau.","10","N5","true"
-"g044","～は～にいます／あります","～は～にいます／あります","Localiser une personne, un animal ou une chose.","Sujet + は + lieu + に + います／あります","先生は事務所にいます。／ Le professeur est au bureau.","せんせいはじむしょにいます。／ Le professeur est au bureau.","10","N5","true"
-"g045","助数詞","じょすうし","Compter avec le classificateur adapté à l’objet.","Nombre + classificateur","りんごを三つ買いました。／ J’ai acheté trois pommes.","りんごをみっつかいました。／ J’ai acheté trois pommes.","11","N5","true"
-"g046","＜期間＞～ます","＜きかん＞～ます","Indiquer la durée d’une action, sans particule に.","Durée + verbe","日本語を二年勉強しました。／ J’ai étudié le japonais pendant deux ans.","にほんごをにねんべんきょうしました。／ J’ai étudié le japonais pendant deux ans.","11","N5","true"
-"g047","＜期間＞に＜回数＞～ます","＜きかん＞に＜かいすう＞～ます","Exprimer une fréquence pendant une période.","Période + に + fréquence + verbe","一週間に二回テニスをします。／ Je joue au tennis deux fois par semaine.","いちしゅうかんににかいテニスをします。／ Je joue au tennis deux fois par semaine.","11","N5","true"
-"g048","～から～までかかります","～から～までかかります","Exprimer la durée nécessaire d’un trajet ou d’une action.","Départ + から + arrivée + まで + durée + かかります","東京から大阪まで三時間かかります。","とうきょうからおおさかまでさんじかんかかります。","11","N5","true"
-"g049","＜な形容詞／名詞＞でした","＜なけいようし／めいし＞でした","Former le passé d’un nom ou d’un adjectif en な.","Nom/adjectif-na + でした／じゃありませんでした","きのうは雨でした。／ Hier, il pleuvait.","きのうはあめでした。／ Hier, il pleuvait.","12","N5","true"
-"g050","＜い形容詞＞かったです","＜いけいようし＞かったです","Former le passé d’un adjectif en い.","Retirer い + かったです","旅行は楽しかったです。／ Le voyage était agréable.","りょこうはたのしかったです。／ Le voyage était agréable.","12","N5","true"
-"g051","～は～より＜形容詞＞です","～は～より＜けいようし＞です","Comparer deux éléments.","A + は + B + より + adjectif + です","電車はバスより速いです。／ Le train est plus rapide que le bus.","でんしゃはバスよりはやいです。／ Le train est plus rapide que le bus.","12","N5","true"
-"g052","～と～とどちらが～ですか","～と～とどちらが～ですか","Demander lequel de deux éléments possède davantage une qualité.","A + と + B + と + どちらが + adjectif + ですか","サッカーと野球とどちらが好きですか。","サッカーとやきゅうとどちらがすきですか。","12","N5","true"
-"g053","～の中で～がいちばん～です","～のなかで～がいちばん～です","Exprimer le superlatif dans un ensemble.","Ensemble + の中で + élément + が + いちばん + adjectif","日本料理の中ですしがいちばん好きです。","にほんりょうりのなかですしがいちばんすきです。","12","N5","true"
-"g054","～がほしいです","～がほしいです","Exprimer le désir de posséder quelque chose.","Objet + が + ほしいです","新しい車がほしいです。／ Je veux une nouvelle voiture.","あたらしいくるまがほしいです。／ Je veux une nouvelle voiture.","13","N5","true"
-"g055","～たいです","～たいです","Exprimer le désir de faire une action.","Base en ます + たいです","日本へ行きたいです。／ Je veux aller au Japon.","にほんへいきたいです。／ Je veux aller au Japon.","13","N5","true"
-"g056","～に行きます／来ます","～にいきます／きます","Exprimer le but d’un déplacement.","Lieu + へ + base en ます/nom + に + 行きます／来ます","買い物に行きます。／ Je vais faire des achats.","かいものにいきます。／ Je vais faire des achats.","13","N5","true"
-"g057","＜て形＞ください","＜てけい＞ください","Demander poliment à quelqu’un de faire quelque chose.","Verbe en て + ください","ここに名前を書いてください。／ Écrivez votre nom ici, s’il vous plaît.","ここになまえをかいてください。／ Écrivez votre nom ici, s’il vous plaît.","14","N5","true"
-"g058","～ましょうか","～ましょうか","Proposer son aide.","Base en ます + ましょうか","荷物を持ちましょうか。／ Voulez-vous que je porte vos bagages ?","にもつをもちましょうか。／ Voulez-vous que je porte vos bagages ?","14","N5","true"
-"g059","＜て形＞います","＜てけい＞います","Exprimer une action en cours.","Verbe en て + います","今、雨が降っています。／ Il pleut maintenant.","いま、あめがふっています。／ Il pleut maintenant.","14","N5","true"
-"g060","＜て形＞もいいです","＜てけい＞もいいです","Exprimer une permission.","Verbe en て + もいいです","ここで写真を撮ってもいいです。／ On peut prendre des photos ici.","ここでしゃしんをとってもいいです。／ On peut prendre des photos ici.","15","N5","true"
-"g061","＜て形＞はいけません","＜てけい＞はいけません","Exprimer une interdiction.","Verbe en て + はいけません","ここでたばこを吸ってはいけません。／ Il est interdit de fumer ici.","ここでたばこをすってはいけません。／ Il est interdit de fumer ici.","15","N5","true"
-"g062","＜て形＞います（état）","＜てけい＞います","Exprimer un état durable, une situation ou une profession.","Verbe en て + います","大阪に住んでいます。／ J’habite à Osaka.","おおさかにすんでいます。／ J’habite à Osaka.","15","N5","true"
-"g063","＜て形＞、＜て形＞、～","＜てけい＞、＜てけい＞、～","Enchaîner plusieurs actions dans l’ordre.","Verbe en て、verbe en て、dernier verbe","朝起きて、顔を洗って、朝ご飯を食べます。","あさおきて、かおをあらって、あさごはんをたべます。","16","N5","true"
-"g064","＜て形＞から、～","＜てけい＞から、～","Dire qu’une action a lieu après une autre.","Verbe en て + から、action suivante","仕事が終わってから、飲みに行きます。","しごとがおわってから、のみにいきます。","16","N5","true"
-"g065","～は～が～","～は～が～","Décrire une partie ou une caractéristique d’un thème.","Thème + は + partie + が + adjectif","大阪は食べ物がおいしいです。／ À Osaka, la nourriture est bonne.","おおさかはたべものがおいしいです。／ À Osaka, la nourriture est bonne.","16","N5","true"
-"g066","＜形容詞／名詞＞で、～","＜けいようし／めいし＞で、～","Relier des descriptions ou des états.","Adjectif-i en くて／adjectif-na ou nom + で","この部屋は広くて、明るいです。","このへやはひろくて、あかるいです。","16","N5","true"
-"g067","＜ない形＞ないでください","＜ないけい＞ないでください","Demander de ne pas faire quelque chose.","Verbe en ない + ないでください","ここで写真を撮らないでください。","ここでしゃしんをとらないでください。","17","N5","true"
-"g068","＜ない形＞なければなりません","＜ないけい＞なければなりません","Exprimer une obligation.","Verbe sans ない + なければなりません","薬を飲まなければなりません。／ Je dois prendre le médicament.","くすりをのまなければなりません。／ Je dois prendre le médicament.","17","N5","true"
-"g069","＜ない形＞なくてもいいです","＜ないけい＞なくてもいいです","Exprimer l’absence d’obligation.","Verbe sans ない + なくてもいいです","あした来なくてもいいです。／ Vous n’êtes pas obligé de venir demain.","あしたこなくてもいいです。／ Vous n’êtes pas obligé de venir demain.","17","N5","true"
-"g070","～は（mise en relief）","～は","Mettre en relief le complément d’objet avec は.","Objet + は + verbe","お酒は飲みません。／ Quant à l’alcool, je n’en bois pas.","おさけはのみません。／ Quant à l’alcool, je n’en bois pas.","17","N5","true"
-"g071","～ことができます","～ことができます","Exprimer une capacité ou une possibilité.","Verbe dictionnaire + ことができます","漢字を読むことができます。／ Je peux lire les kanji.","かんじをよむことができます。／ Je peux lire les kanji.","18","N5","true"
-"g072","趣味は～ことです","しゅみは～ことです","Présenter une activité comme passe-temps.","趣味は + verbe dictionnaire + ことです","趣味は写真を撮ることです。","しゅみはしゃしんをとることです。","18","N5","true"
-"g073","～まえに、～","～まえに、～","Indiquer qu’une action précède une autre.","Verbe dictionnaire／nom + の／durée + まえに","寝るまえに、本を読みます。／ Je lis avant de dormir.","ねるまえに、ほんをよみます。／ Je lis avant de dormir.","18","N5","true"
-"g074","＜た形＞ことがあります","＜たけい＞ことがあります","Parler d’une expérience passée.","Verbe en た + ことがあります","日本へ行ったことがあります。／ Je suis déjà allé au Japon.","にほんへいったことがあります。／ Je suis déjà allé au Japon.","19","N5","true"
-"g075","＜た形＞り、＜た形＞りします","＜たけい＞り、＜たけい＞りします","Donner une liste non exhaustive d’actions.","Verbe en た + り、verbe en た + りします","日曜日は本を読んだり、映画を見たりします。","にちようひはほんをよんだり、えいがをみたりします。","19","N5","true"
-"g076","～く／に なります","～く／に なります","Exprimer un changement d’état.","Adjectif-i en く／adjectif-na ou nom + に + なります","寒くなりました。／ Il a commencé à faire froid.","さむくなりました。／ Il a commencé à faire froid.","19","N5","true"
-"g077","普通体","ふつうたい","Employer le style neutre avec les proches ou dans un contexte informel.","Verbe/adjectif/nom à la forme neutre","あした東京へ行く。／ Demain, je vais à Tokyo.","あしたとうきょうへいく。／ Demain, je vais à Tokyo.","20","N5","true"
-"g078","～けど、～","～けど、～","Relier deux idées avec « mais » dans un registre courant.","Phrase neutre + けど + phrase","おいしいけど、高い。／ C’est bon, mais cher.","おいしいけど、たかい。／ C’est bon, mais cher.","20","N5","true"
-"g079","＜普通形＞と思います","＜ふつうけい＞とおもいます","Exprimer une opinion ou une supposition.","Forme neutre + と + 思います","あした雨が降ると思います。／ Je pense qu’il pleuvra demain.","あしたあめがふるとおもいます。／ Je pense qu’il pleuvra demain.","21","N5","true"
-"g080","＜普通形＞と言います","＜ふつうけい＞といいます","Rapporter des paroles.","Forme neutre + と + 言います","田中さんは休むと言いました。／ M. Tanaka a dit qu’il serait absent.","たなかさんはやすむといいました。／ M. Tanaka a dit qu’il serait absent.","21","N5","true"
-"g081","＜普通形＞でしょう？","＜ふつうけい＞でしょう？","Demander confirmation ou chercher l’accord.","Forme neutre + でしょう？","北海道は寒いでしょう？／ Hokkaido est froid, n’est-ce pas ?","ほっかいどうはさむいでしょう？／ Hokkaido est froid, n’est-ce pas ?","21","N5","true"
-"g082","＜phrase＞＋＜nom＞","＜ぶん＞＋＜めいし＞","Former une proposition relative placée avant le nom.","Forme neutre + nom","これは父が撮った写真です。／ C’est une photo prise par mon père.","これはちちがとったしゃしんです。／ C’est une photo prise par mon père.","22","N5","true"
-"g083","＜proposition relative＞は～です","＜かんけいせつ＞は～です","Utiliser un groupe nominal avec proposition relative comme thème.","Proposition relative + nom + は + prédicat","料理を作る人は母です。","りょうりをつくるひとはははです。","22","N5","true"
-"g084","＜proposition relative＞を～","＜かんけいせつ＞を～","Utiliser un groupe nominal avec proposition relative comme objet.","Proposition relative + nom + を + verbe","昨日買った本を読みます。","きのうかったほんをよみます。","22","N5","true"
-"g085","＜proposition relative＞が／を～","＜かんけいせつ＞が／を～","Exprimer un souhait ou une préférence portant sur un nom précisé.","Proposition relative + nom + が／を + prédicat","駅に近い家がほしいです。","えきにちかいいえがほしいです。","22","N5","true"
-"g086","＜動詞普通形＞とき、～","＜どうしふつうけい＞とき、～","Exprimer « quand » avec un verbe.","Verbe neutre + とき","日本へ行くとき、かばんを買いました。","にほんへいくとき、かばんをかいました。","23","N5","true"
-"g087","＜形容詞＞とき、～","＜けいようし＞とき、～","Exprimer « quand » avec un adjectif.","Adjectif-i + とき／adjectif-na + な + とき","暇なとき、本を読みます。","ひまなとき、ほんをよみます。","23","N5","true"
-"g088","＜名詞＞のとき、～","＜めいし＞のとき、～","Exprimer « quand » avec un nom.","Nom + の + とき","子どものとき、よく泳ぎました。","こどものとき、よくおよぎました。","23","N5","true"
-"g089","＜辞書形＞と、～","＜じしょけい＞と、～","Exprimer une conséquence automatique ou habituelle.","Verbe dictionnaire + と + conséquence","このボタンを押すと、ドアが開きます。","このボタンをおすと、ドアがひらきます。","23","N5","true"
-"g090","～をくれます","～をくれます","Dire que quelqu’un donne quelque chose au locuteur ou à son groupe.","Personne + が + objet + を + くれます","友達が本をくれました。／ Un ami m’a donné un livre.","ともだちがほんをくれました。／ Un ami m’a donné un livre.","24","N5","true"
-"g091","＜て形＞あげます","＜てけい＞あげます","Dire que l’on fait une action pour quelqu’un.","Verbe en て + あげます","弟に漢字を教えてあげました。","おとうとにかんじをおしえてあげました。","24","N5","true"
-"g092","＜て形＞もらいます","＜てけい＞もらいます","Dire que l’on bénéficie d’une action faite par quelqu’un.","Personne + に + verbe en て + もらいます","先生に日本語を教えてもらいました。","せんせいににほんごをおしえてもらいました。","24","N5","true"
-"g093","＜て形＞くれます","＜てけい＞くれます","Dire que quelqu’un fait une action pour le locuteur.","Personne + が + verbe en て + くれます","母が料理を作ってくれました。","ははがりょうりをつくってくれました。","24","N5","true"
-"g094","＜普通形過去＞ら、～","＜ふつうけいかこ＞ら、～","Exprimer une condition hypothétique avec « si ».","Forme passée neutre + ら","時間があったら、旅行します。／ Si j’ai le temps, je voyagerai.","じかんがあったら、りょこうします。／ Si j’ai le temps, je voyagerai.","25","N5","true"
-"g095","＜た形＞ら、～","＜たけい＞ら、～","Exprimer qu’une action suivra quand la première sera accomplie.","Verbe en た + ら","駅に着いたら、電話してください。","えきについたら、でんわしてください。","25","N5","true"
-"g096","＜て形＞も、～","＜てけい＞も、～","Exprimer une concession : « même si ».","Verbe en て + も／adjectif-i en くても／nom ou adjectif-na + でも","雨が降っても、出かけます。／ Même s’il pleut, je sortirai.","あめがふっても、でかけます。／ Même s’il pleut, je sortirai.","25","N5","true"
-"g097","～んです","～んです","Expliquer une situation, demander une explication ou insister sur le contexte.","Forme neutre + んです／nom et adjectif-na + なんです","どうしたんですか。／ Que se passe-t-il ?","どうしたんですか。／ Que se passe-t-il ?","26","N4","true"
-"g098","～んですが、～ていただけませんか","～んですが、～ていただけませんか","Introduire poliment une demande en donnant le contexte.","Forme neutre + んですが + verbe en て + いただけませんか","日本語で手紙を書いたんですが、見ていただけませんか。","にほんごでてがみをかいたんですが、みていただけませんか。","26","N4","true"
-"g099","～んですが、～たらいいですか","～んですが、～たらいいですか","Demander un conseil sur ce qu’il convient de faire.","Forme neutre + んですが + interrogatif + forme en た + らいいですか","駅へ行きたいんですが、どう行ったらいいですか。","えきへいきたいんですが、どういったらいいですか。","26","N4","true"
-"g100","可能動詞","かのうどうし","Exprimer la capacité ou la possibilité de faire une action.","Verbe à la forme potentielle","わたしは日本語が話せます。／ Je peux parler japonais.","わたしはにほんごがはなせます。／ Je peux parler japonais.","27","N4","true"
-"g101","～が見えます／聞こえます","～がみえます／きこえます","Dire que quelque chose est spontanément visible ou audible.","Nom + が + 見えます／聞こえます","窓から山が見えます。／ On voit la montagne depuis la fenêtre.","まどからやまがみえます。／ On voit la montagne depuis la fenêtre.","27","N4","true"
-"g102","～ができます","～ができます","Dire qu’une installation ou une création apparaît ou est achevée.","Nom + が + できます","駅の前に新しい店ができました。","えきのまえにあたらしいみせができました。","27","N4","true"
-"g103","～しか～ません","～しか～ません","Exprimer « seulement » avec une nuance restrictive.","Nom/quantité + しか + verbe négatif","千円しかありません。／ Je n’ai que 1 000 yens.","せんえんしかありません。／ Je n’ai que 1 000 yens.","27","N4","true"
-"g104","～は～、～は～","～は～、～は～","Mettre deux éléments en contraste.","Élément A + は + prédicat、élément B + は + prédicat","ひらがなは書けますが、漢字は書けません。","ひらがなはかけますが、かんじはかけません。","27","N4","true"
-"g105","～には／～では","～には／～では","Combiner une particule avec は pour marquer le thème ou le contraste.","Nom + particule + は","この町には大学がありません。","このまちにはだいがくがありません。","27","N4","true"
-"g106","～ながら","～ながら","Exprimer deux actions simultanées réalisées par le même sujet.","Base en ます + ながら + action principale","音楽を聞きながら勉強します。","おんがくをききながらべんきょうします。","28","N4","true"
-"g107","～ています（habitude）","～ています","Exprimer une habitude ou une activité régulière.","Verbe en て + います","毎朝ジョギングをしています。","まいあさジョギングをしています。","28","N4","true"
-"g108","～し、～し","～し、～し","Énumérer plusieurs raisons ou qualités.","Forme neutre + し + forme neutre + し","この店は安いし、おいしいし、よく行きます。","このみせはやすいし、おいしいし、よくいきます。","28","N4","true"
-"g109","～が～ています","～が～ています","Décrire l’état résultant d’un changement avec un verbe intransitif.","Nom + が + verbe intransitif en て + います","窓が開いています。／ La fenêtre est ouverte.","まどがひらいています。／ La fenêtre est ouverte.","29","N4","true"
-"g110","～は～ています","～は～ています","Prendre comme thème un objet dans un état résultant.","Nom + は + verbe intransitif en て + います","このいすは壊れています。","このいすはこわれています。","29","N4","true"
-"g111","～てしまいます","～てしまいます","Exprimer l’achèvement total d’une action.","Verbe en て + しまいます","宿題を全部してしまいました。","しゅくだいをぜんぶしてしまいました。","29","N4","true"
-"g112","～てしまいました（regret）","～てしまいました","Exprimer qu’une action regrettable ou accidentelle s’est produite.","Verbe en て + しまいました","財布をなくしてしまいました。／ J’ai malheureusement perdu mon portefeuille.","さいふをなくしてしまいました。／ J’ai malheureusement perdu mon portefeuille.","29","N4","true"
-"g113","～てあります","～てあります","Décrire le résultat d’une action volontaire effectuée en préparation.","Objet + が + verbe transitif en て + あります","壁に地図が貼ってあります。","かべにちずがはってあります。","30","N4","true"
-"g114","～ておきます（préparation）","～ておきます","Faire quelque chose à l’avance en vue d’un objectif.","Verbe en て + おきます","旅行の前に切符を買っておきます。","りょこうのまえにきっぷをかっておきます。","30","N4","true"
-"g115","～ておきます（maintien）","～ておきます","Laisser une situation telle quelle ou prendre une mesure temporaire.","Verbe en て + おきます","まだ使いますから、そのままにしておいてください。","まだつかいますから、そのままにしておいてください。","30","N4","true"
-"g116","意向形","いこうけい","Exprimer sa volonté ou proposer une action dans un registre courant.","Verbe à la forme volitive ～（よ）う","ちょっと休もう。／ Reposons-nous un peu.","ちょっとやすもう。／ Reposons-nous un peu.","31","N4","true"
-"g117","～ようと思っています","～ようとおもっています","Exprimer une intention déjà réfléchie.","Forme volitive + と + 思っています","来年、日本へ行こうと思っています。","らいねん、にほんへいこうとおもっています。","31","N4","true"
-"g118","まだ～ていません","まだ～ていません","Dire qu’une action prévue n’a pas encore été accomplie.","まだ + verbe en て + いません","まだ昼ご飯を食べていません。","まだひるごはんをたべていません。","31","N4","true"
-"g119","～つもりです","～つもりです","Exprimer une intention ferme.","Verbe dictionnaire ou forme en ない + つもりです","大学を卒業したら、帰国するつもりです。","だいがくをそつぎょうしたら、きこくするつもりです。","31","N4","true"
-"g120","～予定です","～よていです","Exprimer un programme ou un projet planifié.","Verbe dictionnaire／nom + の + 予定です","会議は三時に始まる予定です。","かいぎはさんじにはじまるよていです。","31","N4","true"
-"g121","～ほうがいいです","～ほうがいいです","Donner un conseil positif ou négatif.","Forme en た／forme en ない + ほうがいいです","毎日運動したほうがいいです。","まいにちうんどうしたほうがいいです。","32","N4","true"
-"g122","～でしょう","～でしょう","Exprimer une prévision assez probable.","Forme neutre + でしょう","あしたは晴れるでしょう。／ Il fera probablement beau demain.","あしたははれるでしょう。／ Il fera probablement beau demain.","32","N4","true"
-"g123","～かもしれません","～かもしれません","Exprimer une possibilité incertaine.","Forme neutre + かもしれません","午後から雨が降るかもしれません。","ごごからあめがふるかもしれません。","32","N4","true"
-"g124","命令形","めいれいけい","Donner un ordre direct et fort.","Verbe à la forme impérative","止まれ。／ Arrêtez-vous !","とまれ。／ Arrêtez-vous !","33","N4","true"
-"g125","禁止形","きんしけい","Formuler une interdiction directe et forte.","Verbe dictionnaire + な","ここに入るな。／ N’entrez pas ici !","ここにはいるな。／ N’entrez pas ici !","33","N4","true"
-"g126","「～」と書いてあります","「～」とかいてあります","Citer ce qui est écrit ou se lit sur un panneau ou document.","Contenu cité + と + 書いてあります／読みます","あそこに「危険」と書いてあります。","あそこに「きけん」とかいてあります。","33","N4","true"
-"g127","～は～という意味です","～は～といういみです","Expliquer la signification d’un mot ou symbole.","Terme + は + définition + という意味です","「立入禁止」は入るなという意味です。","「たちいりきんし」ははいるなといういみです。","33","N4","true"
-"g128","～と言っていました","～といっていました","Rapporter le message de quelqu’un.","Forme neutre + と + 言っていました","田中さんは遅れると言っていました。","たなかさんはおくれるといっていました。","33","N4","true"
-"g129","～と伝えていただけませんか","～とつたえていただけませんか","Demander poliment de transmettre un message.","Message + と + 伝えていただけませんか","会議は中止だと伝えていただけませんか。","かいぎはちゅうしだとつたえていただけませんか。","33","N4","true"
-"g130","～とおりに、～","～とおりに、～","Faire quelque chose conformément à un modèle ou des instructions.","Verbe dictionnaire／forme en た／nom + の + とおりに","説明書のとおりに組み立てます。","せつめいしょのとおりにくみたてます。","34","N4","true"
-"g131","～あとで、～","～あとで、～","Indiquer qu’une action a lieu après une autre.","Verbe en た／nom + の + あとで","仕事が終わったあとで、飲みに行きます。","しごとがおわったあとで、のみにいきます。","34","N4","true"
-"g132","～て、～／～ないで、～","～て、～／～ないで、～","Indiquer la manière ou l’état accompagnant une action.","Verbe en て／forme en ない + で + action","傘を持って出かけます。","かさをもってでかけます。","34","N4","true"
-"g133","～ないで、～","～ないで、～","Faire une action sans en faire une autre.","Verbe en ない + で + action","朝ご飯を食べないで会社へ行きました。","あさごはんをたべないでかいしゃへいきました。","34","N4","true"
-"g134","～ば","～ば","Exprimer une condition générale ou hypothétique.","Verbe à la forme conditionnelle en ば","ボタンを押せば、切符が出ます。","ボタンをおせば、きっぷがでます。","35","N4","true"
-"g135","～ければ／～なら","～ければ／～なら","Former la condition avec les adjectifs et les noms.","Adjectif-i en ければ／adjectif-na ou nom + なら","安ければ、買います。／ Si c’est bon marché, je l’achèterai.","やすければ、かいます。／ Si c’est bon marché, je l’achèterai.","35","N4","true"
-"g136","～なら（thème）","～なら","Reprendre un thème pour donner un conseil ou une information.","Nom + なら + commentaire","京都なら、秋がいいです。","きょうとなら、あきがいいです。","35","N4","true"
-"g137","～ように、～","～ように、～","Exprimer un objectif portant sur une capacité ou un état.","Verbe dictionnaire ou forme en ない + ように","忘れないようにメモします。","わすれないようにメモします。","36","N4","true"
-"g138","～ようになります","～ようになります","Exprimer une évolution de capacité ou d’habitude.","Verbe dictionnaire ou forme en ない + ようになります","日本語が話せるようになりました。","にほんごがはなせるようになりました。","36","N4","true"
-"g139","～ようにします","～ようにします","Exprimer un effort régulier ou une règle personnelle.","Verbe dictionnaire ou forme en ない + ようにします","毎日歩くようにしています。","まいにちあるくようにしています。","36","N4","true"
-"g140","受け身","うけみ","Exprimer qu’une personne ou une chose subit une action.","Sujet + は + agent + に + verbe passif","わたしは先生に褒められました。","わたしはせんせいにほめられました。","37","N4","true"
-"g141","～に＜possession＞を～られます","～に＜しょゆうぶつ＞を～られます","Exprimer qu’une action subie touche une possession du sujet.","Personne + は + agent + に + possession + を + passif","わたしは弟にカメラを壊されました。","わたしはおとうとにカメラをこわされました。","37","N4","true"
-"g142","～が／は～られます","～が／は～られます","Décrire objectivement une action au passif.","Objet + が／は + verbe passif","この寺は八百年前に建てられました。","このてらははっぴゃくねんまえにたてられました。","37","N4","true"
-"g143","～によって～られます","～によって～られます","Nommer l’auteur ou le créateur dans une phrase passive.","Œuvre + は + auteur + によって + verbe passif","この絵はピカソによって描かれました。","このえはピカソによってえがかれました。","37","N4","true"
-"g144","～のは＜形容詞＞です","～のは＜けいようし＞です","Nominaliser une action et la décrire.","Forme neutre + のは + adjectif + です","新しい言葉を覚えるのは楽しいです。","あたらしいことばをおぼえるのはたのしいです。","38","N4","true"
-"g145","～のが＜形容詞＞です","～のが＜けいようし＞です","Exprimer une aptitude, une préférence ou une difficulté concernant une action.","Forme neutre + のが + adjectif + です","わたしは泳ぐのが好きです。","わたしはおよぐのがすきです。","38","N4","true"
-"g146","～のを忘れました","～のをわすれました","Dire que l’on a oublié de faire quelque chose.","Forme neutre + のを + 忘れました","宿題を出すのを忘れました。","しゅくだいをだすのをわすれました。","38","N4","true"
-"g147","～のを知っています","～のをしっています","Dire que l’on sait qu’un fait ou événement existe.","Forme neutre + のを + 知っています","田中さんが結婚したのを知っていますか。","たなかさんがけっこんしたのをしっていますか。","38","N4","true"
-"g148","～のは＜名詞＞です","～のは＜めいし＞です","Mettre en relief un élément d’une proposition.","Forme neutre + のは + nom + です","日本へ来たのは去年です。","にほんへきたのはきょねんです。","38","N4","true"
-"g149","～て／～くて／～で（cause）","～て／～くて／～で","Exprimer une cause menant naturellement à un sentiment ou un résultat.","Verbe en て／adjectif-i en くて／nom ou adjectif-na + で","ニュースを聞いて、びっくりしました。","ニュースをきいて、びっくりしました。","39","N4","true"
-"g150","～ので、～","～ので、～","Donner une raison de façon plus neutre et polie que から.","Forme neutre + ので／nom et adjectif-na + なので","用事があるので、お先に失礼します。","ようじがあるので、おさきにしつれいします。","39","N4","true"
-"g151","疑問詞～か","ぎもんし～か","Intégrer une question indirecte comportant un mot interrogatif.","Interrogatif + forme neutre + か","会議が何時に始まるか知っていますか。","かいぎがなんじにはじまるかしっていますか。","40","N4","true"
-"g152","～かどうか","～かどうか","Exprimer une question indirecte avec « si oui ou non ».","Forme neutre + かどうか","間に合うかどうか、わかりません。","まにあうかどうか、わかりません。","40","N4","true"
-"g153","～てみます","～てみます","Essayer de faire quelque chose pour voir le résultat.","Verbe en て + みます","この服を着てみてもいいですか。","このふくをきてみてもいいですか。","40","N4","true"
-"g154","～をいただきます／くださいます／やります","～をいただきます／くださいます／やります","Exprimer le don avec les formes honorifiques ou selon la hiérarchie.","Donneur/receveur + particules + いただきます／くださいます／やります","先生に本をいただきました。","せんせいにほんをいただきました。","41","N4","true"
-"g155","～ていただきます／くださいます／やります","～ていただきます／くださいます／やります","Exprimer le bénéfice d’une action avec déférence.","Verbe en て + いただきます／くださいます／やります","先生に作文を直していただきました。","せんせいにさくぶんをなおしていただきました。","41","N4","true"
-"g156","～てくださいませんか","～てくださいませんか","Formuler une demande très polie.","Verbe en て + くださいませんか","もう一度説明してくださいませんか。","もういちどせつめいしてくださいませんか。","41","N4","true"
-"g157","～ために、～","～ために、～","Exprimer un objectif volontaire.","Verbe dictionnaire／nom + の + ために","日本で働くために、日本語を勉強しています。","にほんではたらくために、にほんごをべんきょうしています。","42","N4","true"
-"g158","～のに使います","～のにつかいます","Exprimer l’usage ou la fonction de quelque chose.","Verbe dictionnaire／nom + に + 使います","このはさみは紙を切るのに使います。","このはさみはかみをきるのにつかいます。","42","N4","true"
-"g159","＜数量＞は／も","＜すうりょう＞は／も","Exprimer un minimum approximatif ou une quantité jugée importante.","Quantité + は／も","駅まで三十分はかかります。","えきまでさんじゅうふんはかかります。","42","N4","true"
-"g160","～そうです（apparence）","～そうです","Exprimer une apparence ou une prévision fondée sur ce que l’on voit.","Base en ます／radical adjectival + そうです","雨が降りそうです。／ On dirait qu’il va pleuvoir.","あめがふりそうです。／ On dirait qu’il va pleuvoir.","43","N4","true"
-"g161","～てきます","～てきます","S’éloigner pour faire une action puis revenir, ou décrire un mouvement vers le locuteur.","Verbe en て + きます","ちょっと飲み物を買ってきます。","ちょっとのみものをかってきます。","43","N4","true"
-"g162","～すぎます","～すぎます","Exprimer un excès.","Base en ます／radical adjectival + すぎます","きのうお酒を飲みすぎました。","きのうおさけをのみすぎました。","44","N4","true"
-"g163","～やすい／にくいです","～やすい／にくいです","Exprimer qu’une action est facile ou difficile à réaliser.","Base en ます + やすい／にくいです","このペンは書きやすいです。","このペンはかきやすいです。","44","N4","true"
-"g164","～く／にします","～く／にします","Exprimer un changement volontaire d’état.","Adjectif-i en く／adjectif-na ou nom + に + します","音を小さくしてください。","おとをちいさくしてください。","44","N4","true"
-"g165","～場合は、～","～ばあいは、～","Présenter un cas ou une éventualité.","Forme neutre + 場合は／nom + の場合は","火事の場合は、エレベーターを使わないでください。","かじのばあいは、エレベーターをつかわないでください。","45","N4","true"
-"g166","～のに、～","～のに、～","Exprimer un résultat contraire à ce qui était attendu.","Forme neutre + のに／nom et adjectif-na + なのに","薬を飲んだのに、よくなりません。","くすりをのんだのに、よくなりません。","45","N4","true"
-"g167","～ところです","～ところです","Situer une action juste avant, pendant ou juste après son déroulement.","Dictionnaire／ている／forme en た + ところです","今から出かけるところです。","いまからでかけるところです。","46","N4","true"
-"g168","～たばかりです","～たばかりです","Dire qu’une action vient d’être accomplie selon le ressenti du locuteur.","Verbe en た + ばかりです","さっき昼ご飯を食べたばかりです。","さっきひるごはんをたべたばかりです。","46","N4","true"
-"g169","～はずです","～はずです","Exprimer une conviction fondée sur une raison logique.","Forme neutre + はずです／nom + のはずです","田中さんは来るはずです。","たなかさんはくるはずです。","46","N4","true"
-"g170","～そうです（ouï-dire）","～そうです","Rapporter une information entendue ou lue.","Forme neutre + そうです","天気予報によると、あしたは雨だそうです。","てんきよほうによると、あしたはあめだそうです。","47","N4","true"
-"g171","～ようです","～ようです","Exprimer une supposition fondée sur des indices.","Forme neutre + ようです／nom + のようです","外は寒いようです。","そとはさむいようです。","47","N4","true"
-"g172","使役形","しえきけい","Exprimer que quelqu’un fait faire ou laisse faire une action.","Personne + を／に + verbe causatif","先生は学生に作文を書かせました。","せんせいはがくせいにさくぶんをかかせました。","48","N4","true"
-"g173","～させていただけませんか","～させていただけませんか","Demander très poliment l’autorisation de faire quelque chose.","Verbe causatif en て + いただけませんか","早く帰らせていただけませんか。","はやくかえらせていただけませんか。","48","N4","true"
-"g174","尊敬語 ～られます","そんけいご ～られます","Élever l’action de l’interlocuteur ou d’une personne respectée.","Verbe à la forme passive honorifique","社長はもう帰られました。","しゃちょうはもうかえられました。","49","N4","true"
-"g175","お～になります","お～になります","Former une expression honorifique régulière.","お + base en ます + になります","先生は何時にお帰りになりますか。","せんせいはなんじにおかえりになりますか。","49","N4","true"
-"g176","特別な尊敬語","とくべつなそんけいご","Employer les verbes honorifiques irréguliers.","いらっしゃいます／召し上がります／ご覧になります…","先生はもうお帰りになりました。","せんせいはもうおかえりになりました。","49","N4","true"
-"g177","お～ください","お～ください","Formuler une invitation ou demande honorifique.","お + base en ます + ください","こちらでお待ちください。","こちらでおまちください。","49","N4","true"
-"g178","お／ご～します","お／ご～します","Abaisser poliment sa propre action au bénéfice d’autrui.","お + base en ます + します／ご + nom verbal + します","お荷物をお持ちします。","おにもつをおもちします。","50","N4","true"
-"g179","特別な謙譲語","とくべつなけんじょうご","Employer les verbes humbles irréguliers.","参ります／申します／拝見します／伺います…","わたしがご案内いたします。","わたしがごあんないいたします。","50","N4","true"
-"g180","丁寧語","ていねいご","Employer des formes particulièrement polies.","ございます／～でございます","受付は二階でございます。","うけつけはにかいでございます。","50","N4","true"
+"id","structure","reading","french","construction","example","example_reading","lesson","level","ready","example_fr","display_example","display_structure"
+"g001","～は～です","～は～です","Je suis… / C’est…","Nom A + は + nom B + です","わたしは学生です。／ Je suis étudiant.","わたしはがくせいです。／ Je suis étudiant.","1","N5","true","Je suis étudiant.","わたしは学生です。","～は～です"
+"g002","～は～じゃありません","～は～じゃありません","Je ne suis pas… / Ce n’est pas…","Nom A + は + nom B + じゃありません","ミラーさんは医者じゃありません。／ M. Miller n’est pas médecin.","ミラーさんはいしゃじゃありません。／ M. Miller n’est pas médecin.","1","N5","true","M. Miller n’est pas médecin.","ミラーさんはいしゃじゃありません。","～は～じゃありません"
+"g003","～は～ですか","～は～ですか","Est-ce que… ?","Phrase + か","サントスさんは会社員ですか。／ M. Santos est-il employé ?","サントスさんはかいしゃいんですか。／ M. Santos est-il employé ?","1","N5","true","M. Santos est-il employé ?","サントスさんはかいしゃいんですか。","～は～ですか"
+"g004","～も～です","～も～です","Moi aussi… / … aussi","Nom A + も + nom B + です","わたしも学生です。／ Moi aussi, je suis étudiant.","わたしもがくせいです。／ Moi aussi, je suis étudiant.","1","N5","true","Moi aussi, je suis étudiant.","わたしも学生です。","～も～です"
+"g005","～は～の～です","～は～の～です","Je suis… de… (appartenance)","Nom A + は + nom B + の + nom C + です","わたしはIMCの社員です。／ Je suis employé d’IMC.","わたしはIMCのしゃいんです。／ Je suis employé d’IMC.","1","N5","true","Je suis employé d’IMC.","わたしはIMCのしゃいんです。","～は～の～です"
+"g006","これ／それ／あれは～です","これ／それ／あれは～です","Ceci / cela / cela là-bas est…","これ／それ／あれ + は + nom + です","これは辞書です。／ Ceci est un dictionnaire.","これはじしょです。／ Ceci est un dictionnaire.","2","N5","true","Ceci est un dictionnaire.","これはじしょです。","これ／それ／あれは～です"
+"g007","この／その／あの～","この／その／あの～","Ce… / cet… / cette…","この／その／あの + nom","あの人はだれですか。／ Qui est cette personne là-bas ?","あのひとはだれですか。／ Qui est cette personne là-bas ?","2","N5","true","Qui est cette personne là-bas ?","あの人はだれですか。","この／その／あの～"
+"g008","～は＜人＞のです","～は＜ひと＞のです","C’est le mien / le tien / celui de…","Nom + は + personne + の + です","この傘はわたしのです。／ Ce parapluie est le mien.","このかさはわたしのです。／ Ce parapluie est le mien.","2","N5","true","Ce parapluie est le mien.","このかさはわたしのです。","～は…のです"
+"g009","そうです／そうじゃありません","そうです／そうじゃありません","Oui, c’est ça / Non, ce n’est pas ça","はい、そうです／いいえ、そうじゃありません","これは本ですか。はい、そうです。／ C’est un livre ? Oui.","これはほんですか。はい、そうです。／ C’est un livre ? Oui.","2","N5","true","C’est un livre ? Oui.","これは本ですか。はい、そうです。","そうです／そうじゃありません"
+"g010","ここ／そこ／あそこは～です","ここ／そこ／あそこは～です","Ici / là / là-bas, c’est…","ここ／そこ／あそこ + は + lieu + です","ここは食堂です。／ Ici, c’est la cantine.","ここはしょくどうです。／ Ici, c’est la cantine.","3","N5","true","Ici, c’est la cantine.","ここはしょくどうです。","ここ／そこ／あそこは～です"
+"g011","～はどこですか","～はどこですか","Où est… ?","Nom + は + どこ + ですか","トイレはどこですか。／ Où sont les toilettes ?","トイレはどこですか。／ Où sont les toilettes ?","3","N5","true","Où sont les toilettes ?","トイレはどこですか。","～はどこですか"
+"g012","～は～の～です","～は～の～です","Un… de… (origine)","Nom A + は + nom B + の + nom C + です","これは日本の車です。／ C’est une voiture japonaise.","これはにほんのくるまです。／ C’est une voiture japonaise.","3","N5","true","C’est une voiture japonaise.","これは日本の車です。","～は～の～です"
+"g013","～はいくらですか","～はいくらですか","Combien coûte… ?","Nom + は + いくら + ですか","この時計はいくらですか。／ Combien coûte cette montre ?","このとけいはいくらですか。／ Combien coûte cette montre ?","3","N5","true","Combien coûte cette montre ?","この時計はいくらですか。","～はいくらですか"
+"g014","～時～分です","～じ～ふんです","Il est… heures… minutes","Nombre + 時 + nombre + 分 + です","今、七時半です。／ Il est maintenant sept heures et demie.","いま、しちじはんです。／ Il est maintenant sept heures et demie.","4","N5","true","Il est maintenant sept heures et demie.","今、七時半です。","～時～分です"
+"g015","～から～まで","～から～まで","De… à… / Depuis… jusqu’à…","Heure/lieu + から + heure/lieu + まで","九時から五時まで働きます。／ Je travaille de 9 h à 17 h.","きゅうじからごじまではたらきます。／ Je travaille de 9 h à 17 h.","4","N5","true","Je travaille de 9 h à 17 h.","九時から五時まで働きます。","～から～まで"
+"g016","～曜日です","～ようびです","C’est lundi / mardi…","jour + ようび + です
+月よう日です / 火よう日です","休みは日曜日です。／ Le jour de repos est dimanche.","やすみはにちようひです。／ Le jour de repos est dimanche.","4","N5","true","Le jour de repos est dimanche.","休みはにちようひです。","～ようびです"
+"g017","～時に～ます","～じに～ます","Je fais… à… heures","Heure + に + verbe poli","六時に起きます。／ Je me lève à 6 h.","ろくじにおきます。／ Je me lève à 6 h.","4","N5","true","Je me lève à 6 h.","六時におきます。","～時に～ます"
+"g018","～ます／ません／ました／ませんでした","～ます／ません／ました／ませんでした","Je fais / je ne fais pas / j’ai fait / je n’ai pas fait","verbe sans ます + ます / ません / ました / ませんでした
+食べます → 食べません → 食べました → 食べませんでした","きのう勉強しませんでした。／ Hier, je n’ai pas étudié.","きのうべんきょうしませんでした。／ Hier, je n’ai pas étudié.","4","N5","true","Hier, je n’ai pas étudié.","きのう勉強しませんでした。","～ます／ません／ました／ませんでした"
+"g019","＜場所＞へ行きます／来ます／帰ります","＜ばしょ＞へいきます／きます／かえります","Je vais / viens / rentre à…","Lieu + へ + verbe de déplacement","京都へ行きます。／ Je vais à Kyoto.","きょうとへいきます。／ Je vais à Kyoto.","5","N5","true","Je vais à Kyoto.","京都へ行きます。","…へ行きます／来ます／帰ります"
+"g020","＜乗り物＞で行きます","＜のりもの＞でいきます","J’y vais en… (transport)","Moyen + で + verbe de déplacement","電車で行きます。／ J’y vais en train.","でんしゃでいきます。／ J’y vais en train.","5","N5","true","J’y vais en train.","電車で行きます。","…で行きます"
+"g021","＜人＞と行きます","＜ひと＞といきます","Je vais avec… (personne)","Personne + と + verbe de déplacement","家族と日本へ来ました。／ Je suis venu au Japon avec ma famille.","かぞくとにほんへきました。／ Je suis venu au Japon avec ma famille.","5","N5","true","Je suis venu au Japon avec ma famille.","家族と日本へ来ました。","…と行きます"
+"g022","＜日時＞に行きます","＜にちじ＞にいきます","J’y vais le… / à…","Date/heure + に + verbe de déplacement","七月二日に行きます。／ J’y vais le 2 juillet.","なながつふつかにいきます。／ J’y vais le 2 juillet.","5","N5","true","J’y vais le 2 juillet.","七月二日に行きます。","…に行きます"
+"g023","～を～ます","～を～ます","Je mange… / je lis… (objet de l’action)","Objet + を + verbe","パンを食べます。／ Je mange du pain.","パンをたべます。／ Je mange du pain.","6","N5","true","Je mange du pain.","パンを食べます。","～を～ます"
+"g024","＜場所＞で～ます","＜ばしょ＞で～ます","Je fais… à… (lieu de l’action)","Lieu + で + verbe","図書館で勉強します。／ J’étudie à la bibliothèque.","としょかんでべんきょうします。／ J’étudie à la bibliothèque.","6","N5","true","J’étudie à la bibliothèque.","図書館で勉強します。","…で～ます"
+"g025","いっしょに～ませんか","いっしょに～ませんか","Et si nous… ensemble ?","いっしょに + verbe en ませんか","いっしょに映画を見ませんか。／ Voulez-vous voir un film ensemble ?","いっしょにえいがをみませんか。／ Voulez-vous voir un film ensemble ?","6","N5","true","Voulez-vous voir un film ensemble ?","いっしょに映画を見ませんか。","いっしょに～ませんか"
+"g026","～ましょう","～ましょう","Faisons… / Allons…","verbe sans ます + ましょう","ちょっと休みましょう。／ Reposons-nous un peu.","ちょっとやすみましょう。／ Reposons-nous un peu.","6","N5","true","Reposons-nous un peu.","ちょっと休みましょう。","～ましょう"
+"g027","～で～ます","～で～ます","Je fais… avec… (outil)","Outil/moyen + で + verbe","はしで食べます。／ Je mange avec des baguettes.","はしでたべます。／ Je mange avec des baguettes.","7","N5","true","Je mange avec des baguettes.","はしで食べます。","～で～ます"
+"g028","「～」は＜langue＞で～です","「～」は＜げんご＞で～です","En français / en japonais, on dit…","Mot + は + langue + で + traduction + です","「ありがとう」はフランス語で「merci」です。","「ありがとう」はフランスごで「merci」です。","7","N5","true","« ありがとう » se dit « merci » en français.","「ありがとう」はフランス語で「merci」です。","「～」は…で～です"
+"g029","＜人＞に＜物＞をあげます","＜ひと＞に＜もの＞をあげます","Je donne… à…","Donneur + は + personne + に + objet + を + あげます","友達に花をあげます。／ J’offre des fleurs à un ami.","ともだちにはなをあげます。／ J’offre des fleurs à un ami.","7","N5","true","J’offre des fleurs à un ami.","ともだちに花をあげます。","…に…をあげます"
+"g030","＜人＞に／から＜物＞をもらいます","＜ひと＞に／から＜もの＞をもらいます","Je reçois… de…","Receveur + は + personne + に／から + objet + を + もらいます","母に時計をもらいました。／ J’ai reçu une montre de ma mère.","ははにとけいをもらいました。／ J’ai reçu une montre de ma mère.","7","N5","true","J’ai reçu une montre de ma mère.","母に時計をもらいました。","…に／から…をもらいます"
+"g031","もう～ました／まだです","もう～ました／まだです","J’ai déjà… / Pas encore","もう + verbe en ました
+もう食べました / いいえ、まだです","もう昼ご飯を食べました。／ J’ai déjà déjeuné.","もうひるごはんをたべました。／ J’ai déjà déjeuné.","7","N5","true","J’ai déjà déjeuné.","もう昼ご飯を食べました。","もう～ました／まだです"
+"g032","～は＜な形容詞＞です","～は＜なけいようし＞です","… est calme / pratique / gentil","nom + は + adjectif en な (sans な) + です
+静かです","奈良は静かです。／ Nara est calme.","ならはしずかです。／ Nara est calme.","8","N5","true","Nara est calme.","ならは静かです。","～は…です"
+"g033","～は＜い形容詞＞です","～は＜いけいようし＞です","… est grand / cher / intéressant","nom + は + adjectif en い + です
+高いです","富士山は高いです。／ Le mont Fuji est haut.","ふじやまはたかいです。／ Le mont Fuji est haut.","8","N5","true","Le mont Fuji est haut.","ふじやまは高いです。","～は…です"
+"g034","＜な形容詞＞な＜名詞＞","＜なけいようし＞な＜めいし＞","Un endroit calme / une personne gentille","adjectif en な + な + nom
+静かな町","奈良は静かな町です。／ Nara est une ville calme.","ならはしずかなまちです。／ Nara est une ville calme.","8","N5","true","Nara est une ville calme.","ならは静かな町です。","…な…"
+"g035","＜い形容詞＞＜名詞＞","＜いけいようし＞＜めいし＞","Un nouveau livre / une grande maison","adjectif en い + nom
+新しい本","これは新しい本です。／ C’est un nouveau livre.","これはあたらしいほんです。／ C’est un nouveau livre.","8","N5","true","C’est un nouveau livre.","これは新しい本です。","……"
+"g036","あまり～ません","あまり～ません","Pas très… / Pas beaucoup…","あまり + verbe négatif / adjectif négatif
+あまり食べません / あまり高くないです","この本はあまりおもしろくないです。／ Ce livre n’est pas très intéressant.","このほんはあまりおもしろくないです。／ Ce livre n’est pas très intéressant.","8","N5","true","Ce livre n’est pas très intéressant.","この本はあまりおもしろくないです。","あまり～ません"
+"g037","～は～が好きです／嫌いです","～は～がすきです／きらいです","J’aime… / Je n’aime pas…","Thème + は + objet + が + 好き／嫌いです","わたしは音楽が好きです。／ J’aime la musique.","わたしはおんがくがすきです。／ J’aime la musique.","9","N5","true","J’aime la musique.","わたしは音楽が好きです。","～は～が好きです／きらいです"
+"g038","～は～が上手です／下手です","～は～がじょうずです／へたです","Je suis doué / peu doué pour…","Thème + は + activité + が + 上手／下手です","マリアさんは料理が上手です。／ Maria cuisine bien.","マリアさんはりょうりがじょうずです。／ Maria cuisine bien.","9","N5","true","Maria cuisine bien.","マリアさんは料理が上手です。","～は～が上手です／下手です"
+"g039","～がわかります","～がわかります","Je comprends…","Objet compris + が + わかります","日本語が少しわかります。／ Je comprends un peu le japonais.","にほんごがすこしわかります。／ Je comprends un peu le japonais.","9","N5","true","Je comprends un peu le japonais.","日本語が少しわかります。","～がわかります"
+"g040","～があります","～があります","J’ai… (du temps, de l’argent…)","Objet + が + あります","時間があります。／ J’ai du temps.","じかんがあります。／ J’ai du temps.","9","N5","true","J’ai du temps.","時間があります。","～があります"
+"g041","～から、～","～から、～","Parce que… / … donc…","phrase polie + から、conséquence
+時間がありませんから、行きません
+En style neutre : nom / adjectif en な + だから","時間がありませんから、新聞を読みません。／ Je ne lis pas le journal car je n’ai pas le temps.","じかんがありませんから、しんぶんをよみません。／ Je ne lis pas le journal car je n’ai pas le temps.","9","N5","true","Je ne lis pas le journal car je n’ai pas le temps.","時間がありませんから、新聞を読みません。","～から、～"
+"g042","～に～がいます","～に～がいます","Il y a quelqu’un / un animal à…","Lieu + に + personne/animal + が + います","教室に学生がいます。／ Il y a des étudiants dans la classe.","きょうしつにがくせいがいます。／ Il y a des étudiants dans la classe.","10","N5","true","Il y a des étudiants dans la classe.","教室に学生がいます。","～に～がいます"
+"g043","～に～があります","～に～があります","Il y a quelque chose à…","Lieu + に + chose + が + あります","机の上に本があります。／ Il y a un livre sur le bureau.","つくえのうえにほんがあります。／ Il y a un livre sur le bureau.","10","N5","true","Il y a un livre sur le bureau.","つくえの上に本があります。","～に～があります"
+"g044","～は～にいます／あります","～は～にいます／あります","… se trouve à…","Sujet + は + lieu + に + います／あります","先生は事務所にいます。／ Le professeur est au bureau.","せんせいはじむしょにいます。／ Le professeur est au bureau.","10","N5","true","Le professeur est au bureau.","先生はじむしょにいます。","～は～にいます／あります"
+"g045","助数詞","じょすうし","Un / deux / trois… (compter les objets)","nombre + compteur adapté à la chose
+一つ、二つ、三つ (objets)
+一人、二人、三人 (personnes)
+一冊、二冊 (livres)","りんごを三つ買いました。／ J’ai acheté trois pommes.","りんごをみっつかいました。／ J’ai acheté trois pommes.","11","N5","true","J’ai acheté trois pommes.","りんごを三つ買いました。","じょすうし"
+"g046","＜期間＞～ます","＜きかん＞～ます","Pendant… (durée)","Durée + verbe","日本語を二年勉強しました。／ J’ai étudié le japonais pendant deux ans.","にほんごをにねんべんきょうしました。／ J’ai étudié le japonais pendant deux ans.","11","N5","true","J’ai étudié le japonais pendant deux ans.","日本語を二年勉強しました。","…～ます"
+"g047","＜期間＞に＜回数＞～ます","＜きかん＞に＜かいすう＞～ます","… fois par jour / semaine…","Période + に + fréquence + verbe","一週間に二回テニスをします。／ Je joue au tennis deux fois par semaine.","いっしゅうかんににかいテニスをします。／ Je joue au tennis deux fois par semaine.","11","N5","true","Je joue au tennis deux fois par semaine.","一週間ににかいテニスをします。","…に…～ます"
+"g048","～から～までかかります","～から～までかかります","Il faut… pour aller de… à…","Départ + から + arrivée + まで + durée + かかります","東京から大阪まで三時間かかります。","とうきょうからおおさかまでさんじかんかかります。","11","N5","true","Il faut trois heures pour aller de Tokyo à Osaka.","東京からおおさかまで三時間かかります。","～から～までかかります"
+"g049","＜な形容詞／名詞＞でした","＜なけいようし／めいし＞でした","C’était… / Ce n’était pas… (nom ou adjectif en な)","nom / adjectif en な (sans な) + でした
+Négatif passé : + じゃありませんでした","きのうは雨でした。／ Hier, il pleuvait.","きのうはあめでした。／ Hier, il pleuvait.","12","N5","true","Hier, il pleuvait.","きのうは雨でした。","…でした"
+"g050","＜い形容詞＞かったです","＜いけいようし＞かったです","C’était agréable / intéressant… (adjectif en い)","adjectif en い : retirer い + かったです
+楽しい → 楽しかったです
+いい → よかったです","旅行は楽しかったです。／ Le voyage était agréable.","りょこうはたのしかったです。／ Le voyage était agréable.","12","N5","true","Le voyage était agréable.","旅行は楽しかったです。","…かったです"
+"g051","～は～より＜形容詞＞です","～は～より＜けいようし＞です","… est plus… que…","A + は + B + より + adjectif + です","電車はバスより速いです。／ Le train est plus rapide que le bus.","でんしゃはバスよりはやいです。／ Le train est plus rapide que le bus.","12","N5","true","Le train est plus rapide que le bus.","電車はバスより速いです。","～は～より…です"
+"g052","～と～とどちらが～ですか","～と～とどちらが～ですか","Entre… et…, lequel est le plus… ?","A + と + B + と + どちらが + adjectif + ですか","サッカーと野球とどちらが好きですか。","サッカーとやきゅうとどちらがすきですか。","12","N5","true","Entre le football et le baseball, lequel préférez-vous ?","サッカーとやきゅうとどちらが好きですか。","～と～とどちらが～ですか"
+"g053","～の中で～がいちばん～です","～のなかで～がいちばん～です","Parmi…, … est le plus…","Ensemble + の中で + élément + が + いちばん + adjectif","日本料理の中ですしがいちばん好きです。","にほんりょうりのなかですしがいちばんすきです。","12","N5","true","Parmi les plats japonais, je préfère les sushis.","日本料理の中ですしがいちばん好きです。","～の中で～がいちばん～です"
+"g054","～がほしいです","～がほしいです","Je voudrais… (une chose)","Objet + が + ほしいです","新しい車がほしいです。／ Je veux une nouvelle voiture.","あたらしいくるまがほしいです。／ Je veux une nouvelle voiture.","13","N5","true","Je veux une nouvelle voiture.","新しい車がほしいです。","～がほしいです"
+"g055","～たいです","～たいです","Je veux faire…","verbe sans ます + たいです","日本へ行きたいです。／ Je veux aller au Japon.","にほんへいきたいです。／ Je veux aller au Japon.","13","N5","true","Je veux aller au Japon.","日本へ行きたいです。","～たいです"
+"g056","～に行きます／来ます","～にいきます／きます","Je vais / viens pour faire…","lieu + へ + verbe sans ます + に行きます
+lieu + へ + nom d’activité + に行きます
+食べに行きます / 買い物に行きます","買い物に行きます。／ Je vais faire des achats.","かいものにいきます。／ Je vais faire des achats.","13","N5","true","Je vais faire des achats.","買い物に行きます。","～に行きます／来ます"
+"g057","＜て形＞ください","＜てけい＞ください","Faites…, s’il vous plaît","Verbe en て + ください","ここに名前を書いてください。／ Écrivez votre nom ici, s’il vous plaît.","ここになまえをかいてください。／ Écrivez votre nom ici, s’il vous plaît.","14","N5","true","Écrivez votre nom ici, s’il vous plaît.","ここに名前を書いてください。","…ください"
+"g058","～ましょうか","～ましょうか","Voulez-vous que je… ?","verbe sans ます + ましょうか","荷物を持ちましょうか。／ Voulez-vous que je porte vos bagages ?","にもつをもちましょうか。／ Voulez-vous que je porte vos bagages ?","14","N5","true","Voulez-vous que je porte vos bagages ?","荷物を持ちましょうか。","～ましょうか"
+"g059","＜て形＞います","＜てけい＞います","Je suis en train de…","Verbe en て + います","今、雨が降っています。／ Il pleut maintenant.","いま、あめがふっています。／ Il pleut maintenant.","14","N5","true","Il pleut maintenant.","今、雨が降っています。","…います"
+"g060","＜て形＞もいいです","＜てけい＞もいいです","On peut… / Vous avez le droit de…","Verbe en て + もいいです","ここで写真を撮ってもいいです。／ On peut prendre des photos ici.","ここでしゃしんをとってもいいです。／ On peut prendre des photos ici.","15","N5","true","On peut prendre des photos ici.","ここで写真をとってもいいです。","…もいいです"
+"g061","＜て形＞はいけません","＜てけい＞はいけません","Il est interdit de…","Verbe en て + はいけません","ここでたばこを吸ってはいけません。／ Il est interdit de fumer ici.","ここでたばこをすってはいけません。／ Il est interdit de fumer ici.","15","N5","true","Il est interdit de fumer ici.","ここでたばこをすってはいけません。","…はいけません"
+"g062","＜て形＞います（état）","＜てけい＞います","J’habite… / Je travaille… (situation durable)","Verbe en て + います","大阪に住んでいます。／ J’habite à Osaka.","おおさかにすんでいます。／ J’habite à Osaka.","15","N5","true","J’habite à Osaka.","おおさかに住んでいます。","…います"
+"g063","＜て形＞、＜て形＞、～","＜てけい＞、＜てけい＞、～","Je fais…, puis…, puis…","Verbe en て、verbe en て、dernier verbe","朝起きて、顔を洗って、朝ご飯を食べます。","あさおきて、かおをあらって、あさごはんをたべます。","16","N5","true","Je me lève le matin, me lave le visage, puis prends mon petit-déjeuner.","あさおきて、かおをあらって、朝ご飯を食べます。","…、…、～"
+"g064","＜て形＞から、～","＜てけい＞から、～","Après avoir fait…, je…","Verbe en て + から、action suivante","仕事が終わってから、飲みに行きます。","しごとがおわってから、のみにいきます。","16","N5","true","Après le travail, je vais boire un verre.","しごとが終わってから、飲みに行きます。","…から、～"
+"g065","～は～が～","～は～が～","… a… (une caractéristique)","Thème + は + partie + が + adjectif","大阪は食べ物がおいしいです。／ À Osaka, la nourriture est bonne.","おおさかはたべものがおいしいです。／ À Osaka, la nourriture est bonne.","16","N5","true","À Osaka, la nourriture est bonne.","おおさかは食べ物がおいしいです。","～は～が～"
+"g066","＜形容詞／名詞＞で、～","＜けいようし／めいし＞で、～","… est grand et lumineux / calme et…","adjectif en い : retirer い + くて
+adjectif en な (sans な) / nom + で
+広くて明るい / 静かで便利","この部屋は広くて、明るいです。","このへやはひろくて、あかるいです。","16","N5","true","Cette pièce est grande et lumineuse.","この部屋は広くて、明るいです。","…で、～"
+"g067","＜ない形＞ないでください","＜ないけい＞ないでください","Ne faites pas…, s’il vous plaît","verbe à la forme ない + でください
+取る → 取らないでください","ここで写真を撮らないでください。","ここでしゃしんをとらないでください。","17","N5","true","Ne prenez pas de photos ici, s’il vous plaît.","ここで写真をとらないでください。","…ないでください"
+"g068","＜ない形＞なければなりません","＜ないけい＞なければなりません","Je dois… / Il faut…","forme ない : remplacer ない par なければなりません
+飲まない → 飲まなければなりません","薬を飲まなければなりません。／ Je dois prendre le médicament.","くすりをのまなければなりません。／ Je dois prendre le médicament.","17","N5","true","Je dois prendre le médicament.","薬を飲まなければなりません。","…なければなりません"
+"g069","＜ない形＞なくてもいいです","＜ないけい＞なくてもいいです","Ce n’est pas nécessaire de…","forme ない : remplacer ない par なくてもいいです
+来ない → 来なくてもいいです","あした来なくてもいいです。／ Vous n’êtes pas obligé de venir demain.","あしたこなくてもいいです。／ Vous n’êtes pas obligé de venir demain.","17","N5","true","Vous n’êtes pas obligé de venir demain.","あした来なくてもいいです。","…なくてもいいです"
+"g070","～は（mise en relief）","～は","Quant à…, je…","Objet + は + verbe","お酒は飲みません。／ Quant à l’alcool, je n’en bois pas.","おさけはのみません。／ Quant à l’alcool, je n’en bois pas.","17","N5","true","Quant à l’alcool, je n’en bois pas.","お酒は飲みません。","～は"
+"g071","～ことができます","～ことができます","Je peux… / Je sais faire…","Verbe dictionnaire + ことができます","漢字を読むことができます。／ Je peux lire les kanji.","かんじをよむことができます。／ Je peux lire les kanji.","18","N5","true","Je peux lire les kanji.","漢字を読むことができます。","～ことができます"
+"g072","趣味は～ことです","しゅみは～ことです","Mon loisir, c’est de…","趣味は + verbe dictionnaire + ことです","趣味は写真を撮ることです。","しゅみはしゃしんをとることです。","18","N5","true","Mon loisir est de prendre des photos.","しゅみは写真をとることです。","しゅみは～ことです"
+"g073","～まえに、～","～まえに、～","Avant de… / Avant…","verbe dictionnaire + 前に
+nom + の前に
+durée + 前に
+寝る前に / 食事の前に / 三年前に","寝るまえに、本を読みます。／ Je lis avant de dormir.","ねるまえに、ほんをよみます。／ Je lis avant de dormir.","18","N5","true","Je lis avant de dormir.","ねるまえに、本を読みます。","～まえに、～"
+"g074","＜た形＞ことがあります","＜たけい＞ことがあります","J’ai déjà fait… (une expérience)","Verbe en た + ことがあります","日本へ行ったことがあります。／ Je suis déjà allé au Japon.","にほんへいったことがあります。／ Je suis déjà allé au Japon.","19","N5","true","Je suis déjà allé au Japon.","日本へ行ったことがあります。","…ことがあります"
+"g075","＜た形＞り、＜た形＞りします","＜たけい＞り、＜たけい＞りします","Je fais entre autres… et…","verbe en た + り、verbe en た + りします
+読んだり、見たりします","日曜日は本を読んだり、映画を見たりします。","にちようびはほんをよんだり、えいがをみたりします。","19","N5","true","Le dimanche, je lis des livres, regarde des films, entre autres.","にちようびは本を読んだり、映画を見たりします。","…り、…りします"
+"g076","～く／に なります","～く／に なります","Ça devient… / Je deviens…","adjectif en い : retirer い + くなります
+adjectif en な (sans な) / nom + になります
+寒くなります / 元気になります","寒くなりました。／ Il a commencé à faire froid.","さむくなりました。／ Il a commencé à faire froid.","19","N5","true","Il a commencé à faire froid.","寒くなりました。","～く／になります"
+"g077","普通体","ふつうたい","Je vais… / C’est… (style courant, sans です・ます)","verbe dictionnaire / ない / た / なかった
+nom / adjectif en な + だ (présent affirmatif)
+行く / 行かない / 行った / 行かなかった / 学生だ","あした東京へ行く。／ Demain, je vais à Tokyo.","あしたとうきょうへいく。／ Demain, je vais à Tokyo.","20","N5","true","Demain, je vais à Tokyo.","あした東京へ行く。","ふつうたい"
+"g078","～けど、～","～けど、～","… mais… (style courant)","Phrase neutre + けど + phrase","おいしいけど、高い。／ C’est bon, mais cher.","おいしいけど、たかい。／ C’est bon, mais cher.","20","N5","true","C’est bon, mais cher.","おいしいけど、高い。","～けど、～"
+"g079","＜普通形＞と思います","＜ふつうけい＞とおもいます","Je pense que…","verbe / adjectif en い à la forme neutre + と思います
+nom / adjectif en な + だと思います
+行くと思います / 雨だと思います","あした雨が降ると思います。／ Je pense qu’il pleuvra demain.","あしたあめがふるとおもいます。／ Je pense qu’il pleuvra demain.","21","N5","true","Je pense qu’il pleuvra demain.","あした雨が降ると思います。","…と思います"
+"g080","＜普通形＞と言います","＜ふつうけい＞といいます","Quelqu’un dit que…","paroles à la forme neutre + と言います
+休むと言いました / 学生だと言いました","田中さんは休むと言いました。／ M. Tanaka a dit qu’il serait absent.","たなかさんはやすむといいました。／ M. Tanaka a dit qu’il serait absent.","21","N5","true","M. Tanaka a dit qu’il serait absent.","田中さんは休むと言いました。","…と言います"
+"g081","＜普通形＞でしょう？","＜ふつうけい＞でしょう？","… n’est-ce pas ?","verbe / adjectif en い neutre + でしょう？
+nom / adjectif en な (sans だ) + でしょう？","北海道は寒いでしょう？／ Hokkaido est froid, n’est-ce pas ?","ほっかいどうはさむいでしょう？／ Hokkaido est froid, n’est-ce pas ?","21","N5","true","Hokkaido est froid, n’est-ce pas ?","北海道は寒いでしょう？","…でしょう？"
+"g082","＜phrase＞＋＜nom＞","＜ぶん＞＋＜めいし＞","Le livre que… / La photo que…","phrase courte avec verbe neutre + nom
+父が撮った + 写真","これは父が撮った写真です。／ C’est une photo prise par mon père.","これはちちがとったしゃしんです。／ C’est une photo prise par mon père.","22","N5","true","C’est une photo prise par mon père.","これは父がとった写真です。","…＋…"
+"g083","＜proposition relative＞は～です","＜かんけいせつ＞は～です","La personne qui… est…","phrase avec verbe neutre + nom + は…です
+料理を作る人は母です","料理を作る人は母です。","りょうりをつくるひとはははです。","22","N5","true","La personne qui cuisine est ma mère.","料理を作る人は母です。","…は～です"
+"g084","＜proposition relative＞を～","＜かんけいせつ＞を～","Je lis le livre que…","phrase avec verbe neutre + nom + を + verbe
+昨日買った本を読みます","昨日買った本を読みます。","きのうかったほんをよみます。","22","N5","true","Je lis le livre que j’ai acheté hier.","きのうかった本を読みます。","…を～"
+"g085","＜proposition relative＞が／を～","＜かんけいせつ＞が／を～","Je voudrais une maison qui…","description + nom + がほしいです
+駅に近い家がほしいです","駅に近い家がほしいです。","えきにちかいいえがほしいです。","22","N5","true","Je voudrais une maison près de la gare.","駅に近い家がほしいです。","…が／を～"
+"g086","＜動詞普通形＞とき、～","＜どうしふつうけい＞とき、～","Quand je fais… / Quand j’ai fait…","verbe dictionnaire + とき (action pas encore accomplie)
+verbe en た + とき (action accomplie)
+行くとき / 行ったとき","日本へ行くとき、かばんを買いました。","にほんへいくとき、かばんをかいました。","23","N5","true","J’ai acheté un sac avant de partir au Japon.","日本へ行くとき、かばんを買いました。","…とき、～"
+"g087","＜形容詞＞とき、～","＜けいようし＞とき、～","Quand c’est… / Quand je suis…","adjectif en い + とき
+adjectif en な + なとき
+寒いとき / 暇なとき","暇なとき、本を読みます。","ひまなとき、ほんをよみます。","23","N5","true","Quand j’ai du temps libre, je lis des livres.","ひまなとき、本を読みます。","…とき、～"
+"g088","＜名詞＞のとき、～","＜めいし＞のとき、～","Quand j’étais enfant / étudiant…","nom + のとき
+子どものとき","子どものとき、よく泳ぎました。","こどものとき、よくおよぎました。","23","N5","true","Quand j’étais enfant, je nageais souvent.","子どものとき、よく泳ぎました。","…のとき、～"
+"g089","＜辞書形＞と、～","＜じしょけい＞と、～","Quand on fait…, il se passe…","Verbe dictionnaire + と + conséquence","このボタンを押すと、ドアが開きます。","このボタンをおすと、ドアがひらきます。","23","N5","true","Quand on appuie sur ce bouton, la porte s’ouvre.","このボタンをおすと、ドアが開きます。","…と、～"
+"g090","～をくれます","～をくれます","Quelqu’un me donne…","Personne + が + objet + を + くれます","友達が本をくれました。／ Un ami m’a donné un livre.","ともだちがほんをくれました。／ Un ami m’a donné un livre.","24","N5","true","Un ami m’a donné un livre.","ともだちが本をくれました。","～をくれます"
+"g091","＜て形＞あげます","＜てけい＞あげます","Je fais… pour quelqu’un","bénéficiaire + に + verbe en て + あげます","弟に漢字を教えてあげました。","おとうとにかんじをおしえてあげました。","24","N5","true","J’ai aidé mon petit frère en lui enseignant des kanji.","弟に漢字を教えてあげました。","…あげます"
+"g092","＜て形＞もらいます","＜てけい＞もらいます","Quelqu’un fait… pour moi (je bénéficie de son aide)","personne qui aide + に + verbe en て + もらいます","先生に日本語を教えてもらいました。","せんせいににほんごをおしえてもらいました。","24","N5","true","Le professeur m’a enseigné le japonais.","先生に日本語を教えてもらいました。","…もらいます"
+"g093","＜て形＞くれます","＜てけい＞くれます","Quelqu’un me rend service en faisant…","personne qui aide + が + verbe en て + くれます","母が料理を作ってくれました。","ははがりょうりをつくってくれました。","24","N5","true","Ma mère a cuisiné pour moi.","母が料理を作ってくれました。","…くれます"
+"g094","＜普通形過去＞ら、～","＜ふつうけいかこ＞ら、～","Si…, alors…","forme passée neutre + ら
+あったら / 安かったら / 静かだったら","時間があったら、旅行します。／ Si j’ai le temps, je voyagerai.","じかんがあったら、りょこうします。／ Si j’ai le temps, je voyagerai.","25","N5","true","Si j’ai le temps, je voyagerai.","時間があったら、旅行します。","…ら、～"
+"g095","＜た形＞ら、～","＜たけい＞ら、～","Une fois que…, faites…","verbe en た + ら、action suivante
+着いたら、電話してください","駅に着いたら、電話してください。","えきについたら、でんわしてください。","25","N5","true","Téléphonez-moi quand vous serez arrivé à la gare.","駅に着いたら、電話してください。","…ら、～"
+"g096","＜て形＞も、～","＜てけい＞も、～","Même si…, …","verbe en て + も
+adjectif en い : retirer い + くても
+nom / adjectif en な (sans な) + でも","雨が降っても、出かけます。／ Même s’il pleut, je sortirai.","あめがふっても、でかけます。／ Même s’il pleut, je sortirai.","25","N5","true","Même s’il pleut, je sortirai.","雨が降っても、出かけます。","…も、～"
+"g097","～んです","～んです","C’est que… / En fait… (expliquer la situation)","verbe / adjectif en い neutre + んです
+nom / adjectif en な (présent affirmatif) + なんです
+行くんです / 静かなんです","どうしたんですか。／ Que se passe-t-il ?","どうしたんですか。／ Que se passe-t-il ?","26","N4","true","Que se passe-t-il ?","どうしたんですか。","～んです"
+"g098","～んですが、～ていただけませんか","～んですが、～ていただけませんか","J’ai… ; pourriez-vous… ?","explication + んですが、verbe en て + いただけませんか
+nom / adjectif en な : なんですが","日本語で手紙を書いたんですが、見ていただけませんか。","にほんごでてがみをかいたんですが、みていただけませんか。","26","N4","true","J’ai écrit une lettre en japonais ; pourriez-vous la regarder ?","日本語で手紙を書いたんですが、見ていただけませんか。","～んですが、～ていただけませんか"
+"g099","～んですが、～たらいいですか","～んですが、～たらいいですか","Je voudrais… ; comment faire ?","explication + んですが、mot interrogatif + verbe en た + らいいですか
+どう行ったらいいですか","駅へ行きたいんですが、どう行ったらいいですか。","えきへいきたいんですが、どういったらいいですか。","26","N4","true","Je voudrais aller à la gare ; comment y aller ?","駅へ行きたいんですが、どう行ったらいいですか。","～んですが、～たらいいですか"
+"g100","可能動詞","かのうどうし","Je peux… / Je suis capable de…","groupe 1 : terminaison en u → e + る (話す → 話せる)
+groupe 2 : retirer る + られる (食べる → 食べられる)
+する → できる / 来る → 来られる","わたしは日本語が話せます。／ Je peux parler japonais.","わたしはにほんごがはなせます。／ Je peux parler japonais.","27","N4","true","Je peux parler japonais.","わたしは日本語が話せます。","かのうどうし"
+"g101","～が見えます／聞こえます","～がみえます／きこえます","On voit… / On entend…","Nom + が + 見えます／聞こえます","窓から山が見えます。／ On voit la montagne depuis la fenêtre.","まどからやまがみえます。／ On voit la montagne depuis la fenêtre.","27","N4","true","On voit la montagne depuis la fenêtre.","まどから山が見えます。","～が見えます／聞こえます"
+"g102","～ができます","～ができます","Un magasin a ouvert / Quelque chose est prêt","Nom + が + できます","駅の前に新しい店ができました。","えきのまえにあたらしいみせができました。","27","N4","true","Un nouveau magasin a ouvert devant la gare.","駅の前に新しい店ができました。","～ができます"
+"g103","～しか～ません","～しか～ません","Je n’ai que… / Seulement…","Nom/quantité + しか + verbe négatif","千円しかありません。／ Je n’ai que 1 000 yens.","せんえんしかありません。／ Je n’ai que 1 000 yens.","27","N4","true","Je n’ai que 1 000 yens.","千円しかありません。","～しか～ません"
+"g104","～は～、～は～","～は～、～は～","… oui, mais… non (contraste)","élément A + は + phrase ; élément B + は + phrase
+ひらがなは書けますが、漢字は書けません","ひらがなは書けますが、漢字は書けません。","ひらがなはかけますが、かんじはかけません。","27","N4","true","Je sais écrire les hiragana, mais pas les kanji.","ひらがなは書けますが、漢字は書けません。","～は～、～は～"
+"g105","～には／～では","～には／～では","Dans ce lieu-là… / Quant à ce lieu…","Nom + particule + は","この町には大学がありません。","このまちにはだいがくがありません。","27","N4","true","Il n’y a pas d’université dans cette ville.","この町には大学がありません。","～には／～では"
+"g106","～ながら","～ながら","Je fais… tout en faisant…","verbe sans ます + ながら + action principale","音楽を聞きながら勉強します。","おんがくをききながらべんきょうします。","28","N4","true","J’étudie en écoutant de la musique.","音楽を聞きながら勉強します。","～ながら"
+"g107","～ています（habitude）","～ています","Je fais… régulièrement","Verbe en て + います","毎朝ジョギングをしています。","まいあさジョギングをしています。","28","N4","true","Je fais du jogging tous les matins.","毎朝ジョギングをしています。","～ています"
+"g108","～し、～し","～し、～し","C’est… et c’est… ; en plus…","verbe / adjectif en い neutre + し
+nom / adjectif en な + だし
+安いし、おいしいし、よく行きます","この店は安いし、おいしいし、よく行きます。","このみせはやすいし、おいしいし、よくいきます。","28","N4","true","Ce restaurant est bon marché et on y mange bien, alors j’y vais souvent.","この店は安いし、おいしいし、よく行きます。","～し、～し"
+"g109","～が～ています","～が～ています","La fenêtre est ouverte / Quelque chose est dans cet état","objet + が + verbe de changement d’état en て + います
+窓が開いています (開く)","窓が開いています。／ La fenêtre est ouverte.","まどがひらいています。／ La fenêtre est ouverte.","29","N4","true","La fenêtre est ouverte.","まどが開いています。","～が～ています"
+"g110","～は～ています","～は～ています","Cette chaise est cassée / Cet objet est dans cet état","objet + は + verbe de changement d’état en て + います
+このいすは壊れています","このいすは壊れています。","このいすはこわれています。","29","N4","true","Cette chaise est cassée.","このいすはこわれています。","～は～ています"
+"g111","～てしまいます","～てしまいます","J’ai tout terminé / J’ai fini de…","Verbe en て + しまいます","宿題を全部してしまいました。","しゅくだいをぜんぶしてしまいました。","29","N4","true","J’ai terminé tous mes devoirs.","宿題をぜんぶしてしまいました。","～てしまいます"
+"g112","～てしまいました（regret）","～てしまいました","J’ai malheureusement… / J’ai fait… par accident","Verbe en て + しまいました","財布をなくしてしまいました。／ J’ai malheureusement perdu mon portefeuille.","さいふをなくしてしまいました。／ J’ai malheureusement perdu mon portefeuille.","29","N4","true","J’ai malheureusement perdu mon portefeuille.","さいふをなくしてしまいました。","～てしまいました"
+"g113","～てあります","～てあります","Quelqu’un a fait… et le résultat est là","objet + が + verbe d’action en て + あります
+地図が貼ってあります (quelqu’un l’a affichée)","壁に地図が貼ってあります。","かべにちずがはってあります。","30","N4","true","Une carte a été affichée au mur.","かべに地図がはってあります。","～てあります"
+"g114","～ておきます（préparation）","～ておきます","Je fais… à l’avance / Je prépare…","Verbe en て + おきます","旅行の前に切符を買っておきます。","りょこうのまえにきっぷをかっておきます。","30","N4","true","J’achète mon billet à l’avance avant le voyage.","旅行の前にきっぷを買っておきます。","～ておきます"
+"g115","～ておきます（maintien）","～ておきます","Laissez… comme ça","Verbe en て + おきます","まだ使いますから、そのままにしておいてください。","まだつかいますから、そのままにしておいてください。","30","N4","true","Je vais encore m’en servir, alors laissez-le comme ça.","まだ使いますから、そのままにしておいてください。","～ておきます"
+"g116","意向形","いこうけい","Allons… / Faisons… (entre proches)","groupe 1 : u → o + う (休む → 休もう)
+groupe 2 : retirer る + よう (食べる → 食べよう)
+する → しよう / 来る → 来よう","ちょっと休もう。／ Reposons-nous un peu.","ちょっとやすもう。／ Reposons-nous un peu.","31","N4","true","Reposons-nous un peu.","ちょっと休もう。","いこうけい"
+"g117","～ようと思っています","～ようとおもっています","J’envisage de… / J’ai l’intention de…","forme volitive + と思っています
+行こうと思っています / 食べようと思っています","来年、日本へ行こうと思っています。","らいねん、にほんへいこうとおもっています。","31","N4","true","J’envisage d’aller au Japon l’année prochaine.","来年、日本へ行こうと思っています。","～ようと思っています"
+"g118","まだ～ていません","まだ～ていません","Je n’ai pas encore…","まだ + verbe en て + いません","まだ昼ご飯を食べていません。","まだひるごはんをたべていません。","31","N4","true","Je n’ai pas encore déjeuné.","まだ昼ご飯を食べていません。","まだ～ていません"
+"g119","～つもりです","～つもりです","J’ai l’intention de… / Je compte ne pas…","verbe dictionnaire + つもりです
+verbe en ない + つもりです
+行くつもりです / 行かないつもりです","大学を卒業したら、帰国するつもりです。","だいがくをそつぎょうしたら、きこくするつもりです。","31","N4","true","J’ai l’intention de rentrer dans mon pays après mon diplôme universitaire.","大学をそつぎょうしたら、帰国するつもりです。","～つもりです"
+"g120","～予定です","～よていです","Il est prévu que… / J’ai prévu de…","nom + の予定です
+verbe dictionnaire + 予定です
+verbe en ない + 予定です
+会議の予定です / 行く予定です / 行かない予定です","会議は三時に始まる予定です。","かいぎはさんじにはじまるよていです。","31","N4","true","Il est prévu que la réunion commence à trois heures.","かいぎは三時に始まるよていです。","～よていです"
+"g121","～ほうがいいです","～ほうがいいです","Tu ferais mieux de… / Il vaut mieux ne pas…","verbe en た + ほうがいいです
+verbe en ない + ほうがいいです
+休んだほうがいいです / 飲まないほうがいいです","毎日運動したほうがいいです。","まいにちうんどうしたほうがいいです。","32","N4","true","Tu ferais mieux de faire de l’exercice tous les jours.","毎日運動したほうがいいです。","～ほうがいいです"
+"g122","～でしょう","～でしょう","Il fera probablement… / Sans doute…","verbe / adjectif en い neutre + でしょう
+nom / adjectif en な (sans だ) + でしょう","あしたは晴れるでしょう。／ Il fera probablement beau demain.","あしたははれるでしょう。／ Il fera probablement beau demain.","32","N4","true","Il fera probablement beau demain.","あしたは晴れるでしょう。","～でしょう"
+"g123","～かもしれません","～かもしれません","Peut-être que… / Il se peut que…","verbe / adjectif en い neutre + かもしれません
+nom / adjectif en な (sans だ) + かもしれません","午後から雨が降るかもしれません。","ごごからあめがふるかもしれません。","32","N4","true","Il se peut qu’il pleuve à partir de cet après-midi.","午後から雨が降るかもしれません。","～かもしれません"
+"g124","命令形","めいれいけい","Arrête ! / Fais-le ! (ordre direct)","groupe 1 : u → e (止まる → 止まれ)
+groupe 2 : retirer る + ろ (食べる → 食べろ)
+する → しろ / 来る → 来い","止まれ。／ Arrêtez-vous !","とまれ。／ Arrêtez-vous !","33","N4","true","Arrêtez-vous !","止まれ。","めいれいけい"
+"g125","禁止形","きんしけい","Ne fais pas… ! (interdiction directe)","verbe dictionnaire + な
+入るな / 食べるな","ここに入るな。／ N’entrez pas ici !","ここにはいるな。／ N’entrez pas ici !","33","N4","true","N’entrez pas ici !","ここに入るな。","きんしけい"
+"g126","「～」と書いてあります","「～」とかいてあります","Il est écrit « … »","Contenu cité + と + 書いてあります／読みます","あそこに「危険」と書いてあります。","あそこに「きけん」とかいてあります。","33","N4","true","Il est écrit « danger » là-bas.","あそこに「きけん」と書いてあります。","「～」と書いてあります"
+"g127","～は～という意味です","～は～といういみです","… veut dire…","Terme + は + définition + という意味です","「立入禁止」は入るなという意味です。","「たちいりきんし」ははいるなといういみです。","33","N4","true","« Entrée interdite » signifie qu’il ne faut pas entrer.","「たちいりきんし」は入るなといういみです。","～は～といういみです"
+"g128","～と言っていました","～といっていました","Quelqu’un a dit que…","Forme neutre + と + 言っていました","田中さんは遅れると言っていました。","たなかさんはおくれるといっていました。","33","N4","true","Tanaka a dit qu’il serait en retard.","田中さんは遅れると言っていました。","～と言っていました"
+"g129","～と伝えていただけませんか","～とつたえていただけませんか","Pourriez-vous lui transmettre que… ?","Message + と + 伝えていただけませんか","会議は中止だと伝えていただけませんか。","かいぎはちゅうしだとつたえていただけませんか。","33","N4","true","Pourriez-vous transmettre que la réunion est annulée ?","かいぎは中止だとつたえていただけませんか。","～とつたえていただけませんか"
+"g130","～とおりに、～","～とおりに、～","Comme indiqué / De la même façon que…","verbe dictionnaire + とおりに
+verbe en た + とおりに
+nom + のとおりに
+説明書のとおりに","説明書のとおりに組み立てます。","せつめいしょのとおりにくみたてます。","34","N4","true","Je l’assemble en suivant le mode d’emploi.","せつめいしょのとおりにくみ立てます。","～とおりに、～"
+"g131","～あとで、～","～あとで、～","Après avoir fait… / Après…","verbe en た + あとで
+nom + のあとで
+終わったあとで / 仕事のあとで","仕事が終わったあとで、飲みに行きます。","しごとがおわったあとで、のみにいきます。","34","N4","true","Après le travail, je vais boire un verre.","しごとが終わったあとで、飲みに行きます。","～あとで、～"
+"g132","～て、～／～ないで、～","～て、～／～ないで、～","Je pars avec… / Je fais… en…","verbe en て + action
+verbe en ない + で + action
+傘を持って出かけます","傘を持って出かけます。","かさをもってでかけます。","34","N4","true","Je sors en prenant un parapluie.","かさを持って出かけます。","～て、～／～ないで、～"
+"g133","～ないで、～","～ないで、～","Je fais… sans faire…","verbe en ない + で + action
+食べないで行きます","朝ご飯を食べないで会社へ行きました。","あさごはんをたべないでかいしゃへいきました。","34","N4","true","Je suis allé travailler sans prendre de petit-déjeuner.","朝ご飯を食べないで会社へ行きました。","～ないで、～"
+"g134","～ば","～ば","Si on fait…, …","groupe 1 : u → e + ば (押す → 押せば)
+groupe 2 : retirer る + れば (食べる → 食べれば)
+する → すれば / 来る → 来れば","ボタンを押せば、切符が出ます。","ボタンをおせば、きっぷがでます。","35","N4","true","Si l’on appuie sur ce bouton, le billet sort.","ボタンをおせば、きっぷが出ます。","～ば"
+"g135","～ければ／～なら","～ければ／～なら","Si c’est… / Si je suis…","adjectif en い : retirer い + ければ
+nom / adjectif en な (sans な) + なら
+安ければ / 静かなら","安ければ、買います。／ Si c’est bon marché, je l’achèterai.","やすければ、かいます。／ Si c’est bon marché, je l’achèterai.","35","N4","true","Si c’est bon marché, je l’achèterai.","安ければ、買います。","～ければ／～なら"
+"g136","～なら（thème）","～なら","Si tu parles de…, alors…","Nom + なら + commentaire","京都なら、秋がいいです。","きょうとなら、あきがいいです。","35","N4","true","Pour Kyoto, je conseille l’automne.","京都なら、秋がいいです。","～なら"
+"g137","～ように、～","～ように、～","Pour pouvoir… / Pour ne pas…","verbe de capacité / état + ように
+verbe en ない + ように
+話せるように / 忘れないように","忘れないようにメモします。","わすれないようにメモします。","36","N4","true","Je prends des notes pour ne pas oublier.","わすれないようにメモします。","～ように、～"
+"g138","～ようになります","～ようになります","J’ai appris à… / Je peux maintenant…","verbe dictionnaire (souvent potentiel) + ようになります
+話せるようになりました
+Perte d’une capacité : 話せなくなりました","日本語が話せるようになりました。","にほんごがはなせるようになりました。","36","N4","true","Je suis maintenant capable de parler japonais.","日本語が話せるようになりました。","～ようになります"
+"g139","～ようにします","～ようにします","Je veille à… / J’essaie de… régulièrement","verbe dictionnaire + ようにします
+verbe en ない + ようにします
+歩くようにしています","毎日歩くようにしています。","まいにちあるくようにしています。","36","N4","true","Je veille à marcher tous les jours.","毎日歩くようにしています。","～ようにします"
+"g140","受け身","うけみ","J’ai été… par… (subir une action)","personne affectée + は + auteur + に + verbe passif
+groupe 1 : u → a + れる (書く → 書かれる ; 言う → 言われる)
+groupe 2 : retirer る + られる
+する → される / 来る → 来られる","わたしは先生に褒められました。","わたしはせんせいにほめられました。","37","N4","true","J’ai été félicité par le professeur.","わたしは先生にほめられました。","うけみ"
+"g141","～に＜possession＞を～られます","～に＜しょゆうぶつ＞を～られます","Quelqu’un m’a cassé / pris… (désagrément)","personne affectée + は + auteur + に + chose possédée + を + verbe passif
+弟にカメラをこわされました (mon appareil a été cassé par mon frère)","わたしは弟にカメラを壊されました。","わたしはおとうとにカメラをこわされました。","37","N4","true","Mon petit frère a cassé mon appareil photo, ce qui m’a causé du tort.","わたしは弟にカメラをこわされました。","～に…を～られます"
+"g142","～が／は～られます","～が／は～られます","… a été construit / fait…","Objet + が／は + verbe passif","この寺は八百年前に建てられました。","このてらははっぴゃくねんまえにたてられました。","37","N4","true","Ce temple a été construit il y a huit cents ans.","この寺は八百年前にたてられました。","～が／は～られます"
+"g143","～によって～られます","～によって～られます","… a été créé par…","Œuvre + は + auteur + によって + verbe passif","この絵はピカソによって描かれました。","このえはピカソによってえがかれました。","37","N4","true","Ce tableau a été peint par Picasso.","このえはピカソによってえがかれました。","～によって～られます"
+"g144","～のは＜形容詞＞です","～のは＜けいようし＞です","Faire…, c’est agréable / difficile…","verbe dictionnaire + のは + adjectif + です
+覚えるのは楽しいです","新しい言葉を覚えるのは楽しいです。","あたらしいことばをおぼえるのはたのしいです。","38","N4","true","Apprendre de nouveaux mots est amusant.","新しいことばをおぼえるのは楽しいです。","～のは…です"
+"g145","～のが＜形容詞＞です","～のが＜けいようし＞です","J’aime faire… / Je suis doué pour faire…","verbe dictionnaire + のが + adjectif + です
+泳ぐのが好きです","わたしは泳ぐのが好きです。","わたしはおよぐのがすきです。","38","N4","true","J’aime nager.","わたしは泳ぐのが好きです。","～のが…です"
+"g146","～のを忘れました","～のをわすれました","J’ai oublié de…","verbe dictionnaire + のを忘れました
+出すのを忘れました","宿題を出すのを忘れました。","しゅくだいをだすのをわすれました。","38","N4","true","J’ai oublié de rendre mon devoir.","宿題を出すのをわすれました。","～のをわすれました"
+"g147","～のを知っています","～のをしっています","Savez-vous que… ?","phrase à la forme neutre + のを知っています
+結婚したのを知っています","田中さんが結婚したのを知っていますか。","たなかさんがけっこんしたのをしっていますか。","38","N4","true","Savez-vous que Tanaka s’est marié ?","田中さんがけっこんしたのを知っていますか。","～のを知っています"
+"g148","～のは＜名詞＞です","～のは＜めいし＞です","C’est… que… / C’est… qui…","phrase à la forme neutre + のは + nom + です
+来たのは去年です","日本へ来たのは去年です。","にほんへきたのはきょねんです。","38","N4","true","C’est l’année dernière que je suis venu au Japon.","日本へ来たのは去年です。","～のは…です"
+"g149","～て／～くて／～で（cause）","～て／～くて／～で","… et, à cause de cela, …","verbe en て、résultat
+adjectif en い : retirer い + くて
+nom / adjectif en な (sans な) + で
+ニュースを聞いて、びっくりしました","ニュースを聞いて、びっくりしました。","ニュースをきいて、びっくりしました。","39","N4","true","J’ai été surpris en entendant la nouvelle.","ニュースを聞いて、びっくりしました。","～て／～くて／～で"
+"g150","～ので、～","～ので、～","Comme… / Puisque…","verbe / adjectif en い neutre + ので
+nom / adjectif en な (présent affirmatif) + なので
+用事があるので / 静かなので","用事があるので、お先に失礼します。","ようじがあるので、おさきにしつれいします。","39","N4","true","Comme j’ai quelque chose à faire, je vous laisse.","ようじがあるので、お先にしつれいします。","～ので、～"
+"g151","疑問詞～か","ぎもんし～か","Je sais quand / où / comment…","mot interrogatif + phrase neutre (sans だ final) + か
+何時に始まるか知っていますか","会議が何時に始まるか知っていますか。","かいぎがなんじにはじまるかしっていますか。","40","N4","true","Savez-vous à quelle heure la réunion commence ?","かいぎが何時に始まるか知っていますか。","ぎもんし～か"
+"g152","～かどうか","～かどうか","Je ne sais pas si… ou non","phrase neutre (sans だ final) + かどうか
+間に合うかどうか、わかりません","間に合うかどうか、わかりません。","まにあうかどうか、わかりません。","40","N4","true","Je ne sais pas si j’arriverai à temps.","間に合うかどうか、わかりません。","～かどうか"
+"g153","～てみます","～てみます","J’essaie de… pour voir","Verbe en て + みます","この服を着てみてもいいですか。","このふくをきてみてもいいですか。","40","N4","true","Puis-je essayer ce vêtement ?","この服を着てみてもいいですか。","～てみます"
+"g154","～をいただきます／くださいます／やります","～をいただきます／くださいます／やります","Je reçois / quelqu’un me donne… (respect)","personne respectée + に + objet + をいただきます
+personne respectée + が + objet + をくださいます
+animal / plante + に + objet + をやります","先生に本をいただきました。","せんせいにほんをいただきました。","41","N4","true","J’ai reçu un livre du professeur.","先生に本をいただきました。","～をいただきます／くださいます／やります"
+"g155","～ていただきます／くださいます／やります","～ていただきます／くださいます／やります","Quelqu’un a la gentillesse de faire… pour moi","personne respectée + に + verbe en て + いただきます
+personne respectée + が + verbe en て + くださいます
+bénéficiaire + に + verbe en て + やります","先生に作文を直していただきました。","せんせいにさくぶんをなおしていただきました。","41","N4","true","Le professeur a eu la gentillesse de corriger ma rédaction.","先生に作文をなおしていただきました。","～ていただきます／くださいます／やります"
+"g156","～てくださいませんか","～てくださいませんか","Pourriez-vous…, s’il vous plaît ? (très poli)","Verbe en て + くださいませんか","もう一度説明してくださいませんか。","もういちどせつめいしてくださいませんか。","41","N4","true","Pourriez-vous expliquer encore une fois, s’il vous plaît ?","もういちどせつめいしてくださいませんか。","～てくださいませんか"
+"g157","～ために、～","～ために、～","Pour faire… / Dans le but de…","verbe dictionnaire + ために
+nom + のために
+働くために / 家族のために","日本で働くために、日本語を勉強しています。","にほんではたらくために、にほんごをべんきょうしています。","42","N4","true","J’étudie le japonais pour travailler au Japon.","日本で働くために、日本語を勉強しています。","～ために、～"
+"g158","～のに使います","～のにつかいます","Cela sert à…","verbe dictionnaire + のに使います
+nom + に使います
+切るのに使います / 仕事に使います","このはさみは紙を切るのに使います。","このはさみはかみをきるのにつかいます。","42","N4","true","Ces ciseaux servent à couper le papier.","このはさみは紙を切るのに使います。","～のに使います"
+"g159","＜数量＞は／も","＜すうりょう＞は／も","Au moins… / Pas moins de…","quantité + は (au moins)
+quantité + も (pas moins de… !)
+三十分はかかります","駅まで三十分はかかります。","えきまでさんじゅうふんはかかります。","42","N4","true","Il faut au moins trente minutes pour aller à la gare.","駅まで三十分はかかります。","…は／も"
+"g160","～そうです（apparence）","～そうです","Ça a l’air… / On dirait que… (ce que je vois)","verbe sans ます + そうです
+adjectif en い : retirer い + そうです
+adjectif en な (sans な) + そうです
+いい → よさそう / ない → なさそう","雨が降りそうです。／ On dirait qu’il va pleuvoir.","あめがふりそうです。／ On dirait qu’il va pleuvoir.","43","N4","true","On dirait qu’il va pleuvoir.","雨が降りそうです。","～そうです"
+"g161","～てきます","～てきます","Je vais faire… et je reviens","Verbe en て + きます","ちょっと飲み物を買ってきます。","ちょっとのみものをかってきます。","43","N4","true","Je vais acheter quelque chose à boire et je reviens.","ちょっと飲み物を買ってきます。","～てきます"
+"g162","～すぎます","～すぎます","Trop… / Je fais trop de…","verbe sans ます + すぎます
+adjectif en い : retirer い + すぎます
+adjectif en な (sans な) + すぎます
+飲みすぎます / 高すぎます","きのうお酒を飲みすぎました。","きのうおさけをのみすぎました。","44","N4","true","Hier, j’ai bu trop d’alcool.","きのうお酒を飲みすぎました。","～すぎます"
+"g163","～やすい／にくいです","～やすい／にくいです","Facile à… / Difficile à…","verbe sans ます + やすいです / にくいです
+書きやすいです / 読みにくいです","このペンは書きやすいです。","このペンはかきやすいです。","44","N4","true","Ce stylo permet d’écrire facilement.","このペンは書きやすいです。","～やすい／にくいです"
+"g164","～く／にします","～く／にします","Rendez-le… / Je choisis de le rendre…","adjectif en い : retirer い + くします
+nom / adjectif en な (sans な) + にします
+小さくします / 静かにします","音を小さくしてください。","おとをちいさくしてください。","44","N4","true","Baissez le son, s’il vous plaît.","音を小さくしてください。","～く／にします"
+"g165","～場合は、～","～ばあいは、～","En cas de… / Dans le cas où…","verbe / adjectif en い neutre + 場合は
+adjectif en な + な場合は
+nom + の場合は","火事の場合は、エレベーターを使わないでください。","かじのばあいは、エレベーターをつかわないでください。","45","N4","true","En cas d’incendie, n’utilisez pas l’ascenseur.","かじの場合は、エレベーターを使わないでください。","～場合は、～"
+"g166","～のに、～","～のに、～","Bien que… / Alors que…","verbe / adjectif en い neutre + のに
+nom / adjectif en な (présent affirmatif) + なのに
+飲んだのに / 静かなのに","薬を飲んだのに、よくなりません。","くすりをのんだのに、よくなりません。","45","N4","true","Bien que j’aie pris le médicament, mon état ne s’améliore pas.","薬を飲んだのに、よくなりません。","～のに、～"
+"g167","～ところです","～ところです","Je vais juste… / Je suis en train de… / Je viens juste de…","verbe dictionnaire + ところです (juste avant)
+verbe en ている + ところです (pendant)
+verbe en た + ところです (juste après)","今から出かけるところです。","いまからでかけるところです。","46","N4","true","Je suis sur le point de sortir.","今から出かけるところです。","～ところです"
+"g168","～たばかりです","～たばかりです","Je viens de… (c’est encore récent pour moi)","Verbe en た + ばかりです","さっき昼ご飯を食べたばかりです。","さっきひるごはんをたべたばかりです。","46","N4","true","Je viens de déjeuner.","さっき昼ご飯を食べたばかりです。","～たばかりです"
+"g169","～はずです","～はずです","… devrait… / Normalement… (raison logique)","verbe / adjectif en い neutre + はずです
+adjectif en な + なはずです
+nom + のはずです","田中さんは来るはずです。","たなかさんはくるはずです。","46","N4","true","Tanaka devrait venir.","田中さんは来るはずです。","～はずです"
+"g170","～そうです（ouï-dire）","～そうです","J’ai entendu dire que… / D’après…, …","phrase neutre + そうです
+verbe : 降るそうです
+nom / adjectif en な : 雨だそうです / 元気だそうです","天気予報によると、あしたは雨だそうです。","てんきよほうによると、あしたはあめだそうです。","47","N4","true","Selon la météo, il pleuvra demain.","てんきよほうによると、あしたは雨だそうです。","～そうです"
+"g171","～ようです","～ようです","Il semble que… (d’après des indices)","verbe / adjectif en い neutre + ようです
+adjectif en な + なようです
+nom + のようです","外は寒いようです。","そとはさむいようです。","47","N4","true","Il semble faire froid dehors.","外は寒いようです。","～ようです"
+"g172","使役形","しえきけい","Je fais faire… / Je laisse faire…","groupe 1 : u → a + せる (書く → 書かせる ; 買う → 買わせる)
+groupe 2 : retirer る + させる
+する → させる / 来る → 来させる","先生は学生に作文を書かせました。","せんせいはがくせいにさくぶんをかかせました。","48","N4","true","Le professeur a fait écrire une rédaction aux étudiants.","先生は学生に作文を書かせました。","しえきけい"
+"g173","～させていただけませんか","～させていただけませんか","Pourrais-je avoir l’autorisation de… ? (très poli)","verbe causatif en て + いただけませんか
+帰る → 帰らせる → 帰らせていただけませんか","早く帰らせていただけませんか。","はやくかえらせていただけませんか。","48","N4","true","Pourrais-je avoir l’autorisation de partir plus tôt ?","早く帰らせていただけませんか。","～させていただけませんか"
+"g174","尊敬語 ～られます","そんけいご ～られます","Il / elle fait… (avec respect)","forme passive employée pour parler avec respect de quelqu’un
+groupe 1 : u → a + れる (書く → 書かれる ; 言う → 言われる)
+groupe 2 : retirer る + られる
+する → される / 来る → 来られる","社長はもう帰られました。","しゃちょうはもうかえられました。","49","N4","true","Le directeur est déjà parti.","社長はもう帰られました。","そんけいご～られます"
+"g175","お～になります","お～になります","Il / elle fait… (forme honorifique)","お + verbe sans ます + になります
+帰ります → お帰りになります","先生は何時にお帰りになりますか。","せんせいはなんじにおかえりになりますか。","49","N4","true","À quelle heure rentrez-vous, professeur ?","先生は何時にお帰りになりますか。","お～になります"
+"g176","特別な尊敬語","とくべつなそんけいご","Il / elle va / mange / regarde… (verbe de respect)","行く / 来る / いる → いらっしゃいます
+食べる / 飲む → 召し上がります
+見る → ご覧になります","先生はもう召し上がりました。","せんせいはもうめしあがりました。","49","N4","true","Le professeur a déjà mangé.","先生はもうめしあがりました。","とくべつなそんけいご"
+"g177","お～ください","お～ください","Veuillez… (avec respect)","お + verbe sans ます + ください
+待ちます → お待ちください","こちらでお待ちください。","こちらでおまちください。","49","N4","true","Veuillez attendre ici.","こちらでお待ちください。","お～ください"
+"g178","お／ご～します","お／ご～します","Je fais… pour vous (forme humble)","お + verbe sans ます + します
+ご + nom d’activité d’origine chinoise + します
+お持ちします / ご案内します","お荷物をお持ちします。","おにもつをおもちします。","50","N4","true","Je vais porter vos bagages.","お荷物をお持ちします。","お／ご～します"
+"g179","特別な謙譲語","とくべつなけんじょうご","Je vais / dis / regarde… (verbe humble)","行く / 来る → 参ります
+言う → 申します
+見る → 拝見します
+訪ねる / 聞く → 伺います","わたしがご案内いたします。","わたしがごあんないいたします。","50","N4","true","Je vais vous guider.","わたしがごあんないいたします。","とくべつなけんじょうご"
+"g180","丁寧語","ていねいご","C’est… / Il y a… (très poli)","あります → ございます
+nom + です → nom + でございます","受付は二階でございます。","うけつけはにかいでございます。","50","N4","true","L’accueil se trouve au deuxième étage.","うけつけはにかいでございます。","ていねいご"

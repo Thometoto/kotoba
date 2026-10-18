@@ -1,0 +1,44 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {parseCSV} from '../src/csv.js';
+import {selectSession,migrateAliases,validateBackup} from '../src/learning.js';
+const now=Date.parse('2026-10-18T12:00:00Z');
+const cards=Array.from({length:24},(_,i)=>({id:`v${i}`,ready:'true'}));
+const queue=selectSession('vocabulary',cards,[],20,now);
+assert.deepEqual(queue.map(q=>q.card.id),cards.slice(0,20).map(c=>c.id));
+assert.equal(new Set(queue.map(q=>q.card.id)).size,20);
+assert.equal(queue.filter(q=>q.direction==='fr_to_jp').length,10);
+assert.equal(selectSession('vocabulary',cards,[],20,now,1)[0].direction,'fr_to_jp');
+const state=(id,due)=>({id,card:{due:new Date(due).toISOString()}});
+const due=state('vocabulary:v23:jp_to_fr',now-1000);
+assert.equal(selectSession('vocabulary',cards,[due],20,now)[0].card.id,'v23');
+const future=cards.flatMap(c=>['jp_to_fr','fr_to_jp'].map(d=>state(`vocabulary:${c.id}:${d}`,now+1000)));
+assert.equal(selectSession('vocabulary',cards,future,20,now).length,0);
+assert.equal(selectSession('vocabulary',[{id:'x',ready:'false'}],[],20,now).length,0);
+const kanji=[{character:'日',ready:'true'}];
+assert.equal(selectSession('kanji',kanji,[state('kanji:日:jp_to_fr',now+1000),state('kanji:日:fr_to_jp',now+1000)],20,now)[0].direction,'writing');
+const old=state('vocabulary:v2:jp_to_fr',now-1000),canonical=state('vocabulary:v1:jp_to_fr',now+1000);
+const migrated=migrateAliases([old,canonical],{v2:'v1'});
+assert.equal(migrated.length,2);assert.deepEqual(migrated.find(s=>s.id===old.id),old);
+assert.equal(migrated.find(s=>s.id===canonical.id).card.due,old.card.due);
+assert.deepEqual(migrateAliases(migrated,{v2:'v1'}),migrated);
+assert.doesNotThrow(()=>validateBackup({version:1,states:[old],reviews:[]}));
+assert.throws(()=>validateBackup({version:3,states:[],reviews:[]}));
+assert.throws(()=>validateBackup({version:2,states:[old,old],reviews:[]}));
+assert.throws(()=>validateBackup({version:2,states:[state('x',now),{id:'y',card:{due:'invalid'}}],reviews:[]}));
+const read=name=>parseCSV(fs.readFileSync(`data/${name}.csv`,'utf8'));
+const vocabulary=read('vocabulary'),grammar=read('grammar');
+const migration=JSON.parse(fs.readFileSync('data/vocabulary-migration.json','utf8'));
+for(const records of [grammar,vocabulary])assert.equal(new Set(records.map(c=>c.id)).size,records.length);
+for(const [oldId,id] of Object.entries(migration.aliases)){
+ assert.ok(vocabulary.some(v=>v.id===id));assert.ok(!vocabulary.some(v=>v.id===oldId));
+}
+assert.equal(vocabulary.filter(v=>v.japanese.replace(/[。s]/g,'')==='すみません').length,1);
+assert.ok(vocabulary.filter(v=>v.japanese==='降ります').length>=2,'homographs with different readings must stay separate');
+for(const id of migration.removed)assert.ok(!vocabulary.some(v=>v.id===id));
+for(const g of grammar){assert.ok(g.example_fr&&g.construction&&g.display_example&&g.display_structure,g.id);}
+const planned=grammar.find(g=>g.id==='g120');
+assert.match(planned.french,/prévu|prévois/);assert.match(planned.construction,/名|nom/i);assert.match(planned.construction,/ない/);
+const known=new Set(read('kanji').map(k=>k.character));
+for(const g of grammar)for(const c of (g.display_example+g.display_structure).match(/\p{Script=Han}/gu)||[])assert.ok(known.has(c),`${g.id}: ${c}`);
+console.log('Refonte : sens mélangés, ordre, états indépendants, migrations, sauvegardes et données validés.');

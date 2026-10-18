@@ -29,7 +29,7 @@ Pour tester l’application localement, il suffit de servir le dossier avec un s
 
 ## Ajouter ou modifier les cartes
 
-Toutes les fiches sont dans `data/kanji.csv`. Il peut être ouvert dans un tableur ou un éditeur de texte. Les colonnes sont :
+Les fiches de kanji sont dans `data/kanji.csv`. Il peut être ouvert dans un tableur ou un éditeur de texte. Les colonnes sont :
 
 ```csv
 character,meaning,readings,examples,ready
@@ -49,10 +49,10 @@ pnpm run test:pwa
 ## Portée actuelle
 
 - Parcours Kanji, Vocabulaire et Grammaire fonctionnels.
-- N5 : 1 204 cartes de vocabulaire et 96 cartes de grammaire.
-- N4 : 1 488 cartes de vocabulaire et 84 cartes de grammaire.
-- Toutes les entrées de la liste initiale figurent dans le catalogue.
-- Seules les fiches comportant un sens, des lectures et un exemple participent aux sessions.
+- N5 : 1 038 cartes de vocabulaire et 96 cartes de grammaire.
+- N4 : 1 170 cartes de vocabulaire et 84 cartes de grammaire.
+- Les 327 kanji de la liste étudiée figurent dans le catalogue.
+- Seules les fiches dont ready vaut true participent aux sessions.
 - Taille des sessions : 20 kanji, 20 cartes de vocabulaire et 5 cartes de grammaire.
 
 Le planificateur utilise `ts-fsrs`. Une carte notée « Oublié » revient une heure après la réponse, y compris lors de plusieurs oublis consécutifs et pour une carte déjà apprise. Ce délai s’applique aux prochaines réponses ; les échéances déjà enregistrées ne sont pas modifiées rétroactivement. Les autres intervalles sont calculés selon son état de mémoire plutôt qu’avec des multiplicateurs fixes.
@@ -86,3 +86,21 @@ Une ligne active invalide affiche une erreur dans Exercices, sans bloquer les fl
 Après une modification du code, reconstruire app.js. Après une modification des exercices, lancer pnpm run test:pwa pour vérifier le CSV et ses références.
 
 Le bouton « Difficile » impose un délai minimum de deux heures, dans l’aperçu comme dans la sauvegarde. Si FSRS calcule un intervalle plus long, celui-ci est conservé. Cette règle s’applique aux prochaines réponses, sans modifier les échéances déjà enregistrées.
+
+## Refonte des révisions (octobre 2026)
+
+- Les séances mélangent les deux sens. Une fiche ne paraît qu’une fois par séance. Les nouvelles fiches conservent l’ordre des CSV ; les fiches déjà apprises et dues passent en premier. Les compteurs indiquent des fiches distinctes, pas le nombre de sens à travailler.
+- En kanji, le sens français → japonais devient une écriture de mémoire sur une zone vierge (doigt, stylet ou souris), avec annulation/effacement. Le modèle apparaît après révélation. Pas de reconnaissance automatique ni de sauvegarde des dessins.
+- L’écriture utilise un nouvel état FSRS « writing ». Les états historiques « jp_to_fr » restent actifs pour la reconnaissance. Les anciens « fr_to_jp » restent conservés dans les exports, sans être assimilés à une maîtrise de l’écriture.
+- Le vocabulaire et la grammaire gardent leurs états indépendants « jp_to_fr » et « fr_to_jp ». Oublié reste à une heure, Difficile à deux heures minimum.
+- La grammaire affiche des phrases contextualisées, leur sens naturel et des constructions détaillées. « Afficher la lecture » révèle le kana, en conservant les katakana. Les kanji affichés sont limités à la liste étudiée de kanji.csv ; un groupe de kanji contenant des caractères hors liste est affiché en kana. Cette liste pédagogique n’est pas une certification officielle de niveau JLPT.
+- grammar.csv conserve les colonnes historiques et ajoute example_fr, display_example et display_structure. Lors d’une édition, maintenir ces colonnes cohérentes avec example et example_reading. vocabulary.csv ajoute examples.
+- Le nettoyage fusionne 308 lignes et retire 117 lignes de noms propres/pays. Huit pays restent : Japon, France, États-Unis, Royaume-Uni, Chine, Corée du Sud, Allemagne et Espagne. Les homographes et sens distincts restent séparés.
+
+### Protection de la progression
+
+Au premier chargement, une transaction IndexedDB conserve une copie de la progression avant refonte puis applique vocabulary-migration.json. Un bandeau permet de télécharger cette copie ; elle reste aussi accessible dans Sauvegarde. Cette copie locale ne remplace pas un export dans Fichiers : effacer les données du site efface aussi la copie locale.
+
+Les identifiants ne sont pas renumérotés. Pour les doublons, l’état complet dont l’échéance est la plus proche est retenu pour la fiche fusionnée, sans moyenne artificielle des paramètres FSRS. Les anciens états et les journaux de révision ne sont pas supprimés. L’import accepte les anciens exports version 1 et les nouveaux version 2, déduplique les événements identiques et résout les anciens identifiants.
+
+Une copie des fichiers avant nettoyage est conservée localement dans backups/ (ignoré par Git). Ne pas supprimer vocabulary-migration.json : il sert aussi à importer les sauvegardes d’autres appareils. Les exercices ne sont pas refondus dans cette mise à jour.
