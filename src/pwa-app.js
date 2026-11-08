@@ -6,6 +6,7 @@ import {openExercises,readHistory,validateHistory,HISTORY_KEY} from './exercises
 import {selectSession,ready,validateBackup} from './learning.js';
 import {allStates,allReviews,getState,getSnapshot,getMeta,putMeta,saveReview,migrateProgress,importProgress} from './storage.js';
 import {mountDrawing} from './drawing.js';
+import {compactConstruction} from './grammar-display.js';
 
 const DECKS={
  kanji:{file:'data/kanji.csv',id:'character',label:'kanji',title:'Kanji',glyph:'字',size:20},
@@ -45,7 +46,10 @@ async function startSession(deck){
 }
 function grammarExample(card){return {jp:card.display_example||card.example.split('／')[0].trim(),reading:card.example_reading.split('／')[0].trim(),fr:card.example_fr||card.french};}
 function reading(text){return `<details class="reading-toggle"><summary>Afficher la lecture</summary><p lang="ja">${esc(text)}</p></details>`;}
-function grammarAnswer(card){const e=grammarExample(card);return `<section class="answer grammar-answer"><h2 lang="ja">${esc(card.display_structure||card.structure)}</h2><p>${esc(card.french)}</p><h3>Construction</h3><p class="construction">${esc(card.construction)}</p><details><summary>Comprendre les formes</summary><p>Forme dictionnaire : 食べる, 行く, 読む… (pas seulement les verbes en る).<br>Sans ます : 食べます → 食べ ; 読みます → 読み.<br>Forme neutre : sans です・ます, au temps demandé. Les modèles précisent les cas particuliers des noms et adjectifs.</p></details><h3>Exemple</h3><p class="example-jp" lang="ja">${esc(e.jp)}</p>${reading(e.reading)}<p>${esc(e.fr)}</p></section>`;}
+function grammarAnswer(card,direction){const e=grammarExample(card);
+ const title=direction==='jp_to_fr'?card.french:(card.display_structure||card.structure);
+ return `<section class="answer grammar-answer"><h2 ${direction==='jp_to_fr'?'':'lang="ja"'}>${esc(title)}</h2>${direction?'':`<p>${esc(card.french)}</p>`}<p class="construction">${esc(compactConstruction(card.construction))}</p><div class="grammar-example"><p class="example-jp" lang="ja">${esc(e.jp)}</p><p class="example-fr">${esc(e.fr)}</p>${reading(e.reading)}</div></section>`;
+}
 async function renderReview(){
  const token=beginView();const active=session;if(!active)return;
  const {deck,queue,position,revealed}=active;if(position>=queue.length)return renderComplete(position);
@@ -62,13 +66,12 @@ async function renderReview(){
   if(jp&&!revealed)extra=`<small class="prompt-reading" lang="ja">${esc(card.reading)}</small>`;
   if(revealed)answer=`<section class="answer"><h2>${esc(jp?card.french:card.japanese)}</h2><p class="reading" lang="ja">${esc(card.reading)}</p>${!jp?`<p>${esc(card.french)}</p>`:''}<p>${esc(card.category)}</p>${card.examples?`<p class="example">${esc(card.examples)}</p>`:''}</section>`;
  }else{
-  const e=grammarExample(card);prompt=jp?e.jp:e.fr;
-  extra=jp?`<p class="target-structure">Expression à comprendre : <span lang="ja">${esc(card.display_structure||card.structure)}</span></p>${reading(e.reading)}`:`<p>Notion travaillée : ${esc(card.french)}</p><p class="mixed-note">Formule une phrase. Plusieurs traductions peuvent être correctes ; compare ensuite avec l’exemple.</p>`;
-  if(revealed)answer=grammarAnswer(card);
+  prompt=jp?(card.display_structure||card.structure):card.french;
+  if(revealed)answer=grammarAnswer(card,direction);
  }
  const mode=writing?'Français → Japonais · Écriture':jp?'Japonais → Français':'Français → Japonais';
  app.innerHTML=`<header class="topbar"><button id="home">Kotoba</button><span>${position+1} / ${queue.length}</span></header><main class="review-page" data-card-id="${esc(deck==='kanji'?card.character:card.id)}" data-direction="${direction}">
- <div class="progress"><i style="width:${Math.round(position/queue.length*100)}%"></i></div><article class="flashcard"><p class="review-mode">${mode}</p><p>${revealed?'Compare ta réponse':writing?'Dessine ce kanji':jp?'Quel est le sens en français ?':'Comment le dire en japonais ?'}</p>
+ <div class="progress"><i style="width:${Math.round(position/queue.length*100)}%"></i></div><article class="flashcard ${deck==='grammar'?'grammar-card':''}"><p class="review-mode">${mode}</p><p>${revealed?'Compare ta réponse':writing?'Dessine ce kanji':jp?'Quel est le sens en français ?':'Comment le dire en japonais ?'}</p>
  <div class="prompt ${deck==='grammar'?'grammar':writing||deck==='vocabulary'||!jp?'words':''}" ${jp?'lang="ja"':''}>${esc(prompt)}</div>${extra}${answer}
  ${revealed?'':`<button class="primary" id="reveal">${writing?'Comparer au modèle':'Afficher la réponse'}</button>`}</article>
  ${revealed?`<section class="ratings"><p>${writing?'Comment était ton écriture de mémoire ?':'Comment était ton rappel ?'}</p><div class="rating-grid">${RATINGS.map(([grade,key,label])=>`<button class="rating ${key}" data-rating="${grade}"><strong>${label}</strong><small>${interval(preview[grade].card.due,now)}</small></button>`).join('')}</div></section>`:''}<p id="status" role="alert" hidden></p></main>`;

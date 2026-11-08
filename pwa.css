@@ -40,3 +40,18 @@ button{font:inherit;color:inherit;cursor:pointer}.loading{display:grid;min-heigh
 .drawing-tools{display:flex;justify-content:center;gap:12px;margin:12px 0}.drawing-tools button{padding:10px 16px;min-height:44px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
 .reading-toggle{font-size:16px;line-height:1.6;margin:12px 0}.reading-toggle summary,.grammar-answer summary{cursor:pointer;min-height:44px;padding:10px;color:var(--green)}.target-structure{font-size:16px;line-height:1.6}.grammar-answer{text-align:left}.grammar-answer h2{font-size:28px}.grammar-answer h3{font-size:15px;color:var(--green);margin:24px 0 8px}.grammar-answer p{line-height:1.8}.construction{white-space:pre-line;font-size:17px;background:#f0f1e9;padding:14px;border-radius:12px}.example-jp{font-size:24px}.review-page .example{white-space:pre-line}.rating:disabled{opacity:.5}.review-page #status{padding:14px;color:#973c28}.panel #status{white-space:pre-line}
 @media(max-width:380px){.drawing-comparison{grid-template-columns:1fr}.kanji-model span{max-height:240px}}
+
+/* Compact grammar cards: short prompt, one answer and one example. */
+.flashcard.grammar-card{min-height:260px;padding:18px 20px;gap:10px}
+.grammar-card>p{margin:0;font-size:12px}
+.review-page .grammar-card .prompt.grammar{font-size:clamp(22px,5vw,28px);line-height:1.4;margin:14px 0}
+.grammar-card .answer{margin:0}
+.grammar-answer h2{font-size:20px;line-height:1.4;margin:0 0 12px}
+.grammar-answer p{font-size:15px;line-height:1.5;margin:8px 0}
+.grammar-answer .construction{font-size:15px;line-height:1.5;padding:10px 12px;margin:12px 0}
+.grammar-example{border-top:1px solid var(--line);padding-top:8px}
+.grammar-answer .example-jp{font-size:18px;line-height:1.5}
+.grammar-answer .example-fr{font-size:14px;color:var(--muted)}
+.grammar-answer .reading-toggle{font-size:14px;margin:0}
+.grammar-answer .reading-toggle summary{padding:8px 0;min-height:44px}
+.grammar-card #reveal{margin-top:auto}

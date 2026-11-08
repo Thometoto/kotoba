@@ -42,3 +42,11 @@ assert.match(planned.french,/prévu|prévois/);assert.match(planned.construction
 const known=new Set(read('kanji').map(k=>k.character));
 for(const g of grammar)for(const c of (g.display_example+g.display_structure).match(/\p{Script=Han}/gu)||[])assert.ok(known.has(c),`${g.id}: ${c}`);
 console.log('Refonte : sens mélangés, ordre, états indépendants, migrations, sauvegardes et données validés.');
+
+const {compactConstruction}=await import('../src/grammar-display.js');
+assert.equal(compactConstruction('nom + の予定です\nverbe dictionnaire + 予定です\nverbe en ない + 予定です\n会議の予定です / 行く予定です'), 'nom + の予定です\nverbe dictionnaire + 予定です\nverbe en ない + 予定です');
+assert.match(compactConstruction('adjectif : retirer い + そうです\nいい → よさそう / ない → なさそう'), /いい → よさそう/);
+assert.equal(compactConstruction('Verbe en て + ください'),'Verbe en て + ください');
+const ui=fs.readFileSync('src/pwa-app.js','utf8');
+for(const label of ['Notion travaillée','Expression à comprendre','Comprendre les formes'])assert.ok(!ui.includes(label));
+console.log('Grammaire compacte : constructions et suppression des blocs explicatifs validées.');
