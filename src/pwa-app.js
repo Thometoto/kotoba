@@ -6,6 +6,7 @@ import {openExercises,readHistory,validateHistory,HISTORY_KEY} from './exercises
 import {selectSession,ready,validateBackup} from './learning.js';
 import {allStates,allReviews,getState,getSnapshot,getMeta,putMeta,saveReview,migrateProgress,importProgress} from './storage.js';
 import {mountDrawing} from './drawing.js';
+import {buildKanjiWords,kanjiQueue} from './kanji-practice.js';
 import {compactConstruction} from './grammar-display.js';
 
 const DECKS={
@@ -23,10 +24,14 @@ const serializeCard=card=>({...card,due:card.due.toISOString(),last_review:card.
 function interval(due,now){const seconds=Math.max(0,(due-now)/1000);return seconds<3600?`${Math.round(seconds/60)} min`:seconds<86400?`${Math.round(seconds/3600)} h`:`${Math.round(seconds/86400)} j`;}
 function download(payload,name){const url=URL.createObjectURL(new Blob([JSON.stringify(payload)],{type:'application/json'}));const link=document.createElement('a');link.href=url;link.download=name;link.click();setTimeout(()=>URL.revokeObjectURL(url),30000);}
 
+let kanjiWords;
+function reviewQueue(deck,states,limit,now=Date.now(),start=0){
+ return deck==='kanji'?kanjiQueue(cards.kanji,kanjiWords,states,limit,now,start):selectSession(deck,cards[deck],states,limit,now,start);
+}
 async function renderHome(){
  const token=beginView();session=null;
  const [states,snapshot,ack]=await Promise.all([allStates(),getSnapshot(),getMeta('snapshot-exported')]);if(token!==view)return;
- const counts=Object.fromEntries(Object.keys(DECKS).map(deck=>[deck,selectSession(deck,cards[deck],states,Infinity).length]));
+ const counts=Object.fromEntries(Object.keys(DECKS).map(deck=>[deck,reviewQueue(deck,states,Infinity).length]));
  app.innerHTML=`<section class="home"><div class="brand"><h1>Kotoba</h1><span class="badge">N5 · N4</span></div>
  ${snapshot&&!ack?.value?'<aside class="migration-notice">Ta progression avant la refonte est conservée sur cet appareil. <button id="snapshot-download">Télécharger cette sauvegarde</button></aside>':''}
  <nav class="choices">${Object.entries(DECKS).map(([key,d])=>`<button class="choice" data-deck="${key}"><span class="choice-glyph">${d.glyph}</span><strong>${d.title}</strong><small>${counts[key]} fiches à réviser</small></button>`).join('')}
@@ -39,7 +44,7 @@ async function renderHome(){
 }
 async function startSession(deck){
  const token=beginView();const [states,offset]=await Promise.all([allStates(),getMeta(`mixed-start:${deck}`)]);if(token!==view)return;
- const start=Number(offset?.value||0)%2;const queue=selectSession(deck,cards[deck],states,DECKS[deck].size,Date.now(),start);
+ const start=Number(offset?.value||0)%2;const queue=reviewQueue(deck,states,DECKS[deck].size,Date.now(),start);
  await putMeta(`mixed-start:${deck}`,1-start);
  if(token!==view)return;
  session={deck,queue,position:0,revealed:false,strokes:[],saving:false};await renderReview();
@@ -57,10 +62,13 @@ async function renderReview(){
  const fsrsCard=restoreCard(saved,now);const preview=scheduler.repeat(fsrsCard,now);
  const writing=direction==='writing';const jp=direction==='jp_to_fr';
  let prompt,answer='',extra='';
- if(deck==='kanji'){
+ if(entry.word){
+  const w=entry.word;prompt=jp?w.front:w.fr;
+  if(revealed)answer=`<section class="answer"><h2>${esc(jp?w.fr:w.jp)}</h2><p class="reading" lang="ja">${esc(w.kana)}</p></section>`;
+ }else if(deck==='kanji'){
   prompt=jp?card.character:card.meaning;
-  if(writing){extra=`<p class="writing-clue">Lectures pour identifier le kanji : ${esc(card.readings)}</p><p>Écris de mémoire, puis compare ton dessin au modèle.</p><div class="drawing-comparison"><div><small>Ton dessin</small><canvas id="kanji-canvas" aria-label="Zone de dessin du kanji"></canvas></div>${revealed?`<div class="kanji-model"><small>Modèle</small><span lang="ja">${esc(card.character)}</span></div>`:''}</div>${revealed?'':'<div class="drawing-tools"><button id="undo-stroke">Annuler le trait</button><button id="clear-drawing">Effacer</button></div>'}`;}
-  if(revealed)answer=`<section class="answer"><h2>${esc(jp?card.meaning:card.character)}</h2><p class="reading" lang="ja">${esc(card.readings)}</p><div class="example">${esc(card.examples)}</div>${writing?'<p>Compare toi-même la forme. Le dessin n’est pas noté automatiquement et n’est pas sauvegardé.</p>':''}</section>`;
+  if(writing){extra=`<p>Écris de mémoire, puis compare ton dessin au modèle.</p><div class="drawing-comparison"><div><small>Ton dessin</small><canvas id="kanji-canvas" aria-label="Zone de dessin du kanji"></canvas></div>${revealed?`<div class="kanji-model"><small>Modèle</small><span lang="ja">${esc(card.character)}</span></div>`:''}</div>${revealed?'':'<div class="drawing-tools"><button id="undo-stroke">Annuler le trait</button><button id="clear-drawing">Effacer</button></div>'}`;}
+  if(revealed)answer=`<section class="answer"><h2>${esc(jp?card.meaning:card.character)}</h2><p class="reading" lang="ja">${esc(card.readings)}</p>${writing?'<p>Compare toi-même la forme. Le dessin n’est pas noté automatiquement et n’est pas sauvegardé.</p>':''}</section>`;
  }else if(deck==='vocabulary'){
   prompt=jp?card.japanese:card.french;
   if(jp&&!revealed)extra=`<small class="prompt-reading" lang="ja">${esc(card.reading)}</small>`;
@@ -71,8 +79,8 @@ async function renderReview(){
  }
  const mode=writing?'Français → Japonais · Écriture':jp?'Japonais → Français':'Français → Japonais';
  app.innerHTML=`<header class="topbar"><button id="home">Kotoba</button><span>${position+1} / ${queue.length}</span></header><main class="review-page" data-card-id="${esc(deck==='kanji'?card.character:card.id)}" data-direction="${direction}">
- <div class="progress"><i style="width:${Math.round(position/queue.length*100)}%"></i></div><article class="flashcard ${deck==='grammar'?'grammar-card':''}"><p class="review-mode">${mode}</p><p>${revealed?'Compare ta réponse':writing?'Dessine ce kanji':jp?'Quel est le sens en français ?':'Comment le dire en japonais ?'}</p>
- <div class="prompt ${deck==='grammar'?'grammar':writing||deck==='vocabulary'||!jp?'words':''}" ${jp?'lang="ja"':''}>${esc(prompt)}</div>${extra}${answer}
+ <div class="progress"><i style="width:${Math.round(position/queue.length*100)}%"></i></div><article class="flashcard ${deck==='grammar'?'grammar-card':''}"><p class="review-mode">${mode}</p><p>${revealed?'Compare ta réponse':writing?'Dessine ce kanji':entry.word&&jp?'Comment se lit ce mot et que signifie-t-il ?':jp?'Quel est le sens en français ?':'Comment le dire en japonais ?'}</p>
+ <div class="prompt ${deck==='grammar'?'grammar':writing||entry.word||deck==='vocabulary'||!jp?'words':''}" ${jp?'lang="ja"':''}>${esc(prompt)}</div>${extra}${answer}
  ${revealed?'':`<button class="primary" id="reveal">${writing?'Comparer au modèle':'Afficher la réponse'}</button>`}</article>
  ${revealed?`<section class="ratings"><p>${writing?'Comment était ton écriture de mémoire ?':'Comment était ton rappel ?'}</p><div class="rating-grid">${RATINGS.map(([grade,key,label])=>`<button class="rating ${key}" data-rating="${grade}"><strong>${label}</strong><small>${interval(preview[grade].card.due,now)}</small></button>`).join('')}</div></section>`:''}<p id="status" role="alert" hidden></p></main>`;
  app.querySelector('#home').onclick=()=>renderHome().catch(displayError);
@@ -123,6 +131,7 @@ async function renderBackup(){
 async function fetchText(path){const r=await fetch(path);if(!r.ok)throw Error(`Chargement de ${path} impossible (${r.status}).`);return r.text();}
 async function boot(){try{
  await Promise.all(Object.entries(DECKS).map(async([key,d])=>{cards[key]=parseCSV(await fetchText(d.file));}));
+ kanjiWords=buildKanjiWords(cards.kanji,cards.vocabulary);
  migration=JSON.parse(await fetchText('data/vocabulary-migration.json'));
  for(const [old,id] of Object.entries(migration.aliases)){if(!/^v\d+$/.test(old)||!cards.vocabulary.some(v=>v.id===id))throw Error('Référence de migration invalide.');}
  await migrateProgress(migration,readHistory());

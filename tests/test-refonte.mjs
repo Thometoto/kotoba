@@ -50,3 +50,19 @@ assert.equal(compactConstruction('Verbe en て + ください'),'Verbe en て + 
 const ui=fs.readFileSync('src/pwa-app.js','utf8');
 for(const label of ['Notion travaillée','Expression à comprendre','Comprendre les formes'])assert.ok(!ui.includes(label));
 console.log('Grammaire compacte : constructions et suppression des blocs explicatifs validées.');
+
+const {buildKanjiWords,kanjiQueue}=await import('../src/kanji-practice.js');
+const bank=read('kanji'),words=buildKanjiWords(bank,vocabulary);
+assert.ok(bank.every(k=>words.get(k.character).length>0),'Chaque kanji a un mot traduit');
+for(const ch of ['月','好']){
+ const subset=bank.filter(c=>c.character===ch),q=kanjiQueue(subset,words,[],20,now);
+ assert.equal(q[0].direction,'writing');assert.equal(q[1].stateId,'kanji:'+ch+':jp_to_fr');
+ assert.equal(new Set(q.map(e=>e.stateId)).size,q.length);
+ assert.ok(q.some(e=>e.word&&e.direction==='fr_to_jp'));
+}
+assert.equal(words.get('月').find(w=>w.kana==='げつようび').front,'月曜日（月ようび）');
+assert.ok(words.get('好').some(w=>w.front==='お好みやき'&&w.kana==='おこのみやき'));
+const sessionK=kanjiQueue(bank,words,[],20,now);
+assert.ok(sessionK.length<=20&&new Set(sessionK.map(e=>e.card.character)).size<=5);
+assert.equal(new Set(sessionK.filter(e=>e.word).map(e=>e.word.jp)).size,sessionK.filter(e=>e.word).length);
+console.log('Parcours kanji : couverture, lectures cachées, directions et plafond validés.');
