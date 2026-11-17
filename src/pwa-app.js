@@ -4,7 +4,7 @@ import {scheduler} from './scheduler.js';
 import {loadExercises} from './exercise-data.js';
 import {openExercises,readHistory,validateHistory,HISTORY_KEY} from './exercises.js';
 import {selectSession,ready,validateBackup} from './learning.js';
-import {allStates,allReviews,getState,getSnapshot,getMeta,putMeta,saveReview,migrateProgress,importProgress} from './storage.js';
+import {KANJI_RESTART,resetKanjiProgress,allStates,allReviews,getState,getSnapshot,getMeta,putMeta,saveReview,migrateProgress,importProgress} from './storage.js';
 import {mountDrawing} from './drawing.js';
 import {buildKanjiWords,kanjiQueue} from './kanji-practice.js';
 import {compactConstruction} from './grammar-display.js';
@@ -44,7 +44,13 @@ async function renderHome(){
 }
 async function startSession(deck){
  const token=beginView();const [states,offset]=await Promise.all([allStates(),getMeta(`mixed-start:${deck}`)]);if(token!==view)return;
- const start=Number(offset?.value||0)%2;const queue=reviewQueue(deck,states,DECKS[deck].size,Date.now(),start);
+ const start=Number(offset?.value||0)%2;
+ let queue;
+ if(deck==='kanji'&&(await getMeta(KANJI_RESTART))?.value){
+  const basics=[...'一二三四五六七八九十百千万円日月火水木金土'];
+  const rank=c=>{const i=basics.indexOf(c.character);return i<0?basics.length:i;};
+  queue=kanjiQueue([...cards.kanji].sort((a,b)=>rank(a)-rank(b)),kanjiWords,states,DECKS.kanji.size,Date.now(),start);
+ }else queue=reviewQueue(deck,states,DECKS[deck].size,Date.now(),start);
  await putMeta(`mixed-start:${deck}`,1-start);
  if(token!==view)return;
  session={deck,queue,position:0,revealed:false,strokes:[],saving:false};await renderReview();
@@ -113,10 +119,17 @@ function renderCatalogCard(deck,c,query){beginView();const s=summary(deck,c);con
  app.innerHTML=`<header class="topbar"><button id="back-catalog">← Résultats</button><span>${DECKS[deck].title}</span></header><main class="catalog-card">${deck==='grammar'?grammarAnswer(c):`<div class="catalog-card-glyph">${esc(s.title)}</div>${fields.filter(([,v])=>v).map(([k,v])=>`<section><small>${k}</small><p>${esc(v)}</p></section>`).join('')}`}</main>`;app.querySelector('#back-catalog').onclick=()=>renderCatalog(deck,query);
 }
 async function renderBackup(){
- const token=beginView();const snapshot=await getSnapshot();if(token!==view)return;
- app.innerHTML=`<header class="topbar"><button id="home">← Accueil</button><span>Local</span></header><section class="panel"><h1>Sauvegarde</h1><p>La progression reste sur cet appareil. Exporte-la pour la conserver ailleurs ou la transférer. Les dessins ne sont pas enregistrés.</p><button class="primary" id="export">Exporter la progression</button>${snapshot?'<p><button id="export-original">Exporter la sauvegarde avant refonte</button></p>':''}<p><label class="primary" for="import">Importer une sauvegarde</label><input hidden id="import" type="file" accept="application/json"></p><p id="status" role="alert" hidden></p></section>`;
+ const token=beginView();const [snapshot,restart]=await Promise.all([getSnapshot(),getMeta(KANJI_RESTART)]);if(token!==view)return;
+ app.innerHTML=`<header class="topbar"><button id="home">← Accueil</button><span>Local</span></header><section class="panel"><h1>Sauvegarde</h1><p>La progression reste sur cet appareil. Exporte-la pour la conserver ailleurs ou la transférer. Les dessins ne sont pas enregistrés.</p><button class="primary" id="export">Exporter la progression</button>${snapshot?'<p><button id="export-original">Exporter la sauvegarde avant refonte</button></p>':''}<p><label class="primary" for="import">Importer une sauvegarde</label><input hidden id="import" type="file" accept="application/json"></p>${restart?.value?'':'<p><button id="reset-kanji">Recommencer les kanji depuis le début</button></p>'}<p id="status" role="alert" hidden></p></section>`;
  app.querySelector('#home').onclick=renderHome;
  app.querySelector('#export').onclick=async()=>{try{download({version:2,exportedAt:new Date().toISOString(),states:await allStates(),reviews:await allReviews(),exercises:readHistory(),preMigration:snapshot||null},`kotoba-${new Date().toISOString().slice(0,10)}.json`);}catch(e){displayError(e);}};
+ const reset=app.querySelector('#reset-kanji');
+ if(reset)reset.onclick=async()=>{
+  if(!confirm('Effacer les notes, les échéances et l’historique des kanji sur cet appareil ? Le vocabulaire, la grammaire et les exercices seront conservés. Pour garder une copie, annule et exporte ta progression avant de continuer.'))return;
+  reset.disabled=true;
+  try{await resetKanjiProgress();if(token!==view)return;reset.remove();const status=app.querySelector('#status');status.hidden=false;status.textContent='Kanji réinitialisés. Retourne à l’accueil pour commencer par les chiffres.';}
+  catch(error){reset.disabled=false;displayError(error);}
+ };
  if(snapshot)app.querySelector('#export-original').onclick=()=>download(snapshot,'kotoba-avant-refonte.json');
  app.querySelector('#import').onchange=async e=>{
   const file=e.target.files[0];if(!file)return;

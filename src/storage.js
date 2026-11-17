@@ -29,6 +29,24 @@ export const putMeta=(key,value)=>write(['meta'],tx=>tx.objectStore('meta').put(
 export const saveReview=(state,review)=>write(['states','reviews'],tx=>{
  tx.objectStore('states').put(state);tx.objectStore('reviews').add(review);
 });
+export const KANJI_RESTART='kanji-restart-v1';
+export async function resetKanjiProgress(){
+ await write(['states','reviews','meta'],tx=>{
+  const meta=tx.objectStore('meta'),marker=meta.get(KANJI_RESTART);
+  marker.onsuccess=()=>{
+   if(marker.result)return;
+   for(const [name,field] of [['states','id'],['reviews','stateId']]){
+    const cursor=tx.objectStore(name).openCursor();
+    cursor.onsuccess=()=>{const c=cursor.result;if(!c)return;
+     if(c.value[field]?.startsWith('kanji:'))c.delete();
+     c.continue();
+    };
+   }
+   meta.delete('mixed-start:kanji');
+   meta.put({key:KANJI_RESTART,value:true});
+  };
+ });
+}
 export async function migrateProgress(migration,exercises){
  if(!migration||typeof migration.aliases!=='object'||!migration.version)throw Error('Table de migration invalide.');
  // All reads/writes and the snapshot share a transaction: either everything commits or nothing does.
